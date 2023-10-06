@@ -35,6 +35,14 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtStatuspet = new System.Windows.Forms.TextBox();
+            this.txtNamepet = new System.Windows.Forms.TextBox();
+            this.txtKindpet = new System.Windows.Forms.TextBox();
+            this.txtIDpet = new System.Windows.Forms.TextBox();
             this.lvPet = new System.Windows.Forms.ListView();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -44,14 +52,6 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
-            this.txtIDpet = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.txtNamepet = new System.Windows.Forms.TextBox();
-            this.txtKindpet = new System.Windows.Forms.TextBox();
-            this.txtStatuspet = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -141,6 +141,74 @@
             this.tabPage2.Text = "Thú Cưng";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(282, 62);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Loại";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(264, 116);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(69, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Trạng Thái";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(27, 117);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Tên";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(27, 62);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(20, 13);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "ID";
+            // 
+            // txtStatuspet
+            // 
+            this.txtStatuspet.Location = new System.Drawing.Point(363, 113);
+            this.txtStatuspet.Name = "txtStatuspet";
+            this.txtStatuspet.Size = new System.Drawing.Size(156, 20);
+            this.txtStatuspet.TabIndex = 2;
+            // 
+            // txtNamepet
+            // 
+            this.txtNamepet.Location = new System.Drawing.Point(62, 110);
+            this.txtNamepet.Name = "txtNamepet";
+            this.txtNamepet.Size = new System.Drawing.Size(156, 20);
+            this.txtNamepet.TabIndex = 2;
+            // 
+            // txtKindpet
+            // 
+            this.txtKindpet.Location = new System.Drawing.Point(363, 62);
+            this.txtKindpet.Name = "txtKindpet";
+            this.txtKindpet.Size = new System.Drawing.Size(156, 20);
+            this.txtKindpet.TabIndex = 2;
+            // 
+            // txtIDpet
+            // 
+            this.txtIDpet.Location = new System.Drawing.Point(62, 59);
+            this.txtIDpet.Name = "txtIDpet";
+            this.txtIDpet.Size = new System.Drawing.Size(156, 20);
+            this.txtIDpet.TabIndex = 2;
+            // 
             // lvPet
             // 
             this.lvPet.HideSelection = false;
@@ -149,6 +217,7 @@
             this.lvPet.Size = new System.Drawing.Size(520, 136);
             this.lvPet.TabIndex = 1;
             this.lvPet.UseCompatibleStateImageBehavior = false;
+            this.lvPet.View = System.Windows.Forms.View.Details;
             this.lvPet.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvPet_ItemSelectionChanged);
             // 
             // button4
@@ -229,74 +298,6 @@
             this.dtgvAccount.Name = "dtgvAccount";
             this.dtgvAccount.Size = new System.Drawing.Size(537, 301);
             this.dtgvAccount.TabIndex = 0;
-            // 
-            // txtIDpet
-            // 
-            this.txtIDpet.Location = new System.Drawing.Point(62, 59);
-            this.txtIDpet.Name = "txtIDpet";
-            this.txtIDpet.Size = new System.Drawing.Size(156, 20);
-            this.txtIDpet.TabIndex = 2;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 62);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "ID";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 117);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Tên";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(264, 116);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Trạng Thái";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(282, 62);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Loại";
-            // 
-            // txtNamepet
-            // 
-            this.txtNamepet.Location = new System.Drawing.Point(62, 110);
-            this.txtNamepet.Name = "txtNamepet";
-            this.txtNamepet.Size = new System.Drawing.Size(156, 20);
-            this.txtNamepet.TabIndex = 2;
-            // 
-            // txtKindpet
-            // 
-            this.txtKindpet.Location = new System.Drawing.Point(363, 62);
-            this.txtKindpet.Name = "txtKindpet";
-            this.txtKindpet.Size = new System.Drawing.Size(156, 20);
-            this.txtKindpet.TabIndex = 2;
-            // 
-            // txtStatuspet
-            // 
-            this.txtStatuspet.Location = new System.Drawing.Point(363, 113);
-            this.txtStatuspet.Name = "txtStatuspet";
-            this.txtStatuspet.Size = new System.Drawing.Size(156, 20);
-            this.txtStatuspet.TabIndex = 2;
             // 
             // fAdmin
             // 

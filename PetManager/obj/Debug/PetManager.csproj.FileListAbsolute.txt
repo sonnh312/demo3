@@ -11,3 +11,16 @@ D:\Study\Đồ án Desktop App\PetManager\PetManager\obj\Debug\PetManager.pdb
 D:\Study\Đồ án Desktop App\PetManager\PetManager\obj\Debug\PetManager.fPetManager.resources
 D:\Study\Đồ án Desktop App\PetManager\PetManager\obj\Debug\PetManager.FAccountProfile.resources
 D:\Study\Đồ án Desktop App\PetManager\PetManager\obj\Debug\PetManager.fAdmin.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.csprojAssemblyReference.cache
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.FAccountProfile.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fAdmin.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.FLogin.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fPetManager.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.Properties.Resources.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.csproj.GenerateResource.cache
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.csproj.CoreCompileInputs.cache
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.exe
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.pdb
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.exe.config
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.exe
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.pdb
