@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PetManager.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,10 +23,7 @@ namespace PetManager
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void label1_Click_1(object sender, EventArgs e)
         {
@@ -34,11 +32,29 @@ namespace PetManager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            fPetManager pet = new fPetManager();
-            this.Hide();
-            pet.ShowDialog();
-            this.Show();    
+            txtPass.Focus();
+            string username = txtPass.Text;
+            string passwork = txtLogin.Text;
+           if(Login(username,passwork)==true)
+           {
+                
+                fPetManager pet = new fPetManager();
+                this.Hide();
+                pet.ShowDialog();
+                this.Show();
+            }
+            else
+            {
+                MessageBox.Show("Sai ten dang nhap hoac mat khau");
+            }
+            txtPass.Focus();
 
+
+        }
+        bool Login(string username,string password)
+        {
+
+            return AccountDAO.Instance.Login(username,password);
         }
 
         private void BtnOut_Click(object sender, EventArgs e)
@@ -52,6 +68,11 @@ namespace PetManager
             {
                 e.Cancel = true;
             }
+        }
+
+        private void txtLogin_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

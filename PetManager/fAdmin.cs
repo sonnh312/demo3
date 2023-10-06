@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
- 
+using PetManager.DAO;
 
 namespace PetManager
 {
@@ -41,8 +41,7 @@ namespace PetManager
         {
 
         }
-        //tao connection 
-        //public void LoadAccountList()
+        
 
         
         private void btnAdd_Click(object sender, EventArgs e)
@@ -66,8 +65,10 @@ namespace PetManager
         }
         public void LoadData()
         {
-            
-            
+            string query = "SELECT * FROM ACCOUNT  ";
+
+            dtgvAccount.DataSource = DataProvider.Instance.ExecuteNonQuery(query);
+
         }
     }
 }

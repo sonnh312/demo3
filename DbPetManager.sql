@@ -34,9 +34,11 @@ CREATE TABLE Account
 	PRIMARY KEY(idUser),
 )
 GO
+DROP TABLE Account
+INSERT Account(idUser,Displayname,Username,Password,Type,email) VALUES('01',N'hoangson','nhson','password','gold','sonten@gmail.com')
+SELECT * FROM dbo.Account
 
-INSERT Account(idUser,Displayname,Username,Password,Type,email) VALUES('son',N'hoangson','nhson','password','gold','sonten@gmail.com')
-SELECT * FROM Account
+
 LAPTOP-ISEILDT0
 CREATE TABLE PetService
 (
@@ -66,9 +68,18 @@ CREATE TABLE Bill
 )
 GO
 
-CREATE TABLE Staff
-(
-	
 
-)
+CREATE PROCEDURE getAccountByUserName
+@username nvarchar(100)
+AS
+BEGIN 
+	SELECT * FROM dbo.Account WHERE Username = @username
+END
 GO
+
+GO
+SELECT * FROM  GetAccountFromUserName
+DROP PROCEDURE IF EXISTS USP_GetAccountFromUserName;
+EXECUTE getAccountByUserName @username = N'nhson' 
+DELETE dbo.Account
+SELECT * FROM dbo.Account WHERE Username=N'nhson' AND PassWord='password'
