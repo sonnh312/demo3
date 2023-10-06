@@ -66,17 +66,7 @@ namespace PetManager
         }
         public void LoadData()
         {
-            string connectStr = "Data Source=LAPTOP-ISEILDT0;Initial Catalog=PetManager;Integrated Security=True";
-            SqlConnection connection = new SqlConnection(connectStr);
-            connection.Open();
-            DataTable data = new DataTable();
-            string query = "SELECT * FROM Account";
-
-            SqlCommand command = new SqlCommand(query, connection);
-            SqlDataAdapter adapter = new SqlDataAdapter(command);
-            adapter.Fill(data);
-            connection.Close();
-            dtgvAccount.DataSource = data;
+            
             
         }
     }
