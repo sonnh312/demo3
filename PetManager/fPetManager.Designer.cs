@@ -38,7 +38,6 @@
             this.hotlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cácDịchVụChămSócToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đồĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.cb = new System.Windows.Forms.ComboBox();
@@ -47,6 +46,7 @@
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -130,13 +130,6 @@
             this.đồĂnToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.đồĂnToolStripMenuItem.Text = "Đồ Ăn";
             // 
-            // panel2
-            // 
-            this.panel2.Location = new System.Drawing.Point(12, 85);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(390, 288);
-            this.panel2.TabIndex = 1;
-            // 
             // panel3
             // 
             this.panel3.Location = new System.Drawing.Point(425, 150);
@@ -209,15 +202,22 @@
             this.comboBox1.Size = new System.Drawing.Size(203, 21);
             this.comboBox1.TabIndex = 0;
             // 
+            // flpTable
+            // 
+            this.flpTable.Location = new System.Drawing.Point(12, 85);
+            this.flpTable.Name = "flpTable";
+            this.flpTable.Size = new System.Drawing.Size(407, 288);
+            this.flpTable.TabIndex = 5;
+            // 
             // fPetManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.flpTable);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel3);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "fPetManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -235,7 +235,6 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
@@ -253,5 +252,6 @@
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.FlowLayoutPanel flpTable;
     }
 }

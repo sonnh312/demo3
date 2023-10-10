@@ -18,7 +18,7 @@ namespace PetManager
         public fAdmin()
         {
             InitializeComponent();
-            LoadData();
+            LoadListAccount();
 
         }
 
@@ -63,11 +63,12 @@ namespace PetManager
         {
 
         }
-        public void LoadData()
+        public void LoadListAccount()
         {
-            string query = "SELECT * FROM ACCOUNT  ";
+            string query = "EXECUTE getAccountByUserName @username";
+            DataProvider provider = new DataProvider();
 
-            dtgvAccount.DataSource = DataProvider.Instance.ExecuteNonQuery(query);
+            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] {"hoangson"});
 
         }
     }

@@ -212,9 +212,9 @@
             // lvPet
             // 
             this.lvPet.HideSelection = false;
-            this.lvPet.Location = new System.Drawing.Point(20, 166);
+            this.lvPet.Location = new System.Drawing.Point(30, 136);
             this.lvPet.Name = "lvPet";
-            this.lvPet.Size = new System.Drawing.Size(520, 136);
+            this.lvPet.Size = new System.Drawing.Size(510, 166);
             this.lvPet.TabIndex = 1;
             this.lvPet.UseCompatibleStateImageBehavior = false;
             this.lvPet.View = System.Windows.Forms.View.Details;

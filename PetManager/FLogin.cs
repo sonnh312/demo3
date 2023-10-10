@@ -32,25 +32,23 @@ namespace PetManager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            txtPass.Focus();
-            string username = txtPass.Text;
-            string passwork = txtLogin.Text;
-           if(Login(username,passwork)==true)
-           {
+            txtLogin.Focus();
+            string username = txtLogin.Text;
+            string passwork = txtPass.Text;
+            //if(Login(username,passwork)==true)
+            //{
                 
-                fPetManager pet = new fPetManager();
-                this.Hide();
-                pet.ShowDialog();
-                this.Show();
-            }
-            else
-            {
-                MessageBox.Show("Sai ten dang nhap hoac mat khau");
-            }
-            txtPass.Focus();
-
-
+               fPetManager pet = new fPetManager();
+               this.Hide();
+               pet.ShowDialog();
+               this.Show();
+           // }
+           // else
+          // {
+            //    MessageBox.Show("Sai ten dang nhap hoac mat khau");
+           // }
         }
+
         bool Login(string username,string password)
         {
 

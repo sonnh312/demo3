@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,12 +15,13 @@ namespace PetManager.DAO
         { get { if (instance == null) instance = new AccountDAO(); return AccountDAO.instance; }
             private set { instance = value; }
         }
-        private AccountDAO() { }
+        public AccountDAO() { }
         public bool Login(string username,string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'nhson' AND PassWord='password";
-            int result = DataProvider.Instance.ExecuteNonQuery(query);
-            return result > 0; 
+            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND PassWord= N' "+password+" '";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0; 
         }
     }
 }
+    

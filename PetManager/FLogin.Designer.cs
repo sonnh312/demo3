@@ -32,11 +32,11 @@
             this.BtnOut = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.txtLogin = new System.Windows.Forms.TextBox();
+            this.txtPass = new System.Windows.Forms.TextBox();
             this.lblPass = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtPass = new System.Windows.Forms.TextBox();
             this.lblUN = new System.Windows.Forms.Label();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -84,12 +84,14 @@
             this.panel3.Size = new System.Drawing.Size(285, 45);
             this.panel3.TabIndex = 0;
             // 
-            // txtLogin
+            // txtPass
             // 
-            this.txtLogin.Location = new System.Drawing.Point(90, 13);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(177, 20);
-            this.txtLogin.TabIndex = 0;
+            this.txtPass.Location = new System.Drawing.Point(90, 12);
+            this.txtPass.Name = "txtPass";
+            this.txtPass.Size = new System.Drawing.Size(177, 20);
+            this.txtPass.TabIndex = 1;
+            this.txtPass.UseSystemPasswordChar = true;
+            this.txtPass.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
             // 
             // lblPass
             // 
@@ -111,15 +113,6 @@
             this.panel2.Size = new System.Drawing.Size(285, 45);
             this.panel2.TabIndex = 0;
             // 
-            // txtPass
-            // 
-            this.txtPass.Location = new System.Drawing.Point(90, 12);
-            this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(177, 20);
-            this.txtPass.TabIndex = 1;
-            this.txtPass.UseSystemPasswordChar = true;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtLogin_TextChanged);
-            // 
             // lblUN
             // 
             this.lblUN.AutoSize = true;
@@ -130,6 +123,13 @@
             this.lblUN.TabIndex = 0;
             this.lblUN.Text = "Tài Khoản";
             this.lblUN.Click += new System.EventHandler(this.label1_Click_1);
+            // 
+            // txtLogin
+            // 
+            this.txtLogin.Location = new System.Drawing.Point(90, 13);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(177, 20);
+            this.txtLogin.TabIndex = 0;
             // 
             // FLogin
             // 

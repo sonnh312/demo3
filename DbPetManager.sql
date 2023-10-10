@@ -28,14 +28,13 @@ CREATE TABLE Account
 	idUser CHAR(10),
 	Displayname NVARCHAR(100) NOT NULL,
 	Username NVARCHAR(100) NOT NULL,
-	Password NVARCHAR(100) NOT NULL,
-	Type NVARCHAR(100) NOT NULL,
-	email NVARCHAR(100) NOT NULL,
+	password NVARCHAR(100) NOT NULL,
 	PRIMARY KEY(idUser),
 )
 GO
-DROP TABLE Account
-INSERT Account(idUser,Displayname,Username,Password,Type,email) VALUES('01',N'hoangson','nhson','password','gold','sonten@gmail.com')
+DROP TABLE ACCOUNT
+INSERT Account(idUser,Displayname,Username,password) VALUES('01',N'hs',N'hoangson',N'nhson')
+INSERT Account(idUser,Displayname,Username,password) VALUES('02',N'hs',N'hoangson',N'0312')
 SELECT * FROM dbo.Account
 
 
@@ -50,12 +49,23 @@ CREATE TABLE PetService
 GO
 ALTER TABLE PetService ADD CONSTRAINT N_1 FOREIGN KEY(idPetService) REFERENCES Pet(idPet)
 
-CREATE TABLE Sale
+CREATE TABLE TableFood
 (
-	Date DATETIME(),
-	
+	name NVARCHAR(100),
+	status int,
 )
-GO
+DROP TABLE dbo.TableFood
+DECLARE @i	INT = 0
+WHILE @i <=10
+BEGIN
+	INSERT dbo.TableFood(name,status) VALUES (N'Ban'+ CAST (@i AS NVARCHAR(100)),0) 
+SET @i = @i + 1
+END 
+UPDATE dbo.TableFood SET status = 1 WHERE name=N'Ban4'
+VALUE (N'Ban 1')
+SELECT * FROM TableFood
+
+
 
 CREATE TABLE Bill
 (
@@ -80,6 +90,12 @@ GO
 GO
 SELECT * FROM  GetAccountFromUserName
 DROP PROCEDURE IF EXISTS USP_GetAccountFromUserName;
-EXECUTE getAccountByUserName @username = N'nhson' 
+EXECUTE getAccountByUserName @username = N'hoangson' 
 DELETE dbo.Account
-SELECT * FROM dbo.Account WHERE Username=N'nhson' AND PassWord='password'
+SELECT * FROM dbo.Account WHERE Username=N'hoangson' AND PassWord='nhson'
+
+
+CREATE PROCEDURE USP_GetTableList
+AS
+SELECT * FROM dbo.TableFood
+EXECUTE USP_GetTableList

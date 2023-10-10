@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetManager.DAO;
+using PetManager.DTOO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,7 +17,25 @@ namespace PetManager
         public fPetManager()
         {
             InitializeComponent();
+            LoadTable();
         }
+        #region method
+        void LoadTable()
+        {
+            List<Table> tablelist=  TableDAO.Instance.LoadTableList(); 
+            foreach(Table item in tablelist)
+            {
+                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                btn.Text = item.Name + Environment.NewLine + item.Status;
+
+                flpTable.Controls.Add(btn); 
+            }
+        }
+
+        #endregion
+
+
+
 
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
