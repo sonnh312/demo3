@@ -51,9 +51,10 @@
     <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TableDAO.cs" />
-    <Compile Include="DTOO\Bill.cs" />
-    <Compile Include="DTOO\BillInfo.cs" />
-    <Compile Include="DTOO\Table.cs" />
+    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Bill.cs" />
+    <Compile Include="DTO\BillInfo.cs" />
+    <Compile Include="DTO\Table.cs" />
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>

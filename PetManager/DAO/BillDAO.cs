@@ -1,4 +1,4 @@
-﻿using PetManager.DTOO;
+﻿using PetManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -23,13 +23,13 @@ namespace PetManager.DAO
         /// that bai -1
         /// </summary>
         /// <returns></returns>
-        public int UnCheckGetBillIdByTableId()
+        public int GetUnCheckGetBillIdByTableId(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE iDTable=" +id+" AND status = 0     ")
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idTable=" + id + " AND status = 0");
             if (data.Rows.Count >0)
             {
-                BillInfo bill = new BillInfo(data.Rows[0]);
-                return bill.ID;
+                Bill bill = new Bill(data.Rows[0]);
+                return bill.Idbill;
             }
             return -1;
         }

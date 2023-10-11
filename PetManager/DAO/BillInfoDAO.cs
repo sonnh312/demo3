@@ -1,10 +1,11 @@
-﻿using PetManager.DTOO;
+﻿using PetManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data;
+
 
 namespace PetManager.DAO
 {
@@ -22,21 +23,23 @@ namespace PetManager.DAO
 
         }
 
-        public List<BillInfo> GetListBillInfo()
+        public List<BillInfo> GetListBillInfo(int id)
         {
             List<BillInfo> lsBillinfo = new List<BillInfo>();
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.BillInfo WHERE idBill=" + iD);
-            foreach(DataRow in item data.Rows)
-               {
-                BillInfo info = new BillInfo();
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idBillInfo= " + id);
+            foreach(DataRow item in data.Rows)
+            {
+                BillInfo info = new BillInfo(item);
                 lsBillinfo.Add(info);
             }
 
 
 
 
-            return List<BillInfo>;
+            return lsBillinfo;
             
         }
+
+        
     }
 }

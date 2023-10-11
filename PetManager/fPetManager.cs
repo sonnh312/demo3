@@ -1,5 +1,5 @@
 ﻿using PetManager.DAO;
-using PetManager.DTOO;
+using PetManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -10,10 +10,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace PetManager
 {
     public partial class fPetManager : Form
     {
+        public List<BillInfo> GetListBillInfo { get; private set; }
+
         public fPetManager()
         {
             InitializeComponent();
@@ -22,28 +25,31 @@ namespace PetManager
         #region method
         void LoadTable()
         {
-            List<Table> tablelist=  TableDAO.Instance.LoadTableList(); 
+            List<Table> tablelist =  TableDAO.Instance.LoadTableList(); 
             foreach(Table item in tablelist)
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
-                btn.Click += btn_Click;
+                btn.Click += BtnClick;
                 btn.Tag = item;
                 flpTable.Controls.Add(btn); 
             }
         }
         void ShowBill(int id)
         {
-                
+            List<BillInfo> lsBillInfo = BillInfoDAO.Instance.GetListBillInfo(BillDAO.Instance.GetUnCheckGetBillIdByTableId(id));
+            
+
+
         }
 
         #endregion
 
         #region Event
-        void btnClick(object sender, EventArgs e)
+        void BtnClick(object sender, EventArgs e)
         {
             int tableID = (sender as Table).ID;
-            ShowBill();
+            ShowBill(tableID);
         }   
 
 

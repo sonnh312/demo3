@@ -5,39 +5,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetManager.DTOO
+namespace PetManager.DTO
 {
-    public class BillInfo
+    public class Bill
     {
-
-
-        private int iD;
+        private int idbill;
         private DateTime? dataCheckIn;
         private DateTime? dataCheckOut;
         private int status;
 
+        public int Idbill { get => idbill; set => idbill = value; }
         public DateTime? DataCheckIn { get => dataCheckIn; set => dataCheckIn = value; }
         public DateTime? DataCheckOut { get => dataCheckOut; set => dataCheckOut = value; }
         public int Status { get => status; set => status = value; }
-        public int ID { get => iD; set => iD = value; }
 
-        public BillInfo(int id,DateTime? dataCheckIn, DateTime? dataCheckOut, int status)
+
+
+
+        public Bill(int idBill, DateTime? dataCheckIn, DateTime? dataCheckOut, int status)
         {
-            this.ID = iD;
+            this.Idbill = idbill;
             this.DataCheckIn = dataCheckIn;
             this.DataCheckOut = dataCheckOut;
-            this.Status = Status;
+            this.Status = status;
         }
-        public Bull(DataRow row)
+        public Bill(DataRow row)
         {
-            this.ID = (int)row["iD"];
+            this.Idbill = (int)row["idbill"];
             this.DataCheckIn = (DateTime?)row["dataCheckIn"];
             this.DataCheckOut = (DateTime?)row["dataCheckOut"];
             this.Status = (int)row["Status"];
         }
-
-
     }
-
-
 }

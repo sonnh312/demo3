@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace PetManager.DTOO
+namespace PetManager.DTO
 {
     public class Table
     {
@@ -12,7 +12,7 @@ namespace PetManager.DTOO
         private string name;
         private int status;
 
-        public void table(int id,string name, int status)
+        public void table (int id,string name, int status)
         {
             this.ID = id;
             this.Name = name;
