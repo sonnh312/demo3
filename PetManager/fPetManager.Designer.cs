@@ -47,8 +47,10 @@
             this.btnAdd = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.flpTable = new System.Windows.Forms.FlowLayoutPanel();
+            this.lvFood = new System.Windows.Forms.ListView();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel5.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +134,7 @@
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.lvFood);
             this.panel3.Location = new System.Drawing.Point(425, 150);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(363, 288);
@@ -209,6 +212,17 @@
             this.flpTable.Size = new System.Drawing.Size(407, 288);
             this.flpTable.TabIndex = 5;
             // 
+            // lvFood
+            // 
+            this.lvFood.GridLines = true;
+            this.lvFood.HideSelection = false;
+            this.lvFood.Location = new System.Drawing.Point(3, 3);
+            this.lvFood.Name = "lvFood";
+            this.lvFood.Size = new System.Drawing.Size(357, 282);
+            this.lvFood.TabIndex = 0;
+            this.lvFood.UseCompatibleStateImageBehavior = false;
+            this.lvFood.View = System.Windows.Forms.View.List;
+            // 
             // fPetManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -226,6 +240,7 @@
             this.panel1.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel5.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -253,5 +268,6 @@
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.FlowLayoutPanel flpTable;
+        private System.Windows.Forms.ListView lvFood;
     }
 }

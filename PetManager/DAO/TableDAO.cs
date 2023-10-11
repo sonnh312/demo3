@@ -27,7 +27,7 @@ namespace PetManager.DAO
             foreach(DataRow item in data.Rows)
             {
                 Table table = new Table();
-
+                //lam 1 appearance status   
 
                 lsTable.Add(table);
             }

@@ -16,12 +16,29 @@ GO
 CREATE TABLE Pet
 (
 	idPet CHAR(10),
+	idPetCategory CHAR(10),
 	name NVARCHAR(100)NOT NULL,
 	status NVARCHAR(100)NOT NULL,
-	Petkind NVARCHAR(100)NOT NULL,
 	PRIMARY KEY(idPet),
 )
 GO
+INSERT dbo.Pet(idPet,idPetCategory,name,status) VALUES ('1','1',N'Ngu',N'ready')
+
+ALTER TABLE Pet ADD CONSTRAINT N_2 FOREIGN KEY(idPetCategory) REFERENCES PetCategory(PetCategory)
+
+CREATE TABLE PetCategory
+(
+	
+	PetCategory CHAR(10),
+	Petkind NVARCHAR(100)NOT NULL,
+	PRIMARY KEY(idPetCategory),
+)
+GO
+
+DROP TABLE dbo.PetCategory
+INSERT dbo.PetCategory(idPetCategory,Petkind) VALUES ('1',N'Kind1')
+INSERT dbo.PetCategory(idPetCategory,Petkind) VALUES ('2',N'Kind2')
+INSERT dbo.PetCategory(idPetCategory,Petkind) VALUES ('3',N'Kind3')
 
 CREATE TABLE Account
 (
@@ -38,7 +55,7 @@ INSERT Account(idUser,Displayname,Username,password) VALUES('02',N'hs',N'hoangso
 SELECT * FROM dbo.Account
 
 
-LAPTOP-ISEILDT0
+
 CREATE TABLE PetService
 (
 	idPet CHAR(10),
@@ -55,6 +72,8 @@ CREATE TABLE TableFood
 	status int,
 )
 DROP TABLE dbo.TableFood
+
+
 DECLARE @i	INT = 0
 WHILE @i <=10
 BEGIN
@@ -71,12 +90,23 @@ CREATE TABLE Bill
 (
 	idUser CHAR(10),
 	idBill INT IDENTITY PRIMARY KEY,
+	idTable CHAR(10),
 	Username NVARCHAR(100) NOT NULL,
 	dataCheckIn NVARCHAR(100) NOT NULL,
 	dataCheckOut NVARCHAR(100) NOT NULL,
 	
 )
 GO
+CREATE TABLE BillInfo
+(
+	
+	idBillInfo INT IDENTITY PRIMARY KEY,
+	idFood CHAR(10),
+	count INT,
+	
+)
+GO
+
 
 
 CREATE PROCEDURE getAccountByUserName
@@ -87,15 +117,16 @@ BEGIN
 END
 GO
 
-GO
+
 SELECT * FROM  GetAccountFromUserName
-DROP PROCEDURE IF EXISTS USP_GetAccountFromUserName;
+
 EXECUTE getAccountByUserName @username = N'hoangson' 
 DELETE dbo.Account
 SELECT * FROM dbo.Account WHERE Username=N'hoangson' AND PassWord='nhson'
-
+GO
 
 CREATE PROCEDURE USP_GetTableList
 AS
 SELECT * FROM dbo.TableFood
 EXECUTE USP_GetTableList
+GO

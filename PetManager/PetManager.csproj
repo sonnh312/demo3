@@ -47,8 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\BillDAO.cs" />
+    <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DTOO\Bill.cs" />
+    <Compile Include="DTOO\BillInfo.cs" />
     <Compile Include="DTOO\Table.cs" />
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>

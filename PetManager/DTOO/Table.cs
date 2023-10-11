@@ -15,8 +15,8 @@ namespace PetManager.DTOO
         public void table(int id,string name, int status)
         {
             this.ID = id;
-            this.name = name;
-            this.status = status;
+            this.Name = name;
+            this.Status = status;
         }
 
         

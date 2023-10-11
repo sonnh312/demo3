@@ -27,14 +27,24 @@ namespace PetManager
             {
                 Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
                 btn.Text = item.Name + Environment.NewLine + item.Status;
-
+                btn.Click += btn_Click;
+                btn.Tag = item;
                 flpTable.Controls.Add(btn); 
             }
+        }
+        void ShowBill(int id)
+        {
+                
         }
 
         #endregion
 
-
+        #region Event
+        void btnClick(object sender, EventArgs e)
+        {
+            int tableID = (sender as Table).ID;
+            ShowBill();
+        }   
 
 
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
@@ -48,5 +58,6 @@ namespace PetManager
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+        #endregion
     }
 }
