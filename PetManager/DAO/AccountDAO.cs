@@ -14,13 +14,14 @@ namespace PetManager.DAO
 
         public static AccountDAO Instance
         {
-                get { if (instance == null) instance = new AccountDAO(); return AccountDAO.instance; }
+            get { if (instance == null) instance = new AccountDAO(); return AccountDAO.instance; }
             private set { instance = value; }
         }
         public AccountDAO() { }
+
         public bool Login(string username,string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'hs' AND password=N'1' ";
+            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"' ";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0; 
         }
@@ -28,7 +29,11 @@ namespace PetManager.DAO
         public Account GetAccountByUserName(int username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Account WHERE Username=" + username);
-            
+            foreach(DataRow item in data.Rows)
+            {
+                return new Account(item);
+            }
+
             return null;
         }
 

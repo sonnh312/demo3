@@ -4,7 +4,7 @@ GO
 USE PetManager
 GO
 
----khach hang, pet,dich vu pet, ds quan li ,pet ds ban hang, nhan vien, bill,billinfo,table
+---khach hang(loai,uu dai khach hang pet), pet(gom nhung loai nao,ten gi,thong tin ra sao),dich vu pet(dich vu gi,gia ca), admin quan li(them, xoa, sua) , nhan vien, bill(gio hang,cach thanh toan,billinfo,table
 
 CREATE TABLE Pet
 (

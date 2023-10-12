@@ -1,4 +1,5 @@
 ﻿using PetManager.DAO;
+using PetManager.DTO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,12 +33,12 @@ namespace PetManager
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            txtLogin.Focus();
-            string username = txtLogin.Text;
+            txtUsername.Focus();
+            string username = txtUsername.Text;
             string passwork = txtPass.Text;
             if(Login(username,passwork)==true)
             {
-                
+               //Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
                fPetManager pet = new fPetManager();
                this.Hide();
                pet.ShowDialog();
@@ -71,6 +72,19 @@ namespace PetManager
         private void txtLogin_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void linkCreateAcc_Click(object sender, EventArgs e)
+        {
+            fCreateAccount f = new fCreateAccount();
+            f.ShowDialog();
+        }
+
+        private void linkLabel1_Click(object sender, EventArgs e)
+        {
+            fChangePass f = new fChangePass();
+            f.ShowDialog();
+           
         }
     }
 }

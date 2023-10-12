@@ -24,3 +24,6 @@ D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.pdb
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.exe.config
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.exe
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\bin\Debug\PetManager.pdb
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fCreateAccount.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fChangePass.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fProduce.resources

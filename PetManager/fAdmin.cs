@@ -21,55 +21,70 @@ namespace PetManager
             LoadListAccount();
 
         }
-
-        private void fAdmin_Load(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage5_Click(object sender, EventArgs e)
-        {
-
-        }
-        
-
-        
+        #region Event
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            try
-            {
-                lvPet.Columns.Add("ID");
-                lvPet.Columns.Add("Tên");
-                lvPet.Columns.Add("Loại");
-                lvPet.Columns.Add("Trạng thái");
-            
-                ListViewItem itempet = new System.Windows.Forms.ListViewItem(new string[] { txtIDpet.Text, txtNamepet.Text, txtKindpet.Text, txtStatuspet.Text });
-                lvPet.Items.Add(itempet);
-            }
-            catch { }
+            ListViewItem itempet = new System.Windows.Forms.ListViewItem(new string[] { txtIDpet.Text, txtNamepet.Text, txtKindpet.Text, txtStatuspet.Text });
+            lvPet.Items.Add(itempet);
+            ResetInput();
+            txtIDpet.Focus();
+        }
+
+        public void ResetInput()
+        {
+            txtIDpet.Text = "";
+            txtKindpet.Text = "";
+            txtNamepet.Text = "";
+            txtStatuspet.Text = "";
         }
 
         private void lvPet_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
+            ListViewItem item;
+            item = e.Item;
+            txtIDpet.Text = item.Text;
+            txtNamepet.Text = item.SubItems[1].Text;
+            txtKindpet.Text = item.SubItems[2].Text;
+            txtStatuspet.Text = item.SubItems[3].Text;
+            
+            
 
         }
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            ListViewItem item;
+            item = 
+            ResetInput();
+            txtIDpet.Focus();
+        }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            int total = lvPet.Items.Count;
+            for (int i = 0; i < total; i++)
+            {
+                if (lvPet.Items[i].Text == txtIDpet.Text)
+                {
+                    lvPet.Items[i].SubItems[1].Text = txtNamepet.Text;
+                    lvPet.Items[i].SubItems[2].Text = txtKindpet.Text;
+                    lvPet.Items[i].SubItems[3].Text = txtStatuspet.Text;
+                    return;
+                }
+            }
+        }
+        #endregion
+        #region Method
         public void LoadListAccount()
         {
             string query = "EXECUTE getAccountByUserName @username";
             DataProvider provider = new DataProvider();
 
-            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] {"hoangson"});
+            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] { "hoangson" });
 
         }
+
+
+        #endregion
+
+        
     }
 }

@@ -15,25 +15,38 @@ namespace PetManager
 {
     public partial class fPetManager : Form
     {
+        private Account loginAccount;
         public List<BillInfo> GetListBillInfo { get; private set; }
+        public Account LoginAccount { get => loginAccount; set => loginAccount = value; }
 
         public fPetManager()
         {
             InitializeComponent();
-            LoadTable();
+            //LoadTableIm();
         }
-        #region method
-        void LoadTable()
+        #region Method
+
+        public void LoadTableIm()
         {
-            List<Table> tablelist =  TableDAO.Instance.LoadTableList(); 
-            foreach(Table item in tablelist)
+            try
             {
-                Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
-                btn.Text = item.Name + Environment.NewLine + item.Status;
-                btn.Click += BtnClick;
-                btn.Tag = item;
-                flpTable.Controls.Add(btn); 
+                List<Table> tablelist = TableDAO.Instance.LoadTableList();
+                foreach (Table item in tablelist)
+                {
+                    Button btn = new Button() { Width = TableDAO.TableWidth, Height = TableDAO.TableHeight };
+                    //btn.Text = item.Name + Environment.NewLine + item.Status;
+
+                    //btn.Tag = item;
+                    flpPet.Controls.Add(btn);
+                }
             }
+            catch ( Exception)
+            {
+               
+                //log
+            }
+
+            
         }
         void ShowBill(int id)
         {
@@ -43,16 +56,14 @@ namespace PetManager
 
         }
 
+        void ChangeAccount(int type)
+        {
+            
+        }
+
         #endregion
 
         #region Event
-        void BtnClick(object sender, EventArgs e)
-        {
-            int tableID = (sender as Table).ID;
-            ShowBill(tableID);
-        }   
-
-
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FAccountProfile f = new FAccountProfile();
@@ -64,6 +75,29 @@ namespace PetManager
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+            FLogin f = new FLogin();
+            this.Hide();
+        }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void thôngTinTàiKhoảnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void hotlineToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
         #endregion
     }
+
 }

@@ -44,9 +44,12 @@
             this.txtKindpet = new System.Windows.Forms.TextBox();
             this.txtIDpet = new System.Windows.Forms.TextBox();
             this.lvPet = new System.Windows.Forms.ListView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -129,9 +132,8 @@
             this.tabPage2.Controls.Add(this.txtKindpet);
             this.tabPage2.Controls.Add(this.txtIDpet);
             this.tabPage2.Controls.Add(this.lvPet);
-            this.tabPage2.Controls.Add(this.button4);
-            this.tabPage2.Controls.Add(this.button3);
-            this.tabPage2.Controls.Add(this.button2);
+            this.tabPage2.Controls.Add(this.btnUpdate);
+            this.tabPage2.Controls.Add(this.btnDel);
             this.tabPage2.Controls.Add(this.btnAdd);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -145,7 +147,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(282, 62);
+            this.label4.Location = new System.Drawing.Point(262, 45);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 3;
@@ -155,7 +157,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(264, 116);
+            this.label3.Location = new System.Drawing.Point(224, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(69, 13);
             this.label3.TabIndex = 3;
@@ -165,7 +167,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(27, 117);
+            this.label2.Location = new System.Drawing.Point(27, 78);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
@@ -175,7 +177,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(27, 62);
+            this.label1.Location = new System.Drawing.Point(36, 50);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 3;
@@ -183,73 +185,89 @@
             // 
             // txtStatuspet
             // 
-            this.txtStatuspet.Location = new System.Drawing.Point(363, 113);
+            this.txtStatuspet.Location = new System.Drawing.Point(299, 68);
             this.txtStatuspet.Name = "txtStatuspet";
             this.txtStatuspet.Size = new System.Drawing.Size(156, 20);
             this.txtStatuspet.TabIndex = 2;
             // 
             // txtNamepet
             // 
-            this.txtNamepet.Location = new System.Drawing.Point(62, 110);
+            this.txtNamepet.Location = new System.Drawing.Point(62, 71);
             this.txtNamepet.Name = "txtNamepet";
             this.txtNamepet.Size = new System.Drawing.Size(156, 20);
             this.txtNamepet.TabIndex = 2;
             // 
             // txtKindpet
             // 
-            this.txtKindpet.Location = new System.Drawing.Point(363, 62);
+            this.txtKindpet.Location = new System.Drawing.Point(299, 42);
             this.txtKindpet.Name = "txtKindpet";
             this.txtKindpet.Size = new System.Drawing.Size(156, 20);
             this.txtKindpet.TabIndex = 2;
             // 
             // txtIDpet
             // 
-            this.txtIDpet.Location = new System.Drawing.Point(62, 59);
+            this.txtIDpet.Location = new System.Drawing.Point(62, 43);
             this.txtIDpet.Name = "txtIDpet";
             this.txtIDpet.Size = new System.Drawing.Size(156, 20);
             this.txtIDpet.TabIndex = 2;
             // 
             // lvPet
             // 
+            this.lvPet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.columnHeader1,
+            this.columnHeader2,
+            this.columnHeader3,
+            this.columnHeader4});
+            this.lvPet.GridLines = true;
             this.lvPet.HideSelection = false;
-            this.lvPet.Location = new System.Drawing.Point(30, 136);
+            this.lvPet.Location = new System.Drawing.Point(30, 109);
             this.lvPet.Name = "lvPet";
-            this.lvPet.Size = new System.Drawing.Size(510, 166);
+            this.lvPet.Size = new System.Drawing.Size(510, 193);
             this.lvPet.TabIndex = 1;
             this.lvPet.UseCompatibleStateImageBehavior = false;
             this.lvPet.View = System.Windows.Forms.View.Details;
             this.lvPet.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvPet_ItemSelectionChanged);
             // 
-            // button4
+            // columnHeader1
             // 
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(267, 6);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 31);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.columnHeader1.Text = "ID";
             // 
-            // button3
+            // columnHeader2
             // 
-            this.button3.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(180, 6);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(81, 31);
-            this.button3.TabIndex = 0;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.columnHeader2.Text = "Tên";
+            this.columnHeader2.Width = 92;
             // 
-            // button2
+            // columnHeader3
             // 
-            this.button2.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(93, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 31);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Xóa";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.columnHeader3.Text = "Loại";
+            this.columnHeader3.Width = 120;
+            // 
+            // columnHeader4
+            // 
+            this.columnHeader4.Text = "Trạng Thái";
+            this.columnHeader4.Width = 150;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdate.Location = new System.Drawing.Point(180, 6);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(81, 31);
+            this.btnUpdate.TabIndex = 0;
+            this.btnUpdate.Text = "Sửa";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnDel
+            // 
+            this.btnDel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDel.Location = new System.Drawing.Point(93, 6);
+            this.btnDel.Name = "btnDel";
+            this.btnDel.Size = new System.Drawing.Size(81, 31);
+            this.btnDel.TabIndex = 0;
+            this.btnDel.Text = "Xóa";
+            this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click);
             // 
             // btnAdd
             // 
@@ -289,7 +307,6 @@
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Tài Khoản";
             this.tabPage5.UseVisualStyleBackColor = true;
-            this.tabPage5.Click += new System.EventHandler(this.tabPage5_Click);
             // 
             // dtgvAccount
             // 
@@ -308,7 +325,6 @@
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Admin";
-            this.Load += new System.EventHandler(this.fAdmin_Load);
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
@@ -333,9 +349,8 @@
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridView dtgvAccount;
         private System.Windows.Forms.ListView lvPet;
         private System.Windows.Forms.Label label4;
@@ -346,5 +361,9 @@
         private System.Windows.Forms.TextBox txtNamepet;
         private System.Windows.Forms.TextBox txtKindpet;
         private System.Windows.Forms.TextBox txtIDpet;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader columnHeader2;
+        private System.Windows.Forms.ColumnHeader columnHeader3;
+        private System.Windows.Forms.ColumnHeader columnHeader4;
     }
 }

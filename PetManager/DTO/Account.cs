@@ -27,7 +27,7 @@ namespace PetManager.DTO
         public Account(DataRow row )
         {
             this.Username =row["username"].ToString();
-            this.Password = row["password"].ToString();
+            this.Password = row["password"].ToString(); 
             this.Displayname = row["displayname"].ToString();
         }
     }

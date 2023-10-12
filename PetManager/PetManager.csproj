@@ -35,6 +35,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.DirectoryServices" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -73,11 +74,29 @@
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </Compile>
+    <Compile Include="fCreateAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCreateAccount.Designer.cs">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fChangePass.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fChangePass.Designer.cs">
+      <DependentUpon>fChangePass.cs</DependentUpon>
+    </Compile>
     <Compile Include="fPetManager.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="fPetManager.Designer.cs">
       <DependentUpon>fPetManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fProduce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProduce.Designer.cs">
+      <DependentUpon>fProduce.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -87,11 +106,20 @@
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fCreateAccount.resx">
+      <DependentUpon>fCreateAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="fChangePass.resx">
+      <DependentUpon>fChangePass.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="fPetManager.resx">
       <DependentUpon>fPetManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProduce.resx">
+      <DependentUpon>fProduce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

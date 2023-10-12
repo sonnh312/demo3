@@ -1,5 +1,4 @@
 ﻿using PetManager.DTO;
-
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -12,29 +11,37 @@ namespace PetManager.DAO
     public class TableDAO
     {
         private static TableDAO instance;
-        public static int TableWidth = 50;
-        public static int TableHeight = 50;
+
         public static TableDAO Instance
-        {
-            get { if (instance == null) instance = new TableDAO(); return TableDAO.instance; }
+        { get { if (instance == null) instance = new TableDAO();return TableDAO.instance   ; }
             private set { TableDAO.instance = value; }
         }
+
+        public static int TableHeight { get; internal set; }
+
         private TableDAO() { }
 
-        public List<Table> LoadTableList()
+        public static int TableWidth = 50;
+        public static int TableHeigh = 50;
+
+        public List<Table> LoadTableList() 
         {
-            List<Table> lsTable = new List<Table>();
+            List<Table> tablelist = new List<Table>();
+
             DataTable data = DataProvider.Instance.ExecuteQuery("USP_GetTableList");
             foreach(DataRow item in data.Rows)
             {
-                Table table = new Table();
-                //lam 1 appearance status   
-
-                lsTable.Add(table);
+                Table table = new Table(item);
+                tablelist.Add(table); 
             }
 
 
-            return lsTable ;
+            return tablelist;
+
+
+
         }
+
+
     }
 }
