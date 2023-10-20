@@ -55,12 +55,15 @@
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.dtgvAccount = new System.Windows.Forms.DataGridView();
+            this.cbCollectionType = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -86,6 +89,8 @@
             // 
             // tabPage1
             // 
+            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.cbCollectionType);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.dateTimePicker2);
             this.tabPage1.Controls.Add(this.dateTimePicker1);
@@ -316,6 +321,22 @@
             this.dtgvAccount.Size = new System.Drawing.Size(537, 301);
             this.dtgvAccount.TabIndex = 0;
             // 
+            // cbCollectionType
+            // 
+            this.cbCollectionType.FormattingEnabled = true;
+            this.cbCollectionType.Location = new System.Drawing.Point(21, 32);
+            this.cbCollectionType.Name = "cbCollectionType";
+            this.cbCollectionType.Size = new System.Drawing.Size(260, 21);
+            this.cbCollectionType.TabIndex = 2;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(6, 68);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(550, 251);
+            this.dataGridView1.TabIndex = 3;
+            // 
             // fAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +353,7 @@
             this.tabPage2.PerformLayout();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -365,5 +387,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader4;
+        private System.Windows.Forms.ComboBox cbCollectionType;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

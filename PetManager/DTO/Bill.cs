@@ -26,6 +26,7 @@ namespace PetManager.DTO
         {
             this.Idbill = idbill;
             this.DataCheckIn = dataCheckIn;
+           // var dateCheckOutTemp = row["dataCheckOut"];
             this.DataCheckOut = dataCheckOut;
             this.Status = status;
         }

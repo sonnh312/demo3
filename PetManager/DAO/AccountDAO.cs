@@ -19,11 +19,17 @@ namespace PetManager.DAO
         }
         public AccountDAO() { }
 
-        public bool Login(string username,string password)
+        public bool LoginAdmin(string username,string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"' ";
+            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"' AND Role=N'admin' ";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0; 
+        }
+        public bool LoginUser(string username, string password)
+        {
+            string query = "SELECT * FROM dbo.Account WHERE Username=N'" + username + "' AND password=N'" + password + "' AND Role!=N'admin'  ";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            return result.Rows.Count > 0;
         }
 
         public Account GetAccountByUserName(int username)

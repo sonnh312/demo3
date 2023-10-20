@@ -50,12 +50,20 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillInfoDAO.cs" />
+    <Compile Include="DAO\CategoryDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
-    <Compile Include="DAO\TableDAO.cs" />
+    <Compile Include="DAO\PetDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
-    <Compile Include="DTO\Table.cs" />
+    <Compile Include="DTO\Category.cs" />
+    <Compile Include="DTO\Pet.cs" />
+    <Compile Include="fCheckOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fCheckOut.Designer.cs">
+      <DependentUpon>fCheckOut.cs</DependentUpon>
+    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fCheckOut.resx">
+      <DependentUpon>fCheckOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fCreateAccount.resx">
       <DependentUpon>fCreateAccount.cs</DependentUpon>

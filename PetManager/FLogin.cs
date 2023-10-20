@@ -36,25 +36,35 @@ namespace PetManager
             txtUsername.Focus();
             string username = txtUsername.Text;
             string passwork = txtPass.Text;
-            if(Login(username,passwork)==true)
+            if(LoginAdmin(username,passwork)==true )
             {
-               //Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
+               
                fPetManager pet = new fPetManager();
                this.Hide();
                pet.ShowDialog();
                this.Show();
-           }
+            }
+            
+
+
+
            else
           {
                 MessageBox.Show("Sai ten dang nhap hoac mat khau");
            }
         }
 
-        bool Login(string username,string password)
+        bool LoginAdmin(string username,string password)
        {
 
-            return AccountDAO.Instance.Login(username,password);
+            return AccountDAO.Instance.LoginAdmin(username,password);
        }
+        bool LoginUser(string username, string password)
+        {
+
+            return AccountDAO.Instance.LoginUser(username, password);
+        }
+
 
         private void BtnOut_Click(object sender, EventArgs e)
         {

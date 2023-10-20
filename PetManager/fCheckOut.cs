@@ -10,21 +10,11 @@ using System.Windows.Forms;
 
 namespace PetManager
 {
-    public partial class fProduce : Form
+    public partial class fCheckOut : Form
     {
-        public fProduce()
+        public fCheckOut()
         {
             InitializeComponent();
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
         }
     }
 }

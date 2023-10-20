@@ -7,30 +7,34 @@ using System.Threading.Tasks;
 
 namespace PetManager.DTO
 {
-    public class Table
+    public class Pet
     {
-        public Table(DataRow row )
+        public Pet(DataRow row )
         {
-            this.Id = (int)row["id"];
-            this.Name = row["name"].ToString();
+            this.Idpet = (int)row["idPet"];
+            this.Name = row["Name"].ToString();
             this.Status = row["status"].ToString();
         }
 
 
-        public Table(int id,string name,string status)
+        public Pet(int idpet,string name,string status)
         {
-            this.Id = id;
+            
             this.Name = name;
             this.Status = status;
+            this.Idpet = idpet;
         }
 
-
+        private int idpet;
         private string status;
         private string name;
-        private int id;
+        
+        
 
-        public int Id { get => id; set => id = value; }
+        
         public string Name { get => name; set => name = value; }
         public string Status { get => status; set => status = value; }
+        public int Idpet { get => idpet; set => idpet = value; }
+
     }
 }

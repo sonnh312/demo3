@@ -19,6 +19,7 @@ namespace PetManager
         {
             InitializeComponent();
             LoadListAccount();
+            LoadListAccount();
 
         }
         #region Event
@@ -26,17 +27,17 @@ namespace PetManager
         {
             ListViewItem itempet = new System.Windows.Forms.ListViewItem(new string[] { txtIDpet.Text, txtNamepet.Text, txtKindpet.Text, txtStatuspet.Text });
             lvPet.Items.Add(itempet);
-            ResetInput();
-            txtIDpet.Focus();
-        }
-
-        public void ResetInput()
-        {
             txtIDpet.Text = "";
             txtKindpet.Text = "";
             txtNamepet.Text = "";
             txtStatuspet.Text = "";
+            txtIDpet.Focus();
         }
+
+         //public void ResetInput()
+        //{
+            
+        //}
 
         private void lvPet_ItemSelectionChanged(object sender, ListViewItemSelectionChangedEventArgs e)
         {
@@ -53,8 +54,8 @@ namespace PetManager
         private void btnDel_Click(object sender, EventArgs e)
         {
             ListViewItem item;
-            item = 
-            ResetInput();
+            //item = 
+            //ResetInput();
             txtIDpet.Focus();
         }
         private void btnUpdate_Click(object sender, EventArgs e)
@@ -82,9 +83,14 @@ namespace PetManager
 
         }
 
+        private void LoadQuestionType()
+        {
+            // tao list do du lieu vao chinh display member and value member
+            //List<QuestionType>
+              //  list = 
+        }
+
 
         #endregion
-
-        
     }
 }
