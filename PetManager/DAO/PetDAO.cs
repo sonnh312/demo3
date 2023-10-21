@@ -20,8 +20,8 @@ namespace PetManager.DAO
 
         private PetDAO() { }
 
-        public static int TableWidth = 50;
-        public static int TableHeigh = 50;
+        public static int TableWidth = 300;
+        public static int TableHeigh = 70;
 
         public List<Pet> LoadPetList() 
         {

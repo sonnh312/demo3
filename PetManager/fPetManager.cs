@@ -40,26 +40,29 @@ namespace PetManager
                 foreach (Pet item in petList)
                 {
                 Button btn= new Button() { Width = PetDAO.TableWidth, Height = PetDAO.TableHeigh };
-               btn.Text = item.Name + Environment.NewLine + item.Status;
-               btn.Click += btn_Click ;
-                switch(item.Status)
+                Label lbl = new Label() { Width = 50, Height = 50 };
+                lbl.Text = item.Name;
+                btn.Text = item.Name + Environment.NewLine + item.Status;
+                btn.Click += btn_Click ;
+                
+                switch (item.Status)
                 {
                     case "0":
-                        btn.BackColor = Color.Black;
+                        btn.BackColor = Color.Blue;
                         break;
                     default:
                         btn.BackColor = Color.Aqua;
                         break;
                 }
 
-
+                lbl.Tag = item;
                 btn.Tag = item;
                 flpPet.Controls.Add(btn);
                 }
             }
             
 
-       void ShowBill(int id)
+        void ShowBill(int id)
         {
            
             lvBill.Items.Clear();

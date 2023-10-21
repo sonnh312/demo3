@@ -12,7 +12,7 @@ namespace PetManager.DTO
         public Pet(DataRow row )
         {
             this.Idpet = (int)row["idPet"];
-            this.Name = row["Name"].ToString();
+            this.Name = row["NamePet"].ToString();
             this.Status = row["status"].ToString();
         }
 
