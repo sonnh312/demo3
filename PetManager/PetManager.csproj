@@ -47,6 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="fAccountProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fAccountProfile.Designer.cs">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </Compile>
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillInfoDAO.cs" />
@@ -70,11 +76,11 @@
     <Compile Include="FLogin.Designer.cs">
       <DependentUpon>FLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FAccountProfile.cs">
+    <Compile Include="FAccountInfo.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FAccountProfile.Designer.cs">
-      <DependentUpon>FAccountProfile.cs</DependentUpon>
+    <Compile Include="FAccountInfo.Designer.cs">
+      <DependentUpon>FAccountInfo.cs</DependentUpon>
     </Compile>
     <Compile Include="fAdmin.cs">
       <SubType>Form</SubType>
@@ -106,10 +112,19 @@
     <Compile Include="fProduce.Designer.cs">
       <DependentUpon>fProduce.cs</DependentUpon>
     </Compile>
+    <Compile Include="fTakeCarePet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fTakeCarePet.Designer.cs">
+      <DependentUpon>fTakeCarePet.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FAccountProfile.resx">
-      <DependentUpon>FAccountProfile.cs</DependentUpon>
+    <EmbeddedResource Include="fAccountProfile.resx">
+      <DependentUpon>fAccountProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FAccountInfo.resx">
+      <DependentUpon>FAccountInfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>

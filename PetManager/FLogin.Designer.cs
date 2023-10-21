@@ -130,7 +130,6 @@
             this.lblPass.Size = new System.Drawing.Size(81, 19);
             this.lblPass.TabIndex = 0;
             this.lblPass.Text = "Mật Khẩu";
-            this.lblPass.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel2
             // 
@@ -150,7 +149,6 @@
             this.lblUN.Size = new System.Drawing.Size(87, 19);
             this.lblUN.TabIndex = 0;
             this.lblUN.Text = "Tài Khoản";
-            this.lblUN.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // txtUsername
             // 

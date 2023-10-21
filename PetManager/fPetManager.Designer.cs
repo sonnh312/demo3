@@ -36,10 +36,10 @@
             this.thànhViênToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cậpNhậtThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.hotlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cácDịchVụChămSócToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đồĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ưuĐãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.hotlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.flpPet = new System.Windows.Forms.FlowLayoutPanel();
@@ -47,8 +47,9 @@
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.lvBill = new System.Windows.Forms.ListView();
-            this.Food = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Pet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -77,10 +78,10 @@
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.userToolStripMenuItem,
             this.thôngTinTàiKhoảnToolStripMenuItem,
-            this.hotlineToolStripMenuItem,
             this.cácDịchVụChămSócToolStripMenuItem,
             this.đồĂnToolStripMenuItem,
-            this.ưuĐãiToolStripMenuItem});
+            this.ưuĐãiToolStripMenuItem,
+            this.hotlineToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(776, 24);
@@ -109,34 +110,29 @@
             // thànhViênToolStripMenuItem
             // 
             this.thànhViênToolStripMenuItem.Name = "thànhViênToolStripMenuItem";
-            this.thànhViênToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
-            this.thànhViênToolStripMenuItem.Text = "Thành viên";
+            this.thànhViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thànhViênToolStripMenuItem.Text = "Tài Khoản";
+            this.thànhViênToolStripMenuItem.Click += new System.EventHandler(this.thànhViênToolStripMenuItem_Click);
             // 
             // cậpNhậtThôngTinToolStripMenuItem
             // 
             this.cậpNhậtThôngTinToolStripMenuItem.Name = "cậpNhậtThôngTinToolStripMenuItem";
-            this.cậpNhậtThôngTinToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.cậpNhậtThôngTinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cậpNhậtThôngTinToolStripMenuItem.Text = "Cập nhật Thông Tin";
             this.cậpNhậtThôngTinToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtThôngTinToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
-            // 
-            // hotlineToolStripMenuItem
-            // 
-            this.hotlineToolStripMenuItem.Name = "hotlineToolStripMenuItem";
-            this.hotlineToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
-            this.hotlineToolStripMenuItem.Text = "Hotline";
-            this.hotlineToolStripMenuItem.Click += new System.EventHandler(this.hotlineToolStripMenuItem_Click);
             // 
             // cácDịchVụChămSócToolStripMenuItem
             // 
             this.cácDịchVụChămSócToolStripMenuItem.Name = "cácDịchVụChămSócToolStripMenuItem";
             this.cácDịchVụChămSócToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.cácDịchVụChămSócToolStripMenuItem.Text = "Các Dịch Vụ Chăm Sóc";
+            this.cácDịchVụChămSócToolStripMenuItem.Click += new System.EventHandler(this.cácDịchVụChămSócToolStripMenuItem_Click);
             // 
             // đồĂnToolStripMenuItem
             // 
@@ -149,6 +145,12 @@
             this.ưuĐãiToolStripMenuItem.Name = "ưuĐãiToolStripMenuItem";
             this.ưuĐãiToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.ưuĐãiToolStripMenuItem.Text = "Ưu Đãi";
+            // 
+            // hotlineToolStripMenuItem
+            // 
+            this.hotlineToolStripMenuItem.Name = "hotlineToolStripMenuItem";
+            this.hotlineToolStripMenuItem.Size = new System.Drawing.Size(58, 20);
+            this.hotlineToolStripMenuItem.Text = "Hotline";
             // 
             // panel2
             // 
@@ -174,7 +176,6 @@
             this.flpPet.Name = "flpPet";
             this.flpPet.Size = new System.Drawing.Size(598, 383);
             this.flpPet.TabIndex = 3;
-            this.flpPet.Paint += new System.Windows.Forms.PaintEventHandler(this.flpPet_Paint);
             // 
             // panel3
             // 
@@ -198,16 +199,17 @@
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(18, 352);
+            this.txtPrice.Location = new System.Drawing.Point(5, 352);
             this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(117, 20);
+            this.txtPrice.Size = new System.Drawing.Size(129, 20);
             this.txtPrice.TabIndex = 2;
             // 
             // lvBill
             // 
             this.lvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Food,
-            this.Count});
+            this.Pet,
+            this.Count,
+            this.columnHeader1});
             this.lvBill.GridLines = true;
             this.lvBill.HideSelection = false;
             this.lvBill.Location = new System.Drawing.Point(5, 40);
@@ -218,13 +220,17 @@
             this.lvBill.View = System.Windows.Forms.View.Details;
             this.lvBill.SelectedIndexChanged += new System.EventHandler(this.lvBill_SelectedIndexChanged);
             // 
-            // Food
+            // Pet
             // 
-            this.Food.Text = "PetID";
+            this.Pet.Text = "Thú Cưng";
             // 
             // Count
             // 
-            this.Count.Text = "Count";
+            this.Count.Text = "Số lượng";
+            // 
+            // columnHeader1
+            // 
+            this.columnHeader1.Text = "Đơn giá";
             // 
             // comboBox1
             // 
@@ -265,7 +271,6 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinTàiKhoảnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thànhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtThôngTinToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem hotlineToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cácDịchVụChămSócToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đồĂnToolStripMenuItem;
         private System.Windows.Forms.Panel panel6;
@@ -277,9 +282,11 @@
         private System.Windows.Forms.FlowLayoutPanel flpPet;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ListView lvBill;
-        private System.Windows.Forms.ColumnHeader Food;
+        private System.Windows.Forms.ColumnHeader Pet;
         private System.Windows.Forms.ColumnHeader Count;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.ToolStripMenuItem hotlineToolStripMenuItem;
+        private System.Windows.Forms.ColumnHeader columnHeader1;
     }
 }

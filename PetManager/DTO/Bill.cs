@@ -10,32 +10,32 @@ namespace PetManager.DTO
     public class Bill
     {
         private int idbill;
-        private DateTime? dataCheckIn;
-        private DateTime? dataCheckOut;
-        private int status;
+        private DateTime? datecheckin;
+        private DateTime? datecheckout;
+        private string status;
 
         public int Idbill { get => idbill; set => idbill = value; }
-        public DateTime? DataCheckIn { get => dataCheckIn; set => dataCheckIn = value; }
-        public DateTime? DataCheckOut { get => dataCheckOut; set => dataCheckOut = value; }
-        public int Status { get => status; set => status = value; }
+        public DateTime? Datecheckin { get => datecheckin; set => datecheckin = value; }
+        public DateTime? Datecheckout { get => datecheckout; set => datecheckout = value; }
+        public string Status { get => status; set => status = value; }
 
 
 
 
-        public Bill(int idBill, DateTime? dataCheckIn, DateTime? dataCheckOut, int status)
+        public Bill(int idBill, DateTime? dataCheckIn, DateTime? dataCheckOut, string status)
         {
             this.Idbill = idbill;
-            this.DataCheckIn = dataCheckIn;
+            this.Datecheckin = datecheckin;
            // var dateCheckOutTemp = row["dataCheckOut"];
-            this.DataCheckOut = dataCheckOut;
+            this.Datecheckout = datecheckout;
             this.Status = status;
         }
         public Bill(DataRow row)
         {
-            this.Idbill = (int)row["idbill"];
-            this.DataCheckIn = (DateTime?)row["dataCheckIn"];
-            this.DataCheckOut = (DateTime?)row["dataCheckOut"];
-            this.Status = (int)row["Status"];
+            this.Idbill = (int)row["IdBill"];
+            this.Datecheckin = (DateTime?)row["dataCheckIn"];
+            this.Datecheckout = (DateTime?)row["dataCheckOut"];
+            this.Status = row["Status"].ToString();
         }
     }
 }

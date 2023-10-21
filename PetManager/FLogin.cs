@@ -24,53 +24,37 @@ namespace PetManager
 
         }
 
-        
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
+       
         private void btnLogin_Click(object sender, EventArgs e)
         {
             txtUsername.Focus();
             string username = txtUsername.Text;
             string passwork = txtPass.Text;
-            if(LoginAdmin(username,passwork)==true )
+            if(Login(username,passwork)==true )
             {
-               
-               fPetManager pet = new fPetManager();
+               Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
+               fPetManager f = new fPetManager(loginAccount);
                this.Hide();
-               pet.ShowDialog();
+               f.ShowDialog();
                this.Show();
             }
-            
-
-
-
            else
-          {
-                MessageBox.Show("Sai ten dang nhap hoac mat khau");
-           }
+                {
+                    MessageBox.Show("Sai ten dang nhap hoac mat khau");
+                }
         }
-
-        bool LoginAdmin(string username,string password)
+        
+        //check login
+        bool Login(string username,string password)
        {
-
-            return AccountDAO.Instance.LoginAdmin(username,password);
+            return AccountDAO.Instance.Login(username,password);
        }
-        bool LoginUser(string username, string password)
-        {
-
-            return AccountDAO.Instance.LoginUser(username, password);
-        }
-
-
+        
+        //cancel
         private void BtnOut_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
         private void FLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (MessageBox.Show("Bạn có chắc muốn thoát không", "Thông báo",MessageBoxButtons.OKCancel) != System.Windows.Forms.DialogResult.OK)
@@ -83,13 +67,13 @@ namespace PetManager
         {
 
         }
-
+        // open f create acc
         private void linkCreateAcc_Click(object sender, EventArgs e)
         {
             fCreateAccount f = new fCreateAccount();
             f.ShowDialog();
         }
-
+        //open f get pass
         private void linkLabel1_Click(object sender, EventArgs e)
         {
             fChangePass f = new fChangePass();

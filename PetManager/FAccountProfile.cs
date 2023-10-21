@@ -1,4 +1,6 @@
-﻿using System;
+﻿using PetManager.DAO;
+using PetManager.DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,36 +12,75 @@ using System.Windows.Forms;
 
 namespace PetManager
 {
-    public partial class FAccountProfile : Form
+    public partial class fAccountProfile : Form
     {
-        public FAccountProfile()
+        public fAccountProfile(Account acc)
         {
             InitializeComponent();
+            loginAccount = acc;
+            
         }
 
-        private void FAccountProfile_Load(object sender, EventArgs e)
+        private Account loginAccount;
+        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value; ChangeAccount(loginAccount); } }
+
+        public void ChangeAccount(Account acc)
         {
-
+            txtUsername.Text = loginAccount.Username;
+            txtDisplayName.Text = loginAccount.Displayname;
         }
 
-        private void label3_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-
+            UpdateAccountInfo();
         }
-
-        private void label4_Click(object sender, EventArgs e)
+        public void UpdateAccountInfo()
         {
+            string displayname = txtDisplayName.Text;
+            string password = txtPassword.Text;
+            string newpassword = txtNewPassword.Text;
+            string reenterpassword = txtNewPasswordAgain.Text;
+            string username = txtUsername.Text;
 
+            if(newpassword.Equals(reenterpassword))
+            {
+                MessageBox.Show("Vui long nhap lai mat khau moi");
+            }
+            //xem event bac 2
+            else
+            {
+                if(AccountDAO.Instance.UpdateAccount(username,displayname,password,newpassword))
+                {
+                    MessageBox.Show("Cap nhat thanh cong");
+                    if(updateAccount != null)
+                    {
+                        updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(username)));
+                    }
+                }
+                else
+                    MessageBox.Show("Vui long nhap dung mat khau");
+            }
         }
 
-        private void radioButton2_CheckedChanged(object sender, EventArgs e)
+        private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
         {
-
+            add { updateAccount += value; }
+            remove { updateAccount -= value; }
         }
 
-        private void radioButton1_CheckedChanged(object sender, EventArgs e)
+        public class AccountEvent:EventArgs
         {
+            private Account acc;
 
+            public Account Acc { get => acc; set => acc = value; }
+
+            public AccountEvent(Account acc)
+            {
+                this.Acc = acc;
+
+            }
         }
+
     }
 }

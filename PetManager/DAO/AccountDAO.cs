@@ -19,23 +19,25 @@ namespace PetManager.DAO
         }
         public AccountDAO() { }
 
-        public bool LoginAdmin(string username,string password)
+        public bool Login(string username,string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"' AND Role=N'admin' ";
+            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"'";
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0; 
         }
-        public bool LoginUser(string username, string password)
+       
+        public bool UpdateAccount(string username,string displayname,string password,string newpassword)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'" + username + "' AND password=N'" + password + "' AND Role!=N'admin'  ";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
-            return result.Rows.Count > 0;
+            int  result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @username , @displayname , @password , @newpassword");
+
+            return result > 0;
         }
 
-        public Account GetAccountByUserName(int username)
+
+       public Account GetAccountByUserName(string username)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Account WHERE Username=" + username);
-            foreach(DataRow item in data.Rows)
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Account WHERE Username =N'"+username+"'");
+            foreach (DataRow item in data.Rows)
             {
                 return new Account(item);
             }

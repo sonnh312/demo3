@@ -9,25 +9,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using static PetManager.fAccountProfile;
 
 namespace PetManager
 {
     public partial class fPetManager : Form
     {
         private Account loginAccount;
-        public List<BillInfo> GetListBillInfo { get; private set; }
-        public Account LoginAccount { get => loginAccount; set => loginAccount = value; }
+        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value;ChangeAccount(loginAccount.Role); } }
 
-        public fPetManager()
+        public List<BillInfo> GetListBillInfo { get; private set; }
+        public fPetManager(Account acc)
         {
             InitializeComponent();
             LoadPet();
+            this.loginAccount = acc;
+
         }
 
-
         #region Method
-        
+        void ChangeAccount(string role)
+        {
+            userToolStripMenuItem.Enabled = role == "admin";
+            thànhViênToolStripMenuItem.Text += "(" + loginAccount.Displayname + ")";
+        }
+
         void LoadPet()
         { 
             List<Pet> petList = PetDAO.Instance.LoadPetList();
@@ -53,8 +59,6 @@ namespace PetManager
             }
             
 
-            
-        
        void ShowBill(int id)
         {
            
@@ -75,32 +79,25 @@ namespace PetManager
 
         }
 
-        void ChangeAccount(int type)
-        {
-            
-        }
+        
 
         #endregion
 
         #region Event
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FAccountProfile f = new FAccountProfile();
+            FAccountInfo f = new FAccountInfo(loginAccount);
             f.ShowDialog();
         }
 
-        private void userToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            fAdmin f = new fAdmin();
-            f.ShowDialog();
-        }
+        
 
-       // private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-      //  {
-            
-           // FLogin f = new FLogin();
-          //  this.Hide();
-       // }
+        // private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        //  {
+
+        // FLogin f = new FLogin();
+        //  this.Hide();
+        // }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -116,17 +113,43 @@ namespace PetManager
         {
 
         }
-        #endregion
+        private void cácDịchVụChămSócToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fTakeCarePet f = new fTakeCarePet();
+            f.ShowDialog();
+        }
 
         private void lvBill_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void flpPet_Paint(object sender, PaintEventArgs e)
+
+
+
+
+        #endregion
+
+        private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-    }
 
+        private void thànhViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAccountProfile f = new fAccountProfile(loginAccount);
+            f.UpdateAccount += f_UpdateAccount;
+            f.ShowDialog();
+
+        }
+        public void f_UpdateAccount(object sender, AccountEvent e)
+        {
+            thànhViênToolStripMenuItem.Text = "Thông Tin Tài Khoản ( " + e.Acc.Displayname + ")";
+        }
+
+
+
+
+
+    }
 }

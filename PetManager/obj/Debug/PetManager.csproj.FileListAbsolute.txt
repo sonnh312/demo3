@@ -28,3 +28,4 @@ D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fCre
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fChangePass.resources
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fProduce.resources
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fCheckOut.resources
+D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.FAccountInfo.resources

@@ -26,6 +26,7 @@ namespace PetManager.DTO
         }
 
         private int idpet;
+       // private string 
         private string status;
         private string name;
         

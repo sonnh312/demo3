@@ -76,10 +76,9 @@ namespace PetManager
         #region Method
         public void LoadListAccount()
         {
-            string query = "EXECUTE getAccountByUserName @username";
+            string query = "EXEC USP_GetAccountByUserName @username";
             DataProvider provider = new DataProvider();
-
-            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] { "hoangson" });
+            dtgvAccount.DataSource = provider.ExecuteQuery(query, new object[] {"hs"});
 
         }
 
