@@ -37,6 +37,7 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.dgvPetList = new System.Windows.Forms.DataGridView();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -45,11 +46,7 @@
             this.txtNamepet = new System.Windows.Forms.TextBox();
             this.txtKindpet = new System.Windows.Forms.TextBox();
             this.txtIDpet = new System.Windows.Forms.TextBox();
-            this.lvPet = new System.Windows.Forms.ListView();
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.btnSelect = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
             this.btnAdd = new System.Windows.Forms.Button();
@@ -62,6 +59,7 @@
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
             this.tabPage5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).BeginInit();
             this.SuspendLayout();
@@ -144,6 +142,7 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.dgvPetList);
             this.tabPage2.Controls.Add(this.label4);
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
@@ -152,7 +151,7 @@
             this.tabPage2.Controls.Add(this.txtNamepet);
             this.tabPage2.Controls.Add(this.txtKindpet);
             this.tabPage2.Controls.Add(this.txtIDpet);
-            this.tabPage2.Controls.Add(this.lvPet);
+            this.tabPage2.Controls.Add(this.btnSelect);
             this.tabPage2.Controls.Add(this.btnUpdate);
             this.tabPage2.Controls.Add(this.btnDel);
             this.tabPage2.Controls.Add(this.btnAdd);
@@ -163,6 +162,14 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Thú Cưng";
             this.tabPage2.UseVisualStyleBackColor = true;
+            // 
+            // dgvPetList
+            // 
+            this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPetList.Location = new System.Drawing.Point(6, 97);
+            this.dgvPetList.Name = "dgvPetList";
+            this.dgvPetList.Size = new System.Drawing.Size(550, 171);
+            this.dgvPetList.TabIndex = 4;
             // 
             // label4
             // 
@@ -232,41 +239,16 @@
             this.txtIDpet.Size = new System.Drawing.Size(156, 20);
             this.txtIDpet.TabIndex = 2;
             // 
-            // lvPet
+            // btnSelect
             // 
-            this.lvPet.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeader1,
-            this.columnHeader2,
-            this.columnHeader3,
-            this.columnHeader4});
-            this.lvPet.GridLines = true;
-            this.lvPet.HideSelection = false;
-            this.lvPet.Location = new System.Drawing.Point(30, 109);
-            this.lvPet.Name = "lvPet";
-            this.lvPet.Size = new System.Drawing.Size(510, 193);
-            this.lvPet.TabIndex = 1;
-            this.lvPet.UseCompatibleStateImageBehavior = false;
-            this.lvPet.View = System.Windows.Forms.View.Details;
-            this.lvPet.ItemSelectionChanged += new System.Windows.Forms.ListViewItemSelectionChangedEventHandler(this.lvPet_ItemSelectionChanged);
-            // 
-            // columnHeader1
-            // 
-            this.columnHeader1.Text = "ID";
-            // 
-            // columnHeader2
-            // 
-            this.columnHeader2.Text = "Tên";
-            this.columnHeader2.Width = 92;
-            // 
-            // columnHeader3
-            // 
-            this.columnHeader3.Text = "Loại";
-            this.columnHeader3.Width = 120;
-            // 
-            // columnHeader4
-            // 
-            this.columnHeader4.Text = "Trạng Thái";
-            this.columnHeader4.Width = 150;
+            this.btnSelect.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelect.Location = new System.Drawing.Point(267, 5);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(81, 31);
+            this.btnSelect.TabIndex = 0;
+            this.btnSelect.Text = "Xem";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
             // 
             // btnUpdate
             // 
@@ -277,7 +259,6 @@
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Sửa";
             this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDel
             // 
@@ -299,7 +280,6 @@
             this.btnAdd.TabIndex = 0;
             this.btnAdd.Text = "Thêm";
             this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // tabPage3
             // 
@@ -352,6 +332,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).EndInit();
             this.tabPage5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvAccount)).EndInit();
             this.ResumeLayout(false);
@@ -374,7 +355,6 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.DataGridView dtgvAccount;
-        private System.Windows.Forms.ListView lvPet;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -383,11 +363,9 @@
         private System.Windows.Forms.TextBox txtNamepet;
         private System.Windows.Forms.TextBox txtKindpet;
         private System.Windows.Forms.TextBox txtIDpet;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
-        private System.Windows.Forms.ColumnHeader columnHeader2;
-        private System.Windows.Forms.ColumnHeader columnHeader3;
-        private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ComboBox cbCollectionType;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvPetList;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

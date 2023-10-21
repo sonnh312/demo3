@@ -33,13 +33,23 @@ namespace PetManager.DAO
                 Pet table = new Pet(item);
                 petlist.Add(table); 
             }
-
-
             return petlist;
-
-
-
         }
+        public List<Pet> LoadPetListToDesign()
+        {
+            List<Pet> petlist = new List<Pet>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Pet");
+            foreach (DataRow item in data.Rows)
+            {
+                Pet table = new Pet(item);
+                petlist.Add(table);
+            }
+            return petlist;
+        }
+
+
+
 
 
     }

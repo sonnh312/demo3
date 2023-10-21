@@ -11,31 +11,33 @@ namespace PetManager.DTO
     {
         public Pet(DataRow row )
         {
-            this.Idpet = (int)row["idPet"];
-            this.Name = row["NamePet"].ToString();
-            this.Status = row["status"].ToString();
+            this.Idpet = (int)row["IdPet"];
+            this.Idpet = (int)row["IdPetCategory"];-
+            this.Namepet = row["NamePet"].ToString();
+            this.Status = row["Status"].ToString();
         }
 
 
-        public Pet(int idpet,string name,string status)
+        public Pet(int idpet,string namepet,string status)
         {
             
-            this.Name = name;
+            this.Namepet = namepet;
             this.Status = status;
             this.Idpet = idpet;
+            this.Idpetcategory = idpetcategory;
         }
 
         private int idpet;
-       // private string 
+        private int idpetcategory;
         private string status;
-        private string name;
+        private string namepet;
         
         
 
         
-        public string Name { get => name; set => name = value; }
+        public string Namepet { get => namepet; set => namepet = value; }
         public string Status { get => status; set => status = value; }
         public int Idpet { get => idpet; set => idpet = value; }
-
+        public int Idpetcategory { get => idpetcategory; set => idpetcategory = value; }
     }
 }

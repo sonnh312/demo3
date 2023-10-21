@@ -28,12 +28,13 @@ namespace PetManager
         }
 
         #region Method
+        //check role
         void ChangeAccount(string role)
         {
-            userToolStripMenuItem.Enabled = role == "admin";
+            userToolStripMenuItem.Enabled =  role == "admin";
             thànhViênToolStripMenuItem.Text += "(" + loginAccount.Displayname + ")";
         }
-
+        // load btnPet
         void LoadPet()
         { 
             List<Pet> petList = PetDAO.Instance.LoadPetList();
@@ -41,8 +42,8 @@ namespace PetManager
                 {
                 Button btn= new Button() { Width = PetDAO.TableWidth, Height = PetDAO.TableHeigh };
                 Label lbl = new Label() { Width = 50, Height = 50 };
-                lbl.Text = item.Name;
-                btn.Text = item.Name + Environment.NewLine + item.Status;
+                
+                btn.Text = item.Namepet + Environment.NewLine + item.Status;
                 btn.Click += btn_Click ;
                 
                 switch (item.Status)
@@ -61,7 +62,7 @@ namespace PetManager
                 }
             }
             
-
+        //shop bill 
         void ShowBill(int id)
         {
            
@@ -81,8 +82,16 @@ namespace PetManager
            //ShowBill(petID);
 
         }
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            
+        }
 
-        
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            
+        }
+
 
         #endregion
 
@@ -135,7 +144,9 @@ namespace PetManager
 
         private void userToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            fAdmin f = new fAdmin();
+            
+            f.ShowDialog();
         }
 
         private void thànhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -145,6 +156,7 @@ namespace PetManager
             f.ShowDialog();
 
         }
+        //return data
         public void f_UpdateAccount(object sender, AccountEvent e)
         {
             thànhViênToolStripMenuItem.Text = "Thông Tin Tài Khoản ( " + e.Acc.Displayname + ")";
