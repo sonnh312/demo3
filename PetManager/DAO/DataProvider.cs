@@ -22,7 +22,7 @@ namespace PetManager.DAO
 
         //user couldn't access to 
         public DataProvider() { }
-        private string connectionSTR = "Data Source=LAPTOP-ISEILDT0;Initial Catalog=PetManager;Integrated Security=True";
+        private string connectionSTR = "Data Source=LAPTOP-ISEILDT0;Initial Catalog=PetApplication;Integrated Security=True";
         //ExcuteQuery
         public DataTable ExecuteQuery(string query, object[] parameter = null)
         {
@@ -41,7 +41,7 @@ namespace PetManager.DAO
                         if (item.Contains('@'))
                         {
                             command.Parameters.AddWithValue(item, parameter[i]);
-                            i++;
+                            i++;    
                         }
                     }
                 }
@@ -81,8 +81,7 @@ namespace PetManager.DAO
                 data = command.ExecuteNonQuery();
 
                 connection.Close();
-
-            }
+             }
             //return number of row susscess
             return data;
         }
@@ -117,6 +116,6 @@ namespace PetManager.DAO
             //return number of row susscess
             return data;
         }
-    }
 
     }
+}

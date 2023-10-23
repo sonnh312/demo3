@@ -18,6 +18,31 @@ namespace PetManager.DAO
         }
         private BillDAO() { }
 
+
+        public void InserBill(int id )
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InserBill @idPet ", new object[] { id });
+        }
+
+        public void CheckOut(int id, int discount)
+        {
+            string query = "UPDATE dbo.Bill SET datecheckout = GETDATE(), Status =1  ," + "discount = "+ discount +"WHERE IdBill = " + id;   
+            DataProvider.Instance.ExecuteNonQuery(query);
+        }
+
+
+        public int GetMaxIdBill()
+        {
+            try
+            {
+                return (int)DataProvider.Instance.ExcuteScalar("SELECT MAX(id) FROM dbo.Bill");
+            }
+            catch
+            {
+                return 1;
+            }
+        }
+
         /// <summary>
         /// thanh cong bill id
         /// that bai -1

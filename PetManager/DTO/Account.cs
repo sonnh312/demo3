@@ -13,13 +13,13 @@ namespace PetManager.DTO
         private string password;
         private string displayname;
         private string role;
-        private string type;
+        private int type;
 
         public string Username { get => username; set => username = value; }
-        public string Password ; 
         public string Displayname { get => displayname; set => displayname = value; }
         public string Role { get => role; set => role = value; }
-        
+        public int Type { get => type; set => type = value; }
+        public string Password { get => password; set => password = value; }
 
         public Account(string username,string displayname,string role,string password =null)
         {
@@ -27,7 +27,9 @@ namespace PetManager.DTO
             this.Password = password;
             this.Displayname = displayname;
             this.Role = role;
-            
+            this.Type = Type; 
+
+
         }
 
         public Account(DataRow row )
@@ -36,7 +38,9 @@ namespace PetManager.DTO
             this.Password = row["Password"].ToString(); 
             this.Displayname = row["Displayname"].ToString();
             this.Role= row["Role"].ToString();
-            
+            this.Type = (int)row["Type"];
+
+
         }
     }
 }

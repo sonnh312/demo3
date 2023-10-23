@@ -32,12 +32,18 @@ namespace PetManager.DAO
                 BillInfo info = new BillInfo(item);
                 lsBillinfo.Add(info);
             }
-
-
-
-
             return lsBillinfo;
             
+        }
+
+        public void InserBillInfo(int idbill,int idpet, int count)
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBillInfo @idbill , @idpet , @count", new object[] { idbill,idpet,count });
+        }
+
+        public void DeleteBillInfoById(int id)
+        {
+            DataTable data = DataProvider.Instance.ExecuteQuery("DELETE dbo.Bill WHERE idBillInfo= " + id);
         }
 
         

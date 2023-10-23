@@ -45,16 +45,21 @@
             this.flpPet = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnCheckOut = new System.Windows.Forms.Button();
-            this.txtPrice = new System.Windows.Forms.TextBox();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.lvBill = new System.Windows.Forms.ListView();
-            this.Pet = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PetName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Count = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.Price = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.cbCategory = new System.Windows.Forms.ComboBox();
+            this.cbPet = new System.Windows.Forms.ComboBox();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.nmCount = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCount)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -110,21 +115,21 @@
             // thànhViênToolStripMenuItem
             // 
             this.thànhViênToolStripMenuItem.Name = "thànhViênToolStripMenuItem";
-            this.thànhViênToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.thànhViênToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.thànhViênToolStripMenuItem.Text = "Tài Khoản";
             this.thànhViênToolStripMenuItem.Click += new System.EventHandler(this.thànhViênToolStripMenuItem_Click);
             // 
             // cậpNhậtThôngTinToolStripMenuItem
             // 
             this.cậpNhậtThôngTinToolStripMenuItem.Name = "cậpNhậtThôngTinToolStripMenuItem";
-            this.cậpNhậtThôngTinToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cậpNhậtThôngTinToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.cậpNhậtThôngTinToolStripMenuItem.Text = "Cập nhật Thông Tin";
             this.cậpNhậtThôngTinToolStripMenuItem.Click += new System.EventHandler(this.cậpNhậtThôngTinToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             // 
             // cácDịchVụChămSócToolStripMenuItem
@@ -174,18 +179,21 @@
             this.flpPet.AutoScroll = true;
             this.flpPet.Location = new System.Drawing.Point(25, 108);
             this.flpPet.Name = "flpPet";
-            this.flpPet.Size = new System.Drawing.Size(598, 383);
+            this.flpPet.Size = new System.Drawing.Size(506, 383);
             this.flpPet.TabIndex = 3;
             // 
             // panel3
             // 
+            this.panel3.Controls.Add(this.nmCount);
+            this.panel3.Controls.Add(this.btnAdd);
             this.panel3.Controls.Add(this.btnCheckOut);
-            this.panel3.Controls.Add(this.txtPrice);
+            this.panel3.Controls.Add(this.txtTotalPrice);
             this.panel3.Controls.Add(this.lvBill);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Location = new System.Drawing.Point(639, 108);
+            this.panel3.Controls.Add(this.cbCategory);
+            this.panel3.Controls.Add(this.cbPet);
+            this.panel3.Location = new System.Drawing.Point(537, 108);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(262, 383);
+            this.panel3.Size = new System.Drawing.Size(364, 383);
             this.panel3.TabIndex = 4;
             // 
             // btnCheckOut
@@ -196,49 +204,88 @@
             this.btnCheckOut.TabIndex = 3;
             this.btnCheckOut.Text = "Thanh Toan";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
-            // txtPrice
+            // txtTotalPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(5, 352);
-            this.txtPrice.Name = "txtPrice";
-            this.txtPrice.Size = new System.Drawing.Size(129, 20);
-            this.txtPrice.TabIndex = 2;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalPrice.Location = new System.Drawing.Point(5, 352);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(129, 20);
+            this.txtTotalPrice.TabIndex = 2;
+            this.txtTotalPrice.Text = "0";
+            this.txtTotalPrice.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // lvBill
             // 
             this.lvBill.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Pet,
+            this.PetName,
             this.Count,
-            this.columnHeader1});
+            this.Price,
+            this.TotalPrice});
             this.lvBill.GridLines = true;
             this.lvBill.HideSelection = false;
-            this.lvBill.Location = new System.Drawing.Point(5, 40);
+            this.lvBill.Location = new System.Drawing.Point(5, 82);
             this.lvBill.Name = "lvBill";
-            this.lvBill.Size = new System.Drawing.Size(242, 297);
+            this.lvBill.Size = new System.Drawing.Size(356, 255);
             this.lvBill.TabIndex = 1;
             this.lvBill.UseCompatibleStateImageBehavior = false;
             this.lvBill.View = System.Windows.Forms.View.Details;
             this.lvBill.SelectedIndexChanged += new System.EventHandler(this.lvBill_SelectedIndexChanged);
             // 
-            // Pet
+            // PetName
             // 
-            this.Pet.Text = "Thú Cưng";
+            this.PetName.Text = "Thú Cưng";
+            this.PetName.Width = 107;
             // 
             // Count
             // 
             this.Count.Text = "Số lượng";
             // 
-            // columnHeader1
+            // Price
             // 
-            this.columnHeader1.Text = "Đơn giá";
+            this.Price.Text = "Đơn giá";
+            this.Price.Width = 77;
             // 
-            // comboBox1
+            // TotalPrice
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(18, 13);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 21);
-            this.comboBox1.TabIndex = 0;
+            this.TotalPrice.Text = "Tong Tien";
+            this.TotalPrice.Width = 88;
+            // 
+            // cbCategory
+            // 
+            this.cbCategory.FormattingEnabled = true;
+            this.cbCategory.Location = new System.Drawing.Point(18, 40);
+            this.cbCategory.Name = "cbCategory";
+            this.cbCategory.Size = new System.Drawing.Size(200, 21);
+            this.cbCategory.TabIndex = 0;
+            this.cbCategory.SelectedIndexChanged += new System.EventHandler(this.cbCategory_SelectedIndexChanged);
+            // 
+            // cbPet
+            // 
+            this.cbPet.FormattingEnabled = true;
+            this.cbPet.Location = new System.Drawing.Point(18, 13);
+            this.cbPet.Name = "cbPet";
+            this.cbPet.Size = new System.Drawing.Size(200, 21);
+            this.cbPet.TabIndex = 0;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(244, 26);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // nmCount
+            // 
+            this.nmCount.Location = new System.Drawing.Point(224, 56);
+            this.nmCount.Name = "nmCount";
+            this.nmCount.Size = new System.Drawing.Size(120, 20);
+            this.nmCount.TabIndex = 5;
             // 
             // fPetManager
             // 
@@ -259,6 +306,7 @@
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nmCount)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -280,13 +328,17 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.FlowLayoutPanel flpPet;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbPet;
         private System.Windows.Forms.ListView lvBill;
-        private System.Windows.Forms.ColumnHeader Pet;
+        private System.Windows.Forms.ColumnHeader PetName;
         private System.Windows.Forms.ColumnHeader Count;
         private System.Windows.Forms.Button btnCheckOut;
-        private System.Windows.Forms.TextBox txtPrice;
+        private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.ToolStripMenuItem hotlineToolStripMenuItem;
-        private System.Windows.Forms.ColumnHeader columnHeader1;
+        private System.Windows.Forms.ColumnHeader Price;
+        private System.Windows.Forms.ComboBox cbCategory;
+        private System.Windows.Forms.ColumnHeader TotalPrice;
+        private System.Windows.Forms.Button btnAdd;
+        private System.Windows.Forms.NumericUpDown nmCount;
     }
 }

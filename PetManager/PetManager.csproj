@@ -47,6 +47,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\MenuDAO.cs" />
+    <Compile Include="DAO\PetInstanceDAO.cs" />
+    <Compile Include="DTO\Menu.cs" />
+    <Compile Include="DTO\Pet.cs" />
+    <Compile Include="DTO\PetInstance.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -56,14 +61,13 @@
     <Compile Include="DAO\AccountDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
     <Compile Include="DAO\BillInfoDAO.cs" />
-    <Compile Include="DAO\CategoryDAO.cs" />
+    <Compile Include="DAO\PetCategoryDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\PetDAO.cs" />
     <Compile Include="DTO\Account.cs" />
     <Compile Include="DTO\Bill.cs" />
     <Compile Include="DTO\BillInfo.cs" />
-    <Compile Include="DTO\Category.cs" />
-    <Compile Include="DTO\Pet.cs" />
+    <Compile Include="DTO\PetCategory.cs" />
     <Compile Include="fCheckOut.cs">
       <SubType>Form</SubType>
     </Compile>

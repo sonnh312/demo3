@@ -29,7 +29,6 @@ namespace PetManager.DAO
         public bool UpdateAccount(string username,string displayname,string password,string newpassword)
         {
             int  result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @username , @displayname , @password , @newpassword");
-
             return result > 0;
         }
 
