@@ -48,10 +48,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAO\MenuDAO.cs" />
-    <Compile Include="DAO\PetInstanceDAO.cs" />
+    <Compile Include="DAO\PetListDAO.cs" />
+    <Compile Include="DAO\PetServiceDAO.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Pet.cs" />
-    <Compile Include="DTO\PetInstance.cs" />
+    <Compile Include="DTO\PetList.cs" />
+    <Compile Include="DTO\PetService.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
     </Compile>

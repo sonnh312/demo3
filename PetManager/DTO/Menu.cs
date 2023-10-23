@@ -9,7 +9,7 @@ namespace PetManager.DTO
 {
     public class Menu
     {
-        public Menu(string petname, int count,float price)
+        public Menu(string petname, int count,float price, float totalprice)
         {
             this.Petname = petname;
             this.Count = count;
@@ -20,8 +20,8 @@ namespace PetManager.DTO
         public Menu(DataRow row)
         {
             this.Petname = row["NamePet"].ToString();
-            this.Count = (int)row ["count"];
-            this.Price = (float)Convert.ToDouble((row["PRICE"]).ToString());
+            this.Count = (int)row ["Count"];
+            this.Price = (float)Convert.ToDouble((row["Price"]).ToString());
             this.Totalprice = (float)Convert.ToDouble((row["totalPrice"].ToString()));
         }
 

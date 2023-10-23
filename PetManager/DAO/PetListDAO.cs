@@ -8,28 +8,28 @@ using System.Threading.Tasks;
 
 namespace PetManager.DAO
 {
-    public class PetInstanceDAO
+    public class PetListDAO
     {
-        private static PetInstanceDAO instance;
+        private static PetListDAO instance;
 
         public static int TableWidth = 300;
         public static int TableHeigh = 70;
 
-        public static PetInstanceDAO Instance
+        public static PetListDAO Instance
         {
-            get { if (instance == null) instance = new PetInstanceDAO(); return PetInstanceDAO.instance; }
-            private set { PetInstanceDAO.instance = value; }
+            get { if (instance == null) instance = new PetListDAO(); return PetListDAO.instance; }
+            private set { PetListDAO.instance = value; }
         }
-        public PetInstanceDAO() { }
+        public PetListDAO() { }
 
-        public List<PetInstance> LoadPetList()
+        public List<PetList> LoadPetList()
         {
-            List<PetInstance> petlist = new List<PetInstance>();
+            List<PetList> petlist = new List<PetList>();
 
             DataTable data = DataProvider.Instance.ExecuteQuery("exec USP_GetPetList");
             foreach (DataRow item in data.Rows)
             {
-                PetInstance table = new PetInstance(item);
+                PetList table = new PetList(item);
                 petlist.Add(table);
             }
             return petlist;

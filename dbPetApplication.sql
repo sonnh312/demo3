@@ -89,7 +89,7 @@ CREATE TABLE PetList
 )
 GO
 
-INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A01',N'Husky',N'Ready')
+INSERT dbo.PetList(IdPet,N	amePet,Status) VALUES ('A01',N'Husky',N'Ready')
 INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A02',N'Alaska',N'Ready')
 INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A03',N'Pitbull',N'Ready')
 INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A04',N'Corgi',N'Ready')
@@ -98,12 +98,7 @@ INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A05',N'Ragdoll',N'Ready')
 
 UPDATE dbo.PetList SET Status = 'Not Ready' WHERE NamePet = N'Husky'
 
-DECLARE @i	INT = 0
-WHILE @i <=4
-BEGIN
-	INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A01',N'A0'+ CAST (@i AS NVARCHAR(100)),0) 
-SET @i = @i + 1
-END 
+
 
 UPDATE dbo.PetList SET Status = 1 WHERE NamePet=N'Dog4'
 
@@ -125,10 +120,6 @@ INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B04
 INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B05', 'A05',GETDATE(), null, N'Paid')
 
 
-
-
-
-
 CREATE TABLE BillInfo
 (
 	IdBill CHAR(10),
@@ -138,7 +129,6 @@ CREATE TABLE BillInfo
 )
 GO
 
-SELECT * FROM BillInfo
 
 
 INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B01','A01',1)
@@ -148,12 +138,28 @@ INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B04','A04',1)
 INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B05','A05',1)
 
 SELECT p.NamePet, bi.count,p.PRICE AS totalPrice FROM BillInfo AS bi, Bill AS b,Pet AS p 
-WHERE bi.IdBillInfo = b.IdBill AND bi.IdPet= p.IdPet AND b.Status=0 AND b.IdPet = 2	
-SELECT * FROM Pet
-SELECT * FROM Bill
-SELECT * FROM PetList
----Storeproc
+WHERE bi.IdBill = b.IdBill AND bi.IdPet= p.IdPet AND b.Status='UnPaid' AND b.IdPet = 'A01'	
 
+	
+SELECT * FROM PetCategory
+SELECT * FROM PetList
+SELECT * FROM Bill
+SELECT * FROM BillInfo
+SELECT * FROM PetService , Account
+
+SELECT * FROM dbo.Account WHERE Username=N'hs' AND PassWord='1'
+----
+---
+DECLARE @i	INT = 0
+WHILE @i <=4
+BEGIN
+	INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A01',N'A0'+ CAST (@i AS NVARCHAR(100)),0) 
+SET @i = @i + 1
+END 
+
+---Storeproc
+----
+----
 CREATE PROCEDURE USP_GetAccountByUserName
 @username nvarchar(100)
 AS
@@ -162,11 +168,8 @@ BEGIN
 END
 GO
 EXEC USP_GetAccountByUserName @username = N'hs' 
-
-
-SELECT * FROM dbo.Account WHERE Username=N'hs' AND PassWord='1'
-
-
+---
+----
 CREATE PROCEDURE USP_GetPetList
 AS
 	BEGIN
@@ -174,37 +177,38 @@ AS
 	END
 
 exec USP_GetPetList
-
+----
+----
 CREATE PROCEDURE USP_InsertBill
-@idpet INT
+@idpet INT, @i INT = 0
 AS
 	BEGIN
-		INSERT dbo.Bill(IdPet,DateCheckIn,DateCheckOut,Status) VALUES (@idpet,GETDATE(),null,0)
+		INSERT dbo.Bill(IdBill,IdPet,DateCheckIn,DateCheckOut,Status) VALUES ('B06',@idpet,GETDATE(),null,0)
 	END
-exec USP_InsertBill @idpet = 1
-
-
-ALTER CREATE PROCEDURE USP_InsertBillInfo
+exec USP_InsertBill @idpet = ''
+----
+----
+CREATE PROCEDURE USP_InsertBillInfo
 @idbill INT, @idpet INT, @count INT
 AS
 BEGIN
 	DECLARE @isExitsBillInfo INT;
 	DECLARE @petCount INT = 1;
-	SELECT @isExitsBillInfo = IdPet FROM dbo.BillInfo WHERE IdBillInfo = @idbill AND IdPet = @idpet
+	SELECT @isExitsBillInfo = IdPet FROM dbo.BillInfo WHERE IdBill = @idbill AND IdPet = @idpet
 	IF(@isExitsBillInfo >0)
 	BEGIN
 		UPDATE dbo.BillInfo SET count = @petCount + @count WHERE IdPet = IdPet
 	END 
 	ELSE 
 	BEGIN
-		INSERT dbo.BillInfo(IdBillInfo,IdPet,count) VALUES (@idbill,@idpet,@count)
+		INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (@idbill,@idpet,@count)
 	END
 
 END
 	
 exec USP_InsertBillInfo @idbill , @idpet , @count 
-
-
+----
+----
 CREATE PROC USP_UpdateAccount
 @username NVARCHAR(100),@displayname NVARCHAR(100),@password NVARCHAR(100),@newpassword NVARCHAR(100)
 AS 
@@ -221,3 +225,4 @@ BEGIN
 
 	END
 END
+

@@ -9,29 +9,26 @@ namespace PetManager.DTO
 {
     public class BillInfo
     {
-        private int iD;
-        private int billID;
-        private int foodID;
+        private int idbill;
+        private int idpet;
         private int count;
 
-        public int ID { get => iD; set => iD = value; }
-        public int BillID { get => billID; set => billID = value; }
-        public int FoodID { get => foodID; set => foodID = value; }
+        
         public int Count { get => count; set => count = value; }
+        public int Idbill { get => idbill; set => idbill = value; }
+        public int Idpet { get => idpet; set => idpet = value; }
 
-        public BillInfo(int iD,int billID,int FoodID,int count)
+        public BillInfo(int idbill, int idpet,int count)
         {
-            this.ID = iD;
-            this.BillID = billID;
-            this.FoodID = foodID;
+            this.Idbill = idbill;
+            this.Idpet = idpet;
             this.Count = count;
         }
         public BillInfo (DataRow row)
         {
-            this.ID = (int)row["iD"];
-            this.FoodID = (int)row["foodID"];
-            this.BillID = (int)row[" billID"];
-            this.Count = (int)row[" count"];
+            this.Idbill = (int)row["IdBill"];
+            this.Idpet = (int)row["IdPet"];
+            this.Count = (int)row["Count"];
         }
 
     }

@@ -44,6 +44,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.flpPet = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.nmCount = new System.Windows.Forms.NumericUpDown();
+            this.btnAdd = new System.Windows.Forms.Button();
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.lvBill = new System.Windows.Forms.ListView();
@@ -53,8 +55,6 @@
             this.TotalPrice = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.cbCategory = new System.Windows.Forms.ComboBox();
             this.cbPet = new System.Windows.Forms.ComboBox();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.nmCount = new System.Windows.Forms.NumericUpDown();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -196,6 +196,23 @@
             this.panel3.Size = new System.Drawing.Size(364, 383);
             this.panel3.TabIndex = 4;
             // 
+            // nmCount
+            // 
+            this.nmCount.Location = new System.Drawing.Point(224, 56);
+            this.nmCount.Name = "nmCount";
+            this.nmCount.Size = new System.Drawing.Size(120, 20);
+            this.nmCount.TabIndex = 5;
+            // 
+            // btnAdd
+            // 
+            this.btnAdd.Location = new System.Drawing.Point(244, 13);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 4;
+            this.btnAdd.Text = "Add";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
             // btnCheckOut
             // 
             this.btnCheckOut.Location = new System.Drawing.Point(153, 343);
@@ -269,23 +286,6 @@
             this.cbPet.Name = "cbPet";
             this.cbPet.Size = new System.Drawing.Size(200, 21);
             this.cbPet.TabIndex = 0;
-            // 
-            // btnAdd
-            // 
-            this.btnAdd.Location = new System.Drawing.Point(244, 26);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 4;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
-            // 
-            // nmCount
-            // 
-            this.nmCount.Location = new System.Drawing.Point(224, 56);
-            this.nmCount.Name = "nmCount";
-            this.nmCount.Size = new System.Drawing.Size(120, 20);
-            this.nmCount.TabIndex = 5;
             // 
             // fPetManager
             // 

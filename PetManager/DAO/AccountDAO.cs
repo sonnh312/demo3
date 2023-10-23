@@ -25,14 +25,14 @@ namespace PetManager.DAO
             DataTable result = DataProvider.Instance.ExecuteQuery(query);
             return result.Rows.Count > 0; 
         }
-       
+       //update change pass 
         public bool UpdateAccount(string username,string displayname,string password,string newpassword)
         {
             int  result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @username , @displayname , @password , @newpassword");
             return result > 0;
         }
 
-
+        // find account
        public Account GetAccountByUserName(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Account WHERE Username =N'"+username+"'");

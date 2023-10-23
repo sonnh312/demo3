@@ -35,7 +35,7 @@ namespace PetManager.DAO
             }
             return list;
         }
-
+        // get pet by idcategory 
 
         public List<Pet> GetPetByCategoryById(int id)
         {
@@ -57,9 +57,9 @@ namespace PetManager.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0; 
         }
-        public bool UpdatePet(string namepet, int idpetcategory, int price, int idPet)
+        public bool UpdatePet(string namepet, int idpetcategory, int price, string idPet)
         {
-            string query = string.Format("UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE Id = {3})", namepet, idpetcategory, price,idPet);
+            string query = string.Format("UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE IdPet = {3})", namepet, idpetcategory, price,idPet);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
@@ -67,7 +67,7 @@ namespace PetManager.DAO
         {
             BillInfoDAO.Instance.DeleteBillInfoById(idPet);
 
-            string query = string.Format("DELETE WHERE Id = {0})",idPet);
+            string query = string.Format("DELETE WHERE IdPet = {0})",idPet);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

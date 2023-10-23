@@ -7,13 +7,13 @@ using System.Threading.Tasks;
 
 namespace PetManager.DTO
 {
-    public class PetInstance
+    public class PetList
     {
         private int idpet;
         private string namepet;
         private int status;
 
-        public PetInstance(int idpet,string namepet,int status)
+        public PetList(int idpet,string namepet,int status)
         {
             this.IdPet = idpet;
             this.Namepet = namepet;
@@ -21,11 +21,18 @@ namespace PetManager.DTO
 
         }
 
-        public PetInstance(DataRow row)
+        public PetList(DataRow row)
         {
-            this.IdPet = (int)row["IdPet"];
+            if (int.TryParse(row["IdPet"].ToString(), out int idPetValue))
+            {
+                this.IdPet = idPetValue;
+            }
+
             this.Namepet = row["NamePet"].ToString();
-            this.Status = (int)row["Status"];
+            if (int.TryParse(row["Status"].ToString(), out int StatusValue))
+            {
+                this.Status = StatusValue;
+            }
         }
 
 

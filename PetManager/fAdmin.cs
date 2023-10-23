@@ -25,7 +25,7 @@ namespace PetManager
             LoadListAccount();
             LoadListPet();
             AddPetBinding();
-            //LoadCategoryIntoCb(cbPet);
+            LoadCategoryIntoCb(cbPetCategory);
             dgvPetList.DataSource = petlist;//data khong bi mat ket noi khi su dung binding
 
         }
@@ -56,11 +56,10 @@ namespace PetManager
 
         void AddPetBinding()
         {
-            
-            cbIdCategory.DataBindings.Add(new Binding("IdPetCategory", dgvPetList, "IdPetCategory", true, DataSourceUpdateMode.Never));
-            txtNamepet.DataBindings.Add(new Binding("Namepet", dgvPetList, "NamePet", true, DataSourceUpdateMode.Never));
-            txtKindpet.DataBindings.Add(new Binding("PetKind", dgvPetList, "PetKind", true, DataSourceUpdateMode.Never));
-            cbPrice.DataBindings.Add(new Binding("Price", dgvPetList, "Price", true, DataSourceUpdateMode.Never));
+            txtId.DataBindings.Add(new Binding("Text", dgvPetList, "IdPetCategory", true, DataSourceUpdateMode.Never));
+            txtNamepet.DataBindings.Add(new Binding("Text", dgvPetList, "NamePet", true, DataSourceUpdateMode.Never));
+            cbPetCategory.DataBindings.Add(new Binding("Text", dgvPetList, "CategoryPet", true, DataSourceUpdateMode.Never));
+            nmPrice.DataBindings.Add(new Binding("Price", dgvPetList, "Price", true, DataSourceUpdateMode.Never));
         }
 
         void LoadCategoryIntoCb(ComboBox cb)
@@ -163,7 +162,7 @@ namespace PetManager
             string name = txtNamepet.Text;
             int idcategory = (cbPetCategory.SelectedItem as PetCategory).Idpetcategory;
             int price = (int)nmPrice.Value;
-            int idpet = (cbIdCategory.SelectedItem as Pet).Idpetcategory;
+            string idpet = txtId.Text;
             if (PetDAO.Instance.UpdatePet(name, idcategory, price, idpet))
             {
                 MessageBox.Show("Sua thanh cong");
@@ -175,13 +174,17 @@ namespace PetManager
             {
                 MessageBox.Show("Loi them lai");
             }
-        }   
+        }
+
 
 
 
 
         #endregion
 
+        private void txtNamepet_TextChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

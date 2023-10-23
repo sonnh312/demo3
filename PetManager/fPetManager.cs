@@ -41,10 +41,10 @@ namespace PetManager
         void LoadPet()
         {
             flpPet.Controls.Clear();
-            List<PetInstance> petList = PetInstanceDAO.Instance.LoadPetList();
-                foreach (PetInstance item in petList)
+            List<PetList> petList = PetListDAO.Instance.LoadPetList();
+                foreach (PetList item in petList)
                 {
-                Button btn= new Button() { Width = PetInstanceDAO.TableWidth, Height = PetInstanceDAO.TableHeigh };
+                Button btn= new Button() { Width = PetListDAO.TableWidth, Height = PetListDAO.TableHeigh };
                 Label lbl = new Label() { Width = 50, Height = 50 };
                 btn.Tag = item;
                 btn.Text = item.Namepet;//+ Environment.NewLine + item.Price;
@@ -105,7 +105,7 @@ namespace PetManager
        }
         void btn_Click(object sender, EventArgs e)
         {
-           int idpet = ((sender as Button).Tag as PetInstance).IdPet;
+           int idpet = ((sender as Button).Tag as PetList).IdPet;
            ShowBill(idpet);
             lvBill.Tag = (sender as Button).Tag;
 
@@ -222,7 +222,7 @@ namespace PetManager
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-            PetInstance table = lvBill.Tag as PetInstance;
+            PetList table = lvBill.Tag as PetList;
             int idBill = BillDAO.Instance.GetUnCheckGetBillIdByTableId(table.IdPet);
             int idpet = (cbPet.SelectedItem as Pet).Idpet;
             int count = (int)nmCount.Value; 
@@ -242,7 +242,7 @@ namespace PetManager
 
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
-            PetInstance pet = lvBill.Tag as PetInstance;
+            PetList pet = lvBill.Tag as PetList;
 
             int idBill = BillDAO.Instance.GetUnCheckGetBillIdByTableId(pet.IdPet);
 

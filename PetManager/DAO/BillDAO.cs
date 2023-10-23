@@ -18,19 +18,19 @@ namespace PetManager.DAO
         }
         private BillDAO() { }
 
-
+        // add pet to bill
         public void InserBill(int id )
         {
             DataProvider.Instance.ExecuteNonQuery("exec USP_InserBill @idPet ", new object[] { id });
         }
-
-        public void CheckOut(int id, int discount)
+        // update when u paid
+        public void CheckOut(int id)
         {
-            string query = "UPDATE dbo.Bill SET datecheckout = GETDATE(), Status =1  ," + "discount = "+ discount +"WHERE IdBill = " + id;   
+            string query = "UPDATE dbo.Bill SET datecheckout = GETDATE(), Status =N'Paid'  WHERE IdBill = " + id;   
             DataProvider.Instance.ExecuteNonQuery(query);
         }
 
-
+        // 
         public int GetMaxIdBill()
         {
             try
@@ -50,8 +50,8 @@ namespace PetManager.DAO
         /// <returns></returns>
         public int GetUnCheckGetBillIdByTableId(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE idTable=" + id + " AND status = 0");
-            if (data.Rows.Count >0)
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE IdPet='" + id + "' AND status = N'Unpaid'");
+            if (data.Rows.Count > 0)
             {
                 Bill bill = new Bill(data.Rows[0]);
                 return bill.Idbill;

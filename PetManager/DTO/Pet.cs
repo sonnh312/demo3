@@ -11,12 +11,20 @@ namespace PetManager.DTO
     {
         public Pet(DataRow row)
         {
-            this.Idpet = (int)row["IdPet"];
+            if (int.TryParse(row["IdPet"].ToString(), out int idPetValue))
+            {
+                this.Idpet = idPetValue;
+            }
+            
             this.Categorypet = row["CategoryPet"].ToString();
             this.Namepet = row["NamePet"].ToString();
-            this.Price = (int)row["PRICE"];
-            this.Idpetcategory = (int)row["IdPetCategory"];
+            this.Price = (int)row["Price"];
             
+            if (int.TryParse(row["IdPetCategory"].ToString(), out int IdpetcategoryValue))
+            {
+                this.Idpetcategory = IdpetcategoryValue;
+            }
+
         }
 
         public Pet(int idpet, int idpetcategory, string categorypet, string namepet, int price)

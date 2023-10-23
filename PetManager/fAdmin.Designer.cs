@@ -44,7 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtKindpet = new System.Windows.Forms.TextBox();
+            this.txtNamepet = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDel = new System.Windows.Forms.Button();
@@ -58,8 +58,7 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgvLoadAccount = new System.Windows.Forms.DataGridView();
-            this.txtNamepet = new System.Windows.Forms.TextBox();
-            this.cbIdCategory = new System.Windows.Forms.ComboBox();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -149,7 +148,6 @@
             // 
             // cbPrice
             // 
-            this.cbPrice.Controls.Add(this.cbIdCategory);
             this.cbPrice.Controls.Add(this.cbPetCategory);
             this.cbPrice.Controls.Add(this.nmPrice);
             this.cbPrice.Controls.Add(this.dgvPetList);
@@ -157,8 +155,8 @@
             this.cbPrice.Controls.Add(this.label3);
             this.cbPrice.Controls.Add(this.label2);
             this.cbPrice.Controls.Add(this.label1);
+            this.cbPrice.Controls.Add(this.txtId);
             this.cbPrice.Controls.Add(this.txtNamepet);
-            this.cbPrice.Controls.Add(this.txtKindpet);
             this.cbPrice.Controls.Add(this.btnSelect);
             this.cbPrice.Controls.Add(this.btnUpdate);
             this.cbPrice.Controls.Add(this.btnDel);
@@ -174,14 +172,14 @@
             // cbPetCategory
             // 
             this.cbPetCategory.FormattingEnabled = true;
-            this.cbPetCategory.Location = new System.Drawing.Point(374, 194);
+            this.cbPetCategory.Location = new System.Drawing.Point(400, 128);
             this.cbPetCategory.Name = "cbPetCategory";
             this.cbPetCategory.Size = new System.Drawing.Size(156, 21);
             this.cbPetCategory.TabIndex = 9;
             // 
             // nmPrice
             // 
-            this.nmPrice.Location = new System.Drawing.Point(374, 235);
+            this.nmPrice.Location = new System.Drawing.Point(400, 167);
             this.nmPrice.Name = "nmPrice";
             this.nmPrice.Size = new System.Drawing.Size(156, 20);
             this.nmPrice.TabIndex = 8;
@@ -198,7 +196,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(337, 162);
+            this.label4.Location = new System.Drawing.Point(353, 131);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 3;
@@ -208,7 +206,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(337, 237);
+            this.label3.Location = new System.Drawing.Point(353, 174);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 3;
@@ -218,7 +216,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(339, 87);
+            this.label2.Location = new System.Drawing.Point(353, 100);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
@@ -228,18 +226,18 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(320, 123);
+            this.label1.Location = new System.Drawing.Point(353, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(64, 13);
+            this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 3;
-            this.label1.Text = "IDKindPet";
+            this.label1.Text = "ID";
             // 
-            // txtKindpet
+            // txtNamepet
             // 
-            this.txtKindpet.Location = new System.Drawing.Point(374, 159);
-            this.txtKindpet.Name = "txtKindpet";
-            this.txtKindpet.Size = new System.Drawing.Size(156, 20);
-            this.txtKindpet.TabIndex = 2;
+            this.txtNamepet.Location = new System.Drawing.Point(400, 93);
+            this.txtNamepet.Name = "txtNamepet";
+            this.txtNamepet.Size = new System.Drawing.Size(156, 20);
+            this.txtNamepet.TabIndex = 2;
             // 
             // btnSelect
             // 
@@ -362,20 +360,13 @@
             this.dgvLoadAccount.Size = new System.Drawing.Size(342, 310);
             this.dgvLoadAccount.TabIndex = 0;
             // 
-            // txtNamepet
+            // txtId
             // 
-            this.txtNamepet.Location = new System.Drawing.Point(374, 80);
-            this.txtNamepet.Name = "txtNamepet";
-            this.txtNamepet.Size = new System.Drawing.Size(156, 20);
-            this.txtNamepet.TabIndex = 2;
-            // 
-            // cbIdCategory
-            // 
-            this.cbIdCategory.FormattingEnabled = true;
-            this.cbIdCategory.Location = new System.Drawing.Point(390, 120);
-            this.cbIdCategory.Name = "cbIdCategory";
-            this.cbIdCategory.Size = new System.Drawing.Size(156, 21);
-            this.cbIdCategory.TabIndex = 9;
+            this.txtId.Location = new System.Drawing.Point(400, 57);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(156, 20);
+            this.txtId.TabIndex = 2;
+            this.txtId.TextChanged += new System.EventHandler(this.txtNamepet_TextChanged);
             // 
             // fAdmin
             // 
@@ -418,7 +409,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtKindpet;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDel;
@@ -433,7 +423,7 @@
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DataGridView dgvLoadAccount;
         private System.Windows.Forms.ComboBox cbPetCategory;
-        private System.Windows.Forms.ComboBox cbIdCategory;
         private System.Windows.Forms.TextBox txtNamepet;
+        private System.Windows.Forms.TextBox txtId;
     }
 }

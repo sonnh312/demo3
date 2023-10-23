@@ -17,7 +17,7 @@ namespace PetManager.DAO
             private set { PetCategoryDAO.instance = value; }
         }
         private PetCategoryDAO() { }
-
+        //get pet category
         public List<PetCategory> GetListPetCategory()
         {
             List<PetCategory> lsCategory = new List<PetCategory>();
