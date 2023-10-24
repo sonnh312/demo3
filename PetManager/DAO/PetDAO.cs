@@ -19,22 +19,22 @@ namespace PetManager.DAO
 
 
         private PetDAO() { }
-
+        //load pet
         public List<Pet> LoadPetListToDesign()
         {
-            List<Pet> list = new List<Pet>();
-
-            Pet pet = null;
+            List<Pet> list = new List<Pet>(); 
 
             string query = "SELECT * FROM dbo.Pet";
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
-                pet = new Pet(item);
-                //return pet;
+                Pet pet = new Pet(item);
+                list.Add(pet); 
             }
             return list;
         }
+
+
         // get pet by idcategory 
 
         public List<Pet> GetPetByCategoryById(int id)
@@ -48,7 +48,7 @@ namespace PetManager.DAO
                 petlist.Add(pet);
             }
             return petlist;
-        }
+        }   
 
 
         public bool InsertPet(string namepet,int idpetcategory, int price)

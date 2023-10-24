@@ -6,8 +6,8 @@ GO
 
 CREATE TABLE Pet
 (
-	IdPet CHAR(10)NOT NULL,
-	IdPetCategory CHAR(10)NOT NULL,
+	IdPet INT NOT NULL,
+	IdPetCategory INT NOT NULL,
 	CategoryPet NVARCHAR(100)NOT NULL,
 	NamePet NVARCHAR(100)NOT NULL,
 	Price INT ,
@@ -17,31 +17,31 @@ GO
 
 
 
-INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES ('A01', 'D01', N'Dog', N'Husky',2000)
-INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES ('A02', 'D01', N'Dog', N'Alaska',2000)
-INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES ('A03', 'D01', N'Dog', N'Pitbull',2000)
-INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES ('A04', 'D01', N'Dog', N'Corgi',2000)
-INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES ('A05', 'C01', N'Cat', N'Ragdoll',2000)
+INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (1,101, N'Dog', N'Husky',2000)
+INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (2,101, N'Dog', N'Alaska',2000)
+INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (3,101, N'Dog', N'Pitbull',2000)
+INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (4,101, N'Dog', N'Corgi',2000)
+INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (5,102, N'Cat', N'Ragdoll',2000)
 
-UPDATE dbo.Pet SET IdPetCategory=,IdPetCategory,NamePet,PRICE  WHERE IdPet= 
+UPDATE dbo.Pet SET IdPetCategory= IdPetCategory, NamePet,PRICE  WHERE IdPet= 1
 
 UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE Id = {3})
 
 CREATE TABLE PetCategory
 (
-	IdPet CHAR(10)NOT NULL,
-	IdPetCategory CHAR(10)NOT NULL,
+	IdPet INT NOT NULL,
+	IdPetCategory INT NOT NULL,
 	CategoryPet NVARCHAR(100)NOT NULL,
 	PRIMARY KEY (IdPet,IdPetCategory)
 )
 
 
 
-INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES ('A01', 'D01', N'Dog')
-INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES ('A02', 'D01', N'Dog')
-INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES ('A03', 'D01', N'Dog')
-INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES ('A04', 'D01', N'Dog')
-INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES ('A05', 'C01', N'Cat')
+INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES (1,101, N'Dog')
+INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES (2,101, N'Dog')
+INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES (3,101, N'Dog')
+INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES (4,101, N'Dog')
+INSERT INTO PetCategory (IdPet, IdPetCategory, CategoryPet) VALUES (5,102, N'Cat')
 
 
 SELECT * FROM PetCategory
@@ -59,53 +59,54 @@ CREATE TABLE Account
 GO
 
 SELECT * FROM Account
-INSERT INTO Account (IdUser, Displayname, Username, Password, Type, Role) VALUES ('U01', N'Hoang Son', N'hs', N'1',1, N'admin')
-INSERT INTO Account (IdUser, Displayname, Username, Password, Type, Role) VALUES ('U02', N'Gia Han', N'gh', N'0',1, N'user')
+INSERT INTO Account (IdUser, Displayname, Username, Password, Type, Role) VALUES (1, N'Hoang Son', N'hs', N'1',1, N'admin')
+INSERT INTO Account (IdUser, Displayname, Username, Password, Type, Role) VALUES (2, N'Gia Han', N'gh', N'1',0, N'user')
+INSERT INTO Account (IdUser, Displayname, Username, Password, Type, Role) VALUES (3, N'Thanh Ngan', N'tn', N'1',0, N'user')
 
 UPDATE dbo.Account SET Type='0'  WHERE IdUser='3'	
 
-SELECT * FROM dbo.Account WHERE Username='hs' AND password='1'
+SELECT * FROM dbo.Account WHERE Username='hs' AND password=1
 
 CREATE TABLE PetService
 (
-	IdService CHAR(10),
+	IdService INT NOT NULL,
 	NameService CHAR(10),
 	Price INT,
 	PRIMARY KEY (IdService)
 )
 GO
-INSERT dbo.PetService(IdService,NameService,Price) VALUES ('S01',N'Shower',50)
-INSERT dbo.PetService(IdService,NameService,Price) VALUES ('T01',N'Take Care',150)
-INSERT dbo.PetService(IdService,NameService,Price) VALUES ('F01',N'Food',250)
+INSERT dbo.PetService(IdService,NameService,Price) VALUES (1001,N'Shower',50)
+INSERT dbo.PetService(IdService,NameService,Price) VALUES (1002,N'Take Care',150)
+INSERT dbo.PetService(IdService,NameService,Price) VALUES (1003,N'Food',250)
 
 
 
 CREATE TABLE PetList
 (
-	IdPet CHAR(10),
+	IdPet INT NOT NULL,
 	NamePet NVARCHAR(100),
 	Status NVARCHAR(100),
 	PRIMARY KEY (IdPet)
 )
 GO
 
-INSERT dbo.PetList(IdPet,N	amePet,Status) VALUES ('A01',N'Husky',N'Ready')
-INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A02',N'Alaska',N'Ready')
-INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A03',N'Pitbull',N'Ready')
-INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A04',N'Corgi',N'Ready')
-INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A05',N'Ragdoll',N'Ready')
+INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (1,N'Husky',N'Ready')
+INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (2,N'Alaska',N'Ready')
+INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (3,N'Pitbull',N'Ready')
+INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (4,N'Corgi',N'Ready')
+INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (5,N'Ragdoll',N'Ready')
 
 
 UPDATE dbo.PetList SET Status = 'Not Ready' WHERE NamePet = N'Husky'
 
 
 
-UPDATE dbo.PetList SET Status = 1 WHERE NamePet=N'Dog4'
+UPDATE dbo.PetList SET Status = 1 WHERE NamePet=N'Ragdoll'
 
 CREATE TABLE Bill
 (
-	IdBill CHAR(10),
-	IdPet CHAR(10),
+	IdBill INT NOT NULL,
+	IdPet INT NOT NULL,
 	DateCheckIn DATETIME,
 	DateCheckOut DATETIME,
 	Status NVARCHAR(100),
@@ -113,17 +114,17 @@ CREATE TABLE Bill
 )
 GO
 
-INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B01', 'A01',GETDATE(), null, N'Unpaid')
-INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B02', 'A02',GETDATE(), null, N'Unpaid')
-INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B03', 'A03',GETDATE(), null, N'Unpaid')
-INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B04', 'A04',GETDATE(), null, N'Paid')
-INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES ('B05', 'A05',GETDATE(), null, N'Paid')
+INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES (10001,1,GETDATE(), null, N'Unpaid')
+INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES (10002,2,GETDATE(), null, N'Unpaid')
+INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES (10003,3,GETDATE(), null, N'Unpaid')
+INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES (10004,4,GETDATE(), null, N'Paid')
+INSERT INTO Bill (IdBill, IdPet, DateCheckIn, DateCheckOut, Status) VALUES (10005,5,GETDATE(), null, N'Paid')
 
 
 CREATE TABLE BillInfo
 (
-	IdBill CHAR(10),
-	IdPet CHAR(10),
+	IdBill INT NOT NULL,
+	IdPet INT NOT NULL,
 	count INT,
 	PRIMARY KEY (IdBill,IdPet)
 )
@@ -131,14 +132,14 @@ GO
 
 
 
-INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B01','A01',1)
-INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B02','A02',1)
-INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B03','A03',1)
-INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B04','A04',1)
-INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES ('B05','A05',1)
+INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (10001,1,1)
+INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (10002,2,1)
+INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (10003,3,1)
+INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (10004,4,1)
+INSERT dbo.BillInfo(IdBill,IdPet,count) VALUES (10005,5,1)
 
 SELECT p.NamePet, bi.count,p.PRICE AS totalPrice FROM BillInfo AS bi, Bill AS b,Pet AS p 
-WHERE bi.IdBill = b.IdBill AND bi.IdPet= p.IdPet AND b.Status='UnPaid' AND b.IdPet = 'A01'	
+WHERE bi.IdBill = b.IdBill AND bi.IdPet= p.IdPet AND b.Status='UnPaid' AND b.IdPet = 1
 
 	
 SELECT * FROM PetCategory
@@ -218,11 +219,22 @@ BEGIN
 
 	IF(@isRightPass =1)
 	BEGIN
-		IF(@newpassword = null OR @newpassword ='')
+		IF(@newpassword = null OR @newpassword = '')
 		BEGIN
-			UPDATE dbo.Account SET Displayname= @displayname,Password=@newpassword  WHERE Username=@username
+			UPDATE dbo.Account SET Displayname= @displayname WHERE Username=@username
 		END
+		ELSE 
+			UPDATE dbo.Account SET Displayname= @displayname, Password=@newpassword  WHERE Username=@username
 
 	END
 END
+
+CREATE PROCEDURE USP_LoginAccount
+@username NVARCHAR(100),@password NVARCHAR(100)
+AS
+BEGIN
+	SELECT * FROM dbo.Account WHERE Username=@username AND Password=@password
+END
+
+exec USP_LoginAccount @username , @password 
 

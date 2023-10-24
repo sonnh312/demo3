@@ -17,17 +17,17 @@ namespace PetManager
         public fAccountProfile(Account acc)
         {
             InitializeComponent();
-            loginAccount = acc;
+            LoginAccount = acc;
             
         }
 
         private Account loginAccount;
-        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value; ChangeAccount(loginAccount); } }
+        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value; ChangeAccount(LoginAccount); } }
 
         public void ChangeAccount(Account acc)
         {
-            txtUsername.Text = loginAccount.Username;
-            txtDisplayName.Text = loginAccount.Displayname;
+            txtUsername.Text = LoginAccount.Username;
+            txtDisplayName.Text = LoginAccount.Displayname;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -37,16 +37,16 @@ namespace PetManager
         public void UpdateAccountInfo()
         {
             string displayname = txtDisplayName.Text;
-            string password = txtPassword.Text;
+            string password = txtPassword.Text; 
             string newpassword = txtNewPassword.Text;
-            string reenterpassword = txtNewPasswordAgain.Text;
+            string reenterpassword = txtReEnterPass.Text;
             string username = txtUsername.Text;
 
-            if(newpassword.Equals(reenterpassword))
+            if(!newpassword.Equals(reenterpassword))
             {
                 MessageBox.Show("Vui long nhap lai mat khau moi");
             }
-            //xem event bac 2
+            // event bac 2
             else
             {
                 if(AccountDAO.Instance.UpdateAccount(username,displayname,password,newpassword))
@@ -82,5 +82,9 @@ namespace PetManager
             }
         }
 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

@@ -19,14 +19,15 @@ namespace PetManager
     public partial class fPetManager : Form
     {
         private Account loginAccount;
-        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value;ChangeAccount(loginAccount.Type); } }
+        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value;ChangeAccount(LoginAccount.Type); } }
 
         public List<BillInfo> GetListBillInfo { get; private set; }
         public fPetManager(Account acc)
         {
             InitializeComponent();
             LoadPet();
-            this.loginAccount = acc;
+            this.LoginAccount = acc;
+           
 
         }
 
@@ -34,8 +35,10 @@ namespace PetManager
         //check role
         void ChangeAccount(int type)
         {
-            userToolStripMenuItem.Enabled =  type == 1;
-            thànhViênToolStripMenuItem.Text += "(" + loginAccount.Displayname + ")";
+                adminToolStripMenuItem.Enabled = type ==1 ;
+                thànhViênToolStripMenuItem.Text += "(" + loginAccount.Displayname + ")";
+                
+            
         }
         // load btnPet
         void LoadPet()
@@ -141,6 +144,12 @@ namespace PetManager
         #endregion
 
         #region Event
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fAdmin f = new fAdmin();
+            f.ShowDialog();
+        }
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FAccountInfo f = new FAccountInfo(loginAccount);
@@ -181,16 +190,6 @@ namespace PetManager
 
         }
 
-
-
-
-
-        #endregion
-
-       
-
-
-
         private void thànhViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fAccountProfile f = new fAccountProfile(loginAccount);
@@ -198,38 +197,16 @@ namespace PetManager
             f.ShowDialog();
 
         }
-
-        //return data
-    
-        public void f_UpdateAccount(object sender, AccountEvent e)
-        {
-            thànhViênToolStripMenuItem.Text = "Thông Tin Tài Khoản ( " + e.Acc.Displayname + ")";
-        }
-
-
-        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            int id = 0;
-            ComboBox cb = sender as ComboBox;
-            if (cb.SelectedItem == null)
-                return;
-            PetCategory selected = cb.SelectedItem as PetCategory;
-            id = selected.Idpetcategory;
-            LoadPetListByCategory(id);
-
-
-        }
-
         private void btnAdd_Click(object sender, EventArgs e)
         {
             PetList table = lvBill.Tag as PetList;
             int idBill = BillDAO.Instance.GetUnCheckGetBillIdByTableId(table.IdPet);
             int idpet = (cbPet.SelectedItem as Pet).Idpet;
-            int count = (int)nmCount.Value; 
-            if(idBill == -1)
+            int count = (int)nmCount.Value;
+            if (idBill == -1)
             {
                 BillDAO.Instance.InserBill(table.IdPet);
-                BillInfoDAO.Instance.InserBillInfo(BillDAO.Instance.GetMaxIdBill(), idpet , count );
+                BillInfoDAO.Instance.InserBillInfo(BillDAO.Instance.GetMaxIdBill(), idpet, count);
             }
             else
             {
@@ -246,15 +223,35 @@ namespace PetManager
 
             int idBill = BillDAO.Instance.GetUnCheckGetBillIdByTableId(pet.IdPet);
 
-            if(idBill == -1)
+            if (idBill == -1)
             {
-                if(MessageBox.Show("Ban co chac muon thanh toan khong?","ThongBao",MessageBoxButtons.OKCancel) ==System.Windows.Forms.DialogResult.OK)
+                if (MessageBox.Show("Ban co chac muon thanh toan khong?", "ThongBao", MessageBoxButtons.OKCancel) == System.Windows.Forms.DialogResult.OK)
                 {
-                   // BillDAO.Instance.CheckOut(idBill);
+                    // BillDAO.Instance.CheckOut(idBill);
                     ShowBill(pet.IdPet);
                 }
             }
 
         }
+
+        public void f_UpdateAccount(object sender, AccountEvent e)
+        {
+            thànhViênToolStripMenuItem.Text = "Thông Tin Tài Khoản ( " + e.Acc.Displayname + ")";
+        }
+
+        private void cbCategory_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int id = 0;
+            ComboBox cb = sender as ComboBox;
+            if (cb.SelectedItem == null)
+                return;
+            PetCategory selected = cb.SelectedItem as PetCategory;
+            id = selected.Idpetcategory;
+            LoadPetListByCategory(id);
+
+
+        }
+        #endregion
+
     }
 }

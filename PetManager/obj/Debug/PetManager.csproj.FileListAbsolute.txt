@@ -29,3 +29,21 @@ D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fCha
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fProduce.resources
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.fCheckOut.resources
 D:\Study\Đồ án Desktop App\PetMangerApp\PetManager\obj\Debug\PetManager.FAccountInfo.resources
+D:\Git Pull\PetManager\bin\Debug\PetManager.exe.config
+D:\Git Pull\PetManager\bin\Debug\PetManager.exe
+D:\Git Pull\PetManager\bin\Debug\PetManager.pdb
+D:\Git Pull\PetManager\obj\Debug\PetManager.csprojAssemblyReference.cache
+D:\Git Pull\PetManager\obj\Debug\PetManager.fAccountProfile.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.FAccountInfo.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fAdmin.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fCheckOut.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fCreateAccount.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.FLogin.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fChangePass.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fPetManager.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.fProduce.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.Properties.Resources.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.GenerateResource.cache
+D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.CoreCompileInputs.cache
+D:\Git Pull\PetManager\obj\Debug\PetManager.exe
+D:\Git Pull\PetManager\obj\Debug\PetManager.pdb

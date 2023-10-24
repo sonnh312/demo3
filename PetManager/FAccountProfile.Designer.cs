@@ -36,7 +36,7 @@
             this.lblSex = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.lblEmail = new System.Windows.Forms.Label();
-            this.txtNewPasswordAgain = new System.Windows.Forms.TextBox();
+            this.txtReEnterPass = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbBirDate = new System.Windows.Forms.Label();
             this.txtNewPassword = new System.Windows.Forms.TextBox();
@@ -46,6 +46,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
+            this.btnExit = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -56,6 +57,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.panel3);
@@ -70,9 +72,9 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(147, 281);
+            this.btnSave.Location = new System.Drawing.Point(165, 281);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(186, 41);
+            this.btnSave.Size = new System.Drawing.Size(101, 41);
             this.btnSave.TabIndex = 2;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = true;
@@ -117,7 +119,7 @@
             // panel6
             // 
             this.panel6.Controls.Add(this.lblEmail);
-            this.panel6.Controls.Add(this.txtNewPasswordAgain);
+            this.panel6.Controls.Add(this.txtReEnterPass);
             this.panel6.Location = new System.Drawing.Point(26, 235);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(394, 40);
@@ -133,12 +135,12 @@
             this.lblEmail.TabIndex = 0;
             this.lblEmail.Text = "Nhap Lai";
             // 
-            // txtNewPasswordAgain
+            // txtReEnterPass
             // 
-            this.txtNewPasswordAgain.Location = new System.Drawing.Point(121, 9);
-            this.txtNewPasswordAgain.Name = "txtNewPasswordAgain";
-            this.txtNewPasswordAgain.Size = new System.Drawing.Size(208, 20);
-            this.txtNewPasswordAgain.TabIndex = 1;
+            this.txtReEnterPass.Location = new System.Drawing.Point(121, 9);
+            this.txtReEnterPass.Name = "txtReEnterPass";
+            this.txtReEnterPass.Size = new System.Drawing.Size(208, 20);
+            this.txtReEnterPass.TabIndex = 1;
             // 
             // panel5
             // 
@@ -218,6 +220,16 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Username";
             // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(300, 287);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(90, 28);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // fAccountProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -261,6 +273,7 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.TextBox txtDisplayName;
-        private System.Windows.Forms.TextBox txtNewPasswordAgain;
+        private System.Windows.Forms.TextBox txtReEnterPass;
+        private System.Windows.Forms.Button btnExit;
     }
 }

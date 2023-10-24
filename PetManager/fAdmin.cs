@@ -56,16 +56,16 @@ namespace PetManager
 
         void AddPetBinding()
         {
-            txtId.DataBindings.Add(new Binding("Text", dgvPetList, "IdPetCategory", true, DataSourceUpdateMode.Never));
-            txtNamepet.DataBindings.Add(new Binding("Text", dgvPetList, "NamePet", true, DataSourceUpdateMode.Never));
-            cbPetCategory.DataBindings.Add(new Binding("Text", dgvPetList, "CategoryPet", true, DataSourceUpdateMode.Never));
-            nmPrice.DataBindings.Add(new Binding("Price", dgvPetList, "Price", true, DataSourceUpdateMode.Never));
+            txtId.DataBindings.Add(new Binding("Text", petlist, "IdPetCategory", true, DataSourceUpdateMode.Never));
+            txtNamepet.DataBindings.Add(new Binding("Text", petlist, "NamePet", true, DataSourceUpdateMode.Never));
+            
+            nmPrice.DataBindings.Add(new Binding("Value", petlist, "Price", true, DataSourceUpdateMode.Never));
         }
-
+         
         void LoadCategoryIntoCb(ComboBox cb)
         {
             cb.DataSource = PetCategoryDAO.Instance.GetListPetCategory();
-            cb.DisplayMember = "Namepet";
+            cb.DisplayMember = "CategoryPet";
         }
 
         #endregion
@@ -97,27 +97,6 @@ namespace PetManager
         void btnSelect_Click(object sender, EventArgs e)
         {
             LoadListPet();
-        }
-
-        //check categorypet = id cate
-        private void txtIDpet_TextChanged(object sender, EventArgs e)
-        {
-            if (dgvPetList.SelectedCells.Count > 0)
-            {
-                int id = (int)dgvPetList.SelectedCells[0].OwningRow.Cells["IdPetCategory"].Value;
-                int i = 0;
-                List<PetCategory> category = PetCategoryDAO.Instance.GetListPetCategory();
-                cbPetCategory.SelectedItem = category;
-                int index = -1;
-                foreach (PetCategory item in cbPetCategory.Items)
-                {
-                    index = i;
-                    break;
-                }
-                i++;
-
-
-            }
         }
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -176,15 +155,29 @@ namespace PetManager
             }
         }
 
-
+        private void txtNamepet_TextChanged(object sender, EventArgs e)
+        {
+            int id = (int)dgvPetList.SelectedCells[0].OwningRow.Cells["IdPetCategory"].Value;
+            PetCategory category = PetCategoryDAO.Instance.GetListPetCategoryById(id);
+            cbPetCategory.SelectedItem = category;
+            int index = -1;
+            int i = 0;
+            foreach(PetCategory item in cbPetCategory.Items)
+            {
+                if(item.Idpetcategory==category.Idpetcategory)
+                {
+                    index = i;
+                    break;
+                }
+                i++;
+            }
+            cbPetCategory.SelectedIndex = index;
+        }
 
 
 
         #endregion
 
-        private void txtNamepet_TextChanged(object sender, EventArgs e)
-        {
 
-        }
     }
 }

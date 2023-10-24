@@ -44,6 +44,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
             this.txtNamepet = new System.Windows.Forms.TextBox();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -58,7 +59,6 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.dgvLoadAccount = new System.Windows.Forms.DataGridView();
-            this.txtId = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
@@ -232,6 +232,14 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "ID";
             // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(400, 57);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(156, 20);
+            this.txtId.TabIndex = 2;
+            this.txtId.TextChanged += new System.EventHandler(this.txtNamepet_TextChanged);
+            // 
             // txtNamepet
             // 
             this.txtNamepet.Location = new System.Drawing.Point(400, 93);
@@ -359,14 +367,6 @@
             this.dgvLoadAccount.Name = "dgvLoadAccount";
             this.dgvLoadAccount.Size = new System.Drawing.Size(342, 310);
             this.dgvLoadAccount.TabIndex = 0;
-            // 
-            // txtId
-            // 
-            this.txtId.Location = new System.Drawing.Point(400, 57);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(156, 20);
-            this.txtId.TabIndex = 2;
-            this.txtId.TextChanged += new System.EventHandler(this.txtNamepet_TextChanged);
             // 
             // fAdmin
             // 

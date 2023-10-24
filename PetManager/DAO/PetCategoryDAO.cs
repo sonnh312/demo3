@@ -18,6 +18,7 @@ namespace PetManager.DAO
         }
         private PetCategoryDAO() { }
         //get pet category
+
         public List<PetCategory> GetListPetCategory()
         {
             List<PetCategory> lsCategory = new List<PetCategory>();
@@ -31,9 +32,21 @@ namespace PetManager.DAO
 
             return lsCategory;
         }
-            
-        
-        
+        public PetCategory GetListPetCategoryById(int id)
+        {
+            PetCategory category = null;
+            string query = "SELECT * FROM dbo.PetCategory WHERE IdPetCategory ="+id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                category = new PetCategory(item);
+                return category;
+            }
+
+            return category;
+        }
+
+
 
 
     }

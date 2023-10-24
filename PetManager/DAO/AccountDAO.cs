@@ -21,14 +21,14 @@ namespace PetManager.DAO
 
         public bool Login(string username,string password)
         {
-            string query = "SELECT * FROM dbo.Account WHERE Username=N'"+username+"' AND password=N'"+password+"'";
-            DataTable result = DataProvider.Instance.ExecuteQuery(query);
+            string query = "exec USP_LoginAccount @username , @password";
+            DataTable result = DataProvider.Instance.ExecuteQuery(query,new object[] { username,password});
             return result.Rows.Count > 0; 
         }
        //update change pass 
         public bool UpdateAccount(string username,string displayname,string password,string newpassword)
         {
-            int  result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @username , @displayname , @password , @newpassword");
+            int  result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateAccount @username , @displayname , @password , @newpassword",new object[] {username,displayname,password,newpassword });
             return result > 0;
         }
 
@@ -40,7 +40,6 @@ namespace PetManager.DAO
             {
                 return new Account(item);
             }
-
             return null;
         }
 
