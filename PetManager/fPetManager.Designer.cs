@@ -37,7 +37,6 @@
             this.cậpNhậtThôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cácDịchVụChămSócToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đồĂnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ưuĐãiToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.hotlineToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -84,7 +83,6 @@
             this.adminToolStripMenuItem,
             this.thôngTinTàiKhoảnToolStripMenuItem,
             this.cácDịchVụChămSócToolStripMenuItem,
-            this.đồĂnToolStripMenuItem,
             this.ưuĐãiToolStripMenuItem,
             this.hotlineToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
@@ -131,6 +129,7 @@
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
             this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(178, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // cácDịchVụChămSócToolStripMenuItem
             // 
@@ -138,12 +137,6 @@
             this.cácDịchVụChămSócToolStripMenuItem.Size = new System.Drawing.Size(140, 20);
             this.cácDịchVụChămSócToolStripMenuItem.Text = "Các Dịch Vụ Chăm Sóc";
             this.cácDịchVụChămSócToolStripMenuItem.Click += new System.EventHandler(this.cácDịchVụChămSócToolStripMenuItem_Click);
-            // 
-            // đồĂnToolStripMenuItem
-            // 
-            this.đồĂnToolStripMenuItem.Name = "đồĂnToolStripMenuItem";
-            this.đồĂnToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.đồĂnToolStripMenuItem.Text = "Đồ Ăn";
             // 
             // ưuĐãiToolStripMenuItem
             // 
@@ -320,7 +313,6 @@
         private System.Windows.Forms.ToolStripMenuItem thànhViênToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cậpNhậtThôngTinToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cácDịchVụChămSócToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đồĂnToolStripMenuItem;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ưuĐãiToolStripMenuItem;

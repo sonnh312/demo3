@@ -33,6 +33,19 @@ namespace PetManager.DAO
             }
             return list;
         }
+        public List<Pet> GetPetByPetName(string name)
+        {
+            List<Pet> list = new List<Pet>();
+
+            string query = string.Format("SELECT * FROM dbo.Pet WHERE NamePet like N'%{0}%'", name) ;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Pet pet = new Pet(item);
+                list.Add(pet);
+            }
+            return list;
+        }
 
 
         // get pet by idcategory 
@@ -57,12 +70,14 @@ namespace PetManager.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0; 
         }
-        public bool UpdatePet(string namepet, int idpetcategory, int price, string idPet)
+
+        public bool UpdatePet(int idpet,string namepet, int idpetcategory, int price)
         {
-            string query = string.Format("UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE IdPet = {3})", namepet, idpetcategory, price,idPet);
+            string query = string.Format("UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE IdPet = {3})",namepet, idpetcategory, price,idpet);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
+
         public bool DeletePet(int idPet)
         {
             BillInfoDAO.Instance.DeleteBillInfoById(idPet);

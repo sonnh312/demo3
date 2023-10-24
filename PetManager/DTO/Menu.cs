@@ -21,7 +21,7 @@ namespace PetManager.DTO
         {
             this.Petname = row["NamePet"].ToString();
             this.Count = (int)row ["Count"];
-            this.Price = (int)row["Price"];
+           // this.Price = (int)row["Price"];
             this.Totalprice = (float)Convert.ToDouble((row["totalPrice"].ToString()));
         }
 

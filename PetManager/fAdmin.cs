@@ -27,6 +27,7 @@ namespace PetManager
             AddPetBinding();
             LoadCategoryIntoCb(cbPetCategory);
             dgvPetList.DataSource = petlist;//data khong bi mat ket noi khi su dung binding
+            
 
         }
         #region Method
@@ -52,13 +53,17 @@ namespace PetManager
             List<Pet> list = new List<Pet>();
             petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
         }
+        List<Pet> SeachPetByName(string name)
+        {
+            List<Pet> list = PetDAO.Instance.GetPetByPetName(name);
 
+            return list;
+        }
 
         void AddPetBinding()
         {
             txtId.DataBindings.Add(new Binding("Text", petlist, "IdPetCategory", true, DataSourceUpdateMode.Never));
             txtNamepet.DataBindings.Add(new Binding("Text", petlist, "NamePet", true, DataSourceUpdateMode.Never));
-            
             nmPrice.DataBindings.Add(new Binding("Value", petlist, "Price", true, DataSourceUpdateMode.Never));
         }
          
@@ -119,30 +124,33 @@ namespace PetManager
             }
 
         }
+
         private void btnDel_Click(object sender, EventArgs e)
         {
-            int id = Convert.ToInt32(txtNamepet.Text);
+            int id = Convert.ToInt32(txtId.Text);
 
             if (PetDAO.Instance.DeletePet(id))
             {
-                MessageBox.Show("Them thanh cong");
+                MessageBox.Show("Xoa thanh cong");
                 LoadListPet();
                 if (deletePet != null)
                     deletePet(this, new EventArgs());
             }
             else
             {
-                MessageBox.Show("Loi them lai");
+                MessageBox.Show("Xoa that bai ");
             }
 
         }
+
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             string name = txtNamepet.Text;
             int idcategory = (cbPetCategory.SelectedItem as PetCategory).Idpetcategory;
             int price = (int)nmPrice.Value;
-            string idpet = txtId.Text;
-            if (PetDAO.Instance.UpdatePet(name, idcategory, price, idpet))
+            int idpet = Convert.ToInt32(txtId);
+            
+            if (PetDAO.Instance.UpdatePet(idpet,name, idcategory, price))
             {
                 MessageBox.Show("Sua thanh cong");
                 LoadListPet();
@@ -151,7 +159,7 @@ namespace PetManager
             }
             else
             {
-                MessageBox.Show("Loi them lai");
+                MessageBox.Show("Loi khi sua lai");
             }
         }
 
@@ -172,6 +180,11 @@ namespace PetManager
                 i++;
             }
             cbPetCategory.SelectedIndex = index;
+        }
+
+        private void btnSeach_Click(object sender, EventArgs e)
+        {
+            petlist.DataSource = SeachPetByName(txtNamepet.Text);
         }
 
 

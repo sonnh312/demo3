@@ -22,6 +22,9 @@ namespace PetManager.DAO
         {
 
         }
+
+
+
         // get list bill info
         public List<BillInfo> GetListBillInfo(int id)
         {

@@ -47,3 +47,6 @@ D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.GenerateResource.cache
 D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.CoreCompileInputs.cache
 D:\Git Pull\PetManager\obj\Debug\PetManager.exe
 D:\Git Pull\PetManager\obj\Debug\PetManager.pdb
+D:\Git Pull\PetManager\bin\Debug\Guna.UI2.dll
+D:\Git Pull\PetManager\obj\Debug\PetManager.fMain.resources
+D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.CopyComplete

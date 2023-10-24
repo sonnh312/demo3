@@ -150,20 +150,12 @@ namespace PetManager
             fAdmin f = new fAdmin();
             f.ShowDialog();
         }
+
         private void cậpNhậtThôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FAccountInfo f = new FAccountInfo(loginAccount);
             f.ShowDialog();
         }
-
-        
-
-        // private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        //  {
-
-        // FLogin f = new FLogin();
-        //  this.Hide();
-        // }
 
         private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -179,15 +171,16 @@ namespace PetManager
         {
 
         }
+
         private void cácDịchVụChămSócToolStripMenuItem_Click(object sender, EventArgs e)
         {
             fTakeCarePet f = new fTakeCarePet();
             f.ShowDialog();
         }
 
-        private void lvBill_SelectedIndexChanged(object sender, EventArgs e)
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
 
         private void thànhViênToolStripMenuItem_Click(object sender, EventArgs e)
@@ -197,6 +190,13 @@ namespace PetManager
             f.ShowDialog();
 
         }
+
+        private void lvBill_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+       
         private void btnAdd_Click(object sender, EventArgs e)
         {
             PetList table = lvBill.Tag as PetList;
@@ -253,5 +253,6 @@ namespace PetManager
         }
         #endregion
 
+        
     }
 }

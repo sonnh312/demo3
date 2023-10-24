@@ -154,7 +154,7 @@ SELECT * FROM dbo.Account WHERE Username=N'hs' AND PassWord='1'
 DECLARE @i	INT = 0
 WHILE @i <=4
 BEGIN
-	INSERT dbo.PetList(IdPet,NamePet,Status) VALUES ('A01',N'A0'+ CAST (@i AS NVARCHAR(100)),0) 
+	INSERT dbo.PetList(IdPet,NamePet,Status) VALUES (@i,N'A0'+ CAST (@i AS NVARCHAR(100)),0) 
 SET @i = @i + 1
 END 
 
@@ -180,6 +180,25 @@ AS
 exec USP_GetPetList
 ----
 ----
+CREATE PROCEDURE USP_InsertPet
+@namepet NVARCHAR(100), @idpet INT, @price INT , @idpetcategory INT
+AS
+	BEGIN
+		INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (@idpet+1,@idpetcategory+1, N'Dog', N'Husky',2000)
+		
+	END
+--
+--
+CREATE PROCEDURE USP_UpdatePet
+@namepet NVARCHAR(100), @idpet INT, @price INT , @idpetcategory INT
+AS
+	BEGIN
+		INSERT INTO Pet (IdPet, IdPetCategory, CategoryPet, NamePet, Price) VALUES (@idpet+1,@idpetcategory+1, N'Dog', N'Husky',2000)
+		
+	END
+
+--
+--
 CREATE PROCEDURE USP_InsertBill
 @idpet INT, @i INT = 0
 AS
@@ -209,6 +228,24 @@ END
 	
 exec USP_InsertBillInfo @idbill , @idpet , @count 
 ----
+--
+CREATE TRIGGER UTG_DeleteBillInfo
+ON dbo.BillInfo FOR DELETE
+AS
+BEGIN
+	DECLARE @idbillinfo INT
+	DECLARE @idbill INT
+	SELECT @idbillinfo = IdBill,@idbill =deleted.IdBill FROM deleted
+
+	declare @idpetliste
+
+	SELECT @idbill = id FROM 
+END
+
+
+
+
+--
 ----
 CREATE PROC USP_UpdateAccount
 @username NVARCHAR(100),@displayname NVARCHAR(100),@password NVARCHAR(100),@newpassword NVARCHAR(100)

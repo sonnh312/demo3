@@ -32,16 +32,16 @@
             this.BtnOut = new System.Windows.Forms.Button();
             this.btnLogin = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.txtPass = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.txtUsername = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -50,16 +50,16 @@
             this.panel1.Controls.Add(this.btnLogin);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(40, 12);
+            this.panel1.Location = new System.Drawing.Point(12, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(394, 282);
+            this.panel1.Size = new System.Drawing.Size(312, 308);
             this.panel1.TabIndex = 0;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // BtnOut
             // 
             this.BtnOut.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnOut.Location = new System.Drawing.Point(148, 243);
+            this.BtnOut.Location = new System.Drawing.Point(110, 262);
             this.BtnOut.Name = "BtnOut";
             this.BtnOut.Size = new System.Drawing.Size(72, 24);
             this.BtnOut.TabIndex = 3;
@@ -70,7 +70,7 @@
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLogin.Location = new System.Drawing.Point(148, 214);
+            this.btnLogin.Location = new System.Drawing.Point(110, 233);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
@@ -81,10 +81,22 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.groupBox2);
-            this.panel3.Location = new System.Drawing.Point(52, 128);
+            this.panel3.Location = new System.Drawing.Point(14, 147);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(281, 80);
             this.panel3.TabIndex = 0;
+            // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.txtPass);
+            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBox2.Location = new System.Drawing.Point(19, 9);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(244, 53);
+            this.groupBox2.TabIndex = 4;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Mật Khẩu";
+            this.groupBox2.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
             // txtPass
             // 
@@ -99,19 +111,10 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.groupBox1);
-            this.panel2.Location = new System.Drawing.Point(52, 46);
+            this.panel2.Location = new System.Drawing.Point(14, 65);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(281, 76);
             this.panel2.TabIndex = 0;
-            // 
-            // txtUsername
-            // 
-            this.txtUsername.Location = new System.Drawing.Point(32, 23);
-            this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(177, 24);
-            this.txtUsername.TabIndex = 0;
-            this.txtUsername.Text = "hs";
-            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // groupBox1
             // 
@@ -125,23 +128,20 @@
             this.groupBox1.Text = "Tài Khoản";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
-            // groupBox2
+            // txtUsername
             // 
-            this.groupBox2.Controls.Add(this.txtPass);
-            this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(19, 9);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(244, 53);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Mật Khẩu";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox1_Enter);
+            this.txtUsername.Location = new System.Drawing.Point(32, 23);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(177, 24);
+            this.txtUsername.TabIndex = 0;
+            this.txtUsername.Text = "hs";
+            this.txtUsername.TextChanged += new System.EventHandler(this.txtUsername_TextChanged);
             // 
             // FLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 332);
+            this.ClientSize = new System.Drawing.Size(335, 332);
             this.Controls.Add(this.panel1);
             this.Name = "FLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -150,11 +150,11 @@
             this.Load += new System.EventHandler(this.FLogin_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
 
         }

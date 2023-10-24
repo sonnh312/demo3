@@ -67,20 +67,7 @@ namespace PetManager
         {
 
         }
-        // open f create acc
-        private void linkCreateAcc_Click(object sender, EventArgs e)
-        {
-            fCreateAccount f = new fCreateAccount();
-            f.ShowDialog();
-        }
-        //open f get pass
-        private void linkLabel1_Click(object sender, EventArgs e)
-        {
-            fChangePass f = new fChangePass();
-            f.ShowDialog();
-           
-        }
-
+ 
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
