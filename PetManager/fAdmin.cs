@@ -19,6 +19,7 @@ namespace PetManager
     {
 
         BindingSource petlist = new BindingSource();
+        BindingSource stafflist = new BindingSource();
         public fAdmin()
         {
             InitializeComponent();
@@ -27,7 +28,8 @@ namespace PetManager
             AddPetBinding();
             LoadCategoryIntoCb(cbPetCategory);
             dgvPetList.DataSource = petlist;//data khong bi mat ket noi khi su dung binding
-            
+            dgvPetList.DataSource = stafflist;
+
 
         }
         #region Method
@@ -45,7 +47,11 @@ namespace PetManager
             //List<QuestionType>
             //  list = 
         }
-
+        voud LoadListStaff()
+        {
+            List<Staff> list = new List<Pet>();
+            petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
+        }
         // list pet
         void LoadListPet()
         {
@@ -53,20 +59,21 @@ namespace PetManager
             List<Pet> list = new List<Pet>();
             petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
         }
+
         List<Pet> SeachPetByName(string name)
         {
             List<Pet> list = PetDAO.Instance.GetPetByPetName(name);
 
             return list;
         }
-
+        //binding 
         void AddPetBinding()
         {
             txtId.DataBindings.Add(new Binding("Text", petlist, "IdPetCategory", true, DataSourceUpdateMode.Never));
             txtNamepet.DataBindings.Add(new Binding("Text", petlist, "NamePet", true, DataSourceUpdateMode.Never));
             nmPrice.DataBindings.Add(new Binding("Value", petlist, "Price", true, DataSourceUpdateMode.Never));
         }
-         
+         //load category to cb
         void LoadCategoryIntoCb(ComboBox cb)
         {
             cb.DataSource = PetCategoryDAO.Instance.GetListPetCategory();
@@ -189,8 +196,12 @@ namespace PetManager
 
 
 
+
         #endregion
 
+        private void cbPrice_Click(object sender, EventArgs e)
+        {
 
+        }
     }
 }

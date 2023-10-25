@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnExit = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -46,13 +47,32 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.lblName = new System.Windows.Forms.Label();
-            this.btnExit = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.btnSaveInfo = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.txtAddress = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.txtPhone = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.txtNameStaff = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
+            this.panel7.SuspendLayout();
+            this.panel8.SuspendLayout();
+            this.panel9.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -65,10 +85,20 @@
             this.panel1.Controls.Add(this.panel5);
             this.panel1.Controls.Add(this.panel4);
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(163, 43);
+            this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(456, 340);
+            this.panel1.Size = new System.Drawing.Size(445, 333);
             this.panel1.TabIndex = 2;
+            // 
+            // btnExit
+            // 
+            this.btnExit.Location = new System.Drawing.Point(300, 287);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(90, 28);
+            this.btnExit.TabIndex = 2;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // btnSave
             // 
@@ -220,21 +250,149 @@
             this.lblName.TabIndex = 0;
             this.lblName.Text = "Username";
             // 
-            // btnExit
+            // panel7
             // 
-            this.btnExit.Location = new System.Drawing.Point(300, 287);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(90, 28);
-            this.btnExit.TabIndex = 2;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.UseVisualStyleBackColor = true;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.panel7.Controls.Add(this.btnSaveInfo);
+            this.panel7.Controls.Add(this.label1);
+            this.panel7.Controls.Add(this.panel11);
+            this.panel7.Controls.Add(this.panel8);
+            this.panel7.Controls.Add(this.panel9);
+            this.panel7.Controls.Add(this.panel10);
+            this.panel7.Location = new System.Drawing.Point(463, 12);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(448, 333);
+            this.panel7.TabIndex = 3;
+            // 
+            // btnSaveInfo
+            // 
+            this.btnSaveInfo.Location = new System.Drawing.Point(126, 246);
+            this.btnSaveInfo.Name = "btnSaveInfo";
+            this.btnSaveInfo.Size = new System.Drawing.Size(186, 41);
+            this.btnSaveInfo.TabIndex = 2;
+            this.btnSaveInfo.Text = "Lưu thay đổi";
+            this.btnSaveInfo.UseVisualStyleBackColor = true;
+            this.btnSaveInfo.Click += new System.EventHandler(this.btnSaveInfo_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(23, 14);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(130, 16);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Thông Tin Cá Nhân";
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.txtAddress);
+            this.panel8.Controls.Add(this.label2);
+            this.panel8.Location = new System.Drawing.Point(26, 143);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(394, 40);
+            this.panel8.TabIndex = 0;
+            // 
+            // txtAddress
+            // 
+            this.txtAddress.Location = new System.Drawing.Point(121, 10);
+            this.txtAddress.Name = "txtAddress";
+            this.txtAddress.Size = new System.Drawing.Size(208, 20);
+            this.txtAddress.TabIndex = 1;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(46, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(45, 15);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Dia chi";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.txtPhone);
+            this.panel9.Controls.Add(this.label3);
+            this.panel9.Location = new System.Drawing.Point(26, 97);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(394, 40);
+            this.panel9.TabIndex = 0;
+            // 
+            // txtPhone
+            // 
+            this.txtPhone.Location = new System.Drawing.Point(121, 10);
+            this.txtPhone.Name = "txtPhone";
+            this.txtPhone.Size = new System.Drawing.Size(208, 20);
+            this.txtPhone.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(30, 12);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(85, 15);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Số Điện Thoại";
+            // 
+            // panel10
+            // 
+            this.panel10.Controls.Add(this.txtNameStaff);
+            this.panel10.Controls.Add(this.label4);
+            this.panel10.Location = new System.Drawing.Point(26, 51);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(394, 40);
+            this.panel10.TabIndex = 0;
+            // 
+            // txtNameStaff
+            // 
+            this.txtNameStaff.Location = new System.Drawing.Point(121, 10);
+            this.txtNameStaff.Name = "txtNameStaff";
+            this.txtNameStaff.Size = new System.Drawing.Size(208, 20);
+            this.txtNameStaff.TabIndex = 1;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(46, 13);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(46, 15);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "Họ Tên";
+            // 
+            // dtpBirthday
+            // 
+            this.dtpBirthday.Location = new System.Drawing.Point(121, 10);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(200, 20);
+            this.dtpBirthday.TabIndex = 3;
+            // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dtpBirthday);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Location = new System.Drawing.Point(26, 189);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(394, 40);
+            this.panel11.TabIndex = 0;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Ngay Sinh";
             // 
             // fAccountProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(924, 366);
+            this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.Name = "fAccountProfile";
             this.Text = "AccountProfile";
@@ -250,6 +408,16 @@
             this.panel4.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel7.ResumeLayout(false);
+            this.panel7.PerformLayout();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -275,5 +443,20 @@
         private System.Windows.Forms.TextBox txtDisplayName;
         private System.Windows.Forms.TextBox txtReEnterPass;
         private System.Windows.Forms.Button btnExit;
+        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Button btnSaveInfo;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.TextBox txtAddress;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.TextBox txtPhone;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Panel panel10;
+        private System.Windows.Forms.TextBox txtNameStaff;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Panel panel11;
+        private System.Windows.Forms.DateTimePicker dtpBirthday;
+        private System.Windows.Forms.Label label5;
     }
 }

@@ -15,7 +15,7 @@ namespace PetManager.DAO
         public static AccountDAO Instance
         {
             get { if (instance == null) instance = new AccountDAO(); return AccountDAO.instance; }
-            private set { instance = value; }
+            private set { AccountDAO.instance = value; }
         }
         public AccountDAO() { }
 
@@ -32,8 +32,15 @@ namespace PetManager.DAO
             return result > 0;
         }
 
+        public bool UpdateInfo(int phone, string address, DateTime birthday)
+        { 
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_UpdateInfo @phone , @address , @birthday ", new object[] { phone, address, birthday });
+            return result > 0;
+        }
+
+
         // find account
-       public Account GetAccountByUserName(string username)
+        public Account GetAccountByUserName(string username)
         {
             DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Account WHERE Username =N'"+username+"'");
             foreach (DataRow item in data.Rows)

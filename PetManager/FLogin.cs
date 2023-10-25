@@ -33,7 +33,7 @@ namespace PetManager
             if(Login(username,passwork)==true )
             {
                Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
-               fPetManager f = new fPetManager(loginAccount);
+               fHomePage f = new fHomePage(loginAccount);
                this.Hide();
                f.ShowDialog();
                this.Show();

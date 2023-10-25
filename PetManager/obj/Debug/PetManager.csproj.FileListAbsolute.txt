@@ -50,3 +50,19 @@ D:\Git Pull\PetManager\obj\Debug\PetManager.pdb
 D:\Git Pull\PetManager\bin\Debug\Guna.UI2.dll
 D:\Git Pull\PetManager\obj\Debug\PetManager.fMain.resources
 D:\Git Pull\PetManager\obj\Debug\PetManager.csproj.CopyComplete
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.csprojAssemblyReference.cache
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fAccountProfile.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.FAccountInfo.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fAdmin.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fCheckOut.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fCreateAccount.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.FLogin.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fPet.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fHomePage.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fPay.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.fStaff.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.Properties.Resources.resources
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.csproj.GenerateResource.cache
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.csproj.CoreCompileInputs.cache
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.exe
+C:\Users\Administrator\Downloads\AppDesk-main\AppDesk-main\PetManager\obj\Debug\PetManager.pdb
