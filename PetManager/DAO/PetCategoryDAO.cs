@@ -12,12 +12,34 @@ namespace PetManager.DAO
     {
         private static PetCategoryDAO instance;
 
+        public static int TableWidth ;
+        public static int TableHeigh ;
+
+
         public static PetCategoryDAO Instance
         { get { if(instance==null) instance = new PetCategoryDAO();return PetCategoryDAO.instance; }
             private set { PetCategoryDAO.instance = value; }
         }
         private PetCategoryDAO() { }
         //get pet category
+
+
+
+       
+
+        public List<PetCategory> LoadPetList()
+        {
+            List<PetCategory> petlist = new List<PetCategory>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery(" SELECT COUNT(*) AS SoLuong, CategoryPet FROM PetCategory GROUP BY CategoryPet");
+            foreach (DataRow item in data.Rows)
+            {
+                PetCategory table = new PetCategory(item);
+                petlist.Add(table);
+            }
+            return petlist;
+        }
+
 
         public List<PetCategory> GetListPetCategory()
         {
@@ -32,6 +54,8 @@ namespace PetManager.DAO
 
             return lsCategory;
         }
+
+
         public PetCategory GetListPetCategoryById(int id)
         {
             PetCategory category = null;

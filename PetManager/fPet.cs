@@ -26,19 +26,14 @@ namespace PetManager
         {
 
             List<Pet> list = new List<Pet>();
-            petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
+            dgvPet.DataSource = PetDAO.Instance.LoadPetListToDesign();
         }
 
-        public List<Pet> SeachPetByName(string name)
-        {
-            List<Pet> list = PetDAO.Instance.GetPetByPetName(name);
-
-            return list;
-        }
+        
         private void btnSeach_Click(object sender, EventArgs e)
         {
            
-            petlist.DataSource = SeachPetByName(txtNamePet.Text);
+            petlist.DataSource = (txtNamePet.Text);
         }
 
     }

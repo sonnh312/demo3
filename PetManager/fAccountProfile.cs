@@ -14,24 +14,24 @@ namespace PetManager
 {
     public partial class fAccountProfile : Form
     {
-        public fAccountProfile(Account acc)
+        public fAccountProfile(Staff acc)
         {
             InitializeComponent();
             LoginAccount = acc;
             
         }
 
-        private Account loginAccount;
-        public Account LoginAccount { get => this.loginAccount; set { this.loginAccount = value; ChangeAccount(LoginAccount); } }
+        private Staff loginAccount;
+        public Staff LoginAccount { get => this.loginAccount; set { this.loginAccount = value; ChangeAccount(LoginAccount); } }
 
-        public void ChangeAccount(Account acc)
+        public void ChangeAccount(Staff acc)
         {
             txtUsername.Text = LoginAccount.Username;
             txtDisplayName.Text = LoginAccount.Displayname;
             txtNameStaff.Text = LoginAccount.Displayname;
-            txtPhone.Text = LoginAccount.Phone;
+            txtPhone.Text = LoginAccount.Phone.ToString();
             txtAddress.Text = LoginAccount.Address;
-            dtpBirthday.Text = LoginAccount.Birthday;
+            dtpBirthday.Value = LoginAccount.Birthday.Value;
 
         }
 
@@ -51,21 +51,21 @@ namespace PetManager
 
             if(!newpassword.Equals(reenterpassword))
             {
-                MessageBox.Show("Vui long nhap lai mat khau moi");
+                MessageBox.Show("Vui lòng nhập 2 mật khẩu giống nhau");
             }
             // event bac 2
             else
             {
-                if(AccountDAO.Instance.UpdateAccount(username,displayname,password,newpassword))
+                if(StaffDAO.Instance.UpdateAccount(username,displayname,password,newpassword))
                 {
-                    MessageBox.Show("Cap nhat thanh cong");
+                    MessageBox.Show("Cập nhật thành công");
                     if(updateAccount != null)
                     {
-                        updateAccount(this, new AccountEvent(AccountDAO.Instance.GetAccountByUserName(username)));
+                        updateAccount(this, new AccountEvent(StaffDAO.Instance.GetAccountByUserName(username)));
                     }
                 }
                 else
-                    MessageBox.Show("Vui long nhap dung mat khau");
+                    MessageBox.Show("Vui lòng nhập đúng mật khẩu");
             }
         }
 
@@ -78,11 +78,11 @@ namespace PetManager
 
         public class AccountEvent:EventArgs
         {
-            private Account acc;
+            private Staff acc;
 
-            public Account Acc { get => acc; set => acc = value; }
+            public Staff Acc { get => acc; set => acc = value; }
 
-            public AccountEvent(Account acc)
+            public AccountEvent(Staff acc)
             {
                 this.Acc = acc;
 
@@ -96,18 +96,18 @@ namespace PetManager
 
         private void btnSaveInfo_Click(object sender, EventArgs e)
         {
-
+            UpdateInfo();
         }
 
 
         
         public void UpdateInfo()
         {
-            int phone = txtPhone.Text;
+            string phone = txtPhone.Text;
             string address = txtAddress.Text;
-            DateTime birthday = dtpBirthday.Text;
+            DateTime birthday = dtpBirthday.Value;
 
-            if (AccountDAO.Instance.UpdateInfo(phone, address, birthday))
+            if (StaffDAO.Instance.UpdateInfo(phone, address, birthday))
             {
                 MessageBox.Show("Cap nhat thanh cong");
             }

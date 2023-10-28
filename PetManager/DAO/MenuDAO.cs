@@ -21,10 +21,10 @@ namespace PetManager.DAO
         }
 
         private MenuDAO() { }
-        public List<Menu> GetListMenuByPetInstance(int id)
+        public List<Menu> GetListBillByName(string name)
         {
             List<Menu> listMenu = new List<Menu>();
-            string query = "SELECT p.NamePet, bi.count,p.PRICE AS totalPrice FROM BillInfo AS bi, Bill AS b,Pet AS p WHERE bi.IdBill = b.IdBill AND bi.IdPet = p.IdPet AND b.Status=N'Unpaid' AND b.IdPet = " + id;
+            string query = "SELECT b.IdBill, p.NamePet, b.count, p.Price, p.Price*b.count AS totalPrice FROM dbo.Bill AS b,dbo.Pet AS p WHERE b.IdPet = p.IdPet AND b.Status = N'Unpaid' AND p.PetName=" + name;
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach(DataRow item in data.Rows)
             {
@@ -33,6 +33,31 @@ namespace PetManager.DAO
             }
                 return listMenu;
         }
-        
+        public List<Menu> LoadBill()
+        {
+            List<Menu> listMenu = new List<Menu>();
+            string query = "SELECT * FROM Bill";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Menu menu = new Menu(item);
+                listMenu.Add(menu);
+            }
+            return listMenu;
+        }
+
+        public List<Menu> GetListBill(int id)
+        {
+            List<Menu> listMenu = new List<Menu>();
+            string query = "SELECT p.NamePet, bi.count,p.PRICE AS totalPrice FROM BillInfo AS bi, Bill AS b,Pet AS p WHERE bi.IdBill = b.IdBill AND bi.IdPet = p.IdPet AND b.Status=N'Unpaid' AND b.IdPet = " + id;
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Menu menu = new Menu(item);
+                listMenu.Add(menu);
+            }
+            return listMenu;
+        }
+
     }
 }

@@ -53,14 +53,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\CusPayDAO.cs" />
     <Compile Include="DAO\CustomerDAO.cs" />
     <Compile Include="DAO\MenuDAO.cs" />
-    <Compile Include="DAO\PetListDAO.cs" />
+    <Compile Include="DAO\PetCateCusDAO.cs" />
+    <Compile Include="DAO\PetCusDAO.cs" />
     <Compile Include="DAO\PetServiceDAO.cs" />
+    <Compile Include="DTO\CusPay.cs" />
     <Compile Include="DTO\Customer.cs" />
     <Compile Include="DTO\Menu.cs" />
     <Compile Include="DTO\Pet.cs" />
-    <Compile Include="DTO\PetList.cs" />
+    <Compile Include="DTO\PetCateCus.cs" />
+    <Compile Include="DTO\PetCus.cs" />
     <Compile Include="DTO\PetService.cs" />
     <Compile Include="fAccountProfile.cs">
       <SubType>Form</SubType>
@@ -68,22 +72,14 @@
     <Compile Include="fAccountProfile.Designer.cs">
       <DependentUpon>fAccountProfile.cs</DependentUpon>
     </Compile>
-    <Compile Include="DAO\AccountDAO.cs" />
+    <Compile Include="DAO\StaffDAO.cs" />
     <Compile Include="DAO\BillDAO.cs" />
-    <Compile Include="DAO\BillInfoDAO.cs" />
     <Compile Include="DAO\PetCategoryDAO.cs" />
     <Compile Include="DAO\DataProvider.cs" />
     <Compile Include="DAO\PetDAO.cs" />
-    <Compile Include="DTO\Account.cs" />
+    <Compile Include="DTO\Staff.cs" />
     <Compile Include="DTO\Bill.cs" />
-    <Compile Include="DTO\BillInfo.cs" />
     <Compile Include="DTO\PetCategory.cs" />
-    <Compile Include="fCheckOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCheckOut.Designer.cs">
-      <DependentUpon>fCheckOut.cs</DependentUpon>
-    </Compile>
     <Compile Include="FLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,12 +91,6 @@
     </Compile>
     <Compile Include="fAdmin.Designer.cs">
       <DependentUpon>fAdmin.cs</DependentUpon>
-    </Compile>
-    <Compile Include="fCreateAccount.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="fCreateAccount.Designer.cs">
-      <DependentUpon>fCreateAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="fPet.cs">
       <SubType>Form</SubType>
@@ -120,11 +110,17 @@
     <Compile Include="fPay.Designer.cs">
       <DependentUpon>fPay.cs</DependentUpon>
     </Compile>
-    <Compile Include="fTakeCarePet.cs">
+    <Compile Include="fPetService.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fTakeCarePet.Designer.cs">
-      <DependentUpon>fTakeCarePet.cs</DependentUpon>
+    <Compile Include="fPetService.Designer.cs">
+      <DependentUpon>fPetService.cs</DependentUpon>
+    </Compile>
+    <Compile Include="fProduce.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="fProduce.Designer.cs">
+      <DependentUpon>fProduce.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -133,12 +129,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fAdmin.resx">
       <DependentUpon>fAdmin.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fCheckOut.resx">
-      <DependentUpon>fCheckOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="fCreateAccount.resx">
-      <DependentUpon>fCreateAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FLogin.resx">
       <DependentUpon>FLogin.cs</DependentUpon>
@@ -151,6 +141,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="fPay.resx">
       <DependentUpon>fPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fPetService.resx">
+      <DependentUpon>fPetService.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="fProduce.resx">
+      <DependentUpon>fProduce.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -178,6 +174,54 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\preview.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pngegg.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funny-dog-cute-cat-best-260nw-1241846527.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\35844774.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\placeholder.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\dog.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\358447741.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\2021-09-26.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-10-27 075921.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\groomer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\png-clipart-scribblenauts-unlimited-dog-pet-shop-store-animals-retail-thumbnail.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-10-27 080747.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Screenshot 2023-10-27 080715.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funny-dog-cute-cat-best-260nw-12418465271.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\collar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\animals.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

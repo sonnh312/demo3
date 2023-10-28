@@ -9,8 +9,16 @@ namespace PetManager.DTO
 {
     public class Menu
     {
-        public Menu(string petname, int count,int price, float totalprice)
+        private int idbill;
+        private string petname;
+        private int count;
+        private int price;
+        private float totalprice;
+
+
+        public Menu(int idbill,string petname, int count,int price, float totalprice)
         {
+            this.Idbill = idbill;
             this.Petname = petname;
             this.Count = count;
             this.Price = price;
@@ -19,21 +27,20 @@ namespace PetManager.DTO
 
         public Menu(DataRow row)
         {
+            this.Idbill =(int)row["IdBill"];
             this.Petname = row["NamePet"].ToString();
             this.Count = (int)row ["Count"];
-           // this.Price = (int)row["Price"];
-            this.Totalprice = (float)Convert.ToDouble((row["totalPrice"].ToString()));
+            this.Price = (int)row["Price"];
+            
         }
 
 
-        private string petname;
-        private int count;
-        private int price;
-        private float totalprice;
+       
 
         public string Petname { get => petname; set => petname = value; }
         public int Count { get => count; set => count = value; }
         public int Price { get => price; set => price = value; }
         public float Totalprice { get => totalprice; set => totalprice = value; }
+        public int Idbill { get => idbill; set => idbill = value; }
     }
 }

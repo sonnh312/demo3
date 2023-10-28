@@ -19,6 +19,22 @@ namespace PetManager.DAO
 
 
         private PetDAO() { }
+
+        public List<Menu> LoadPetToBill()
+        {
+            List<Menu> petlist = new List<Menu>();
+
+            DataTable data = DataProvider.Instance.ExecuteQuery("exec USP_GetPetList");
+            foreach (DataRow item in data.Rows)
+            {
+                Menu table = new Menu(item);
+                petlist.Add(table);
+            }
+            return petlist;
+        }
+
+
+
         //load pet
         public List<Pet> LoadPetListToDesign()
         {
@@ -33,56 +49,58 @@ namespace PetManager.DAO
             }
             return list;
         }
-        public List<Pet> GetPetByPetName(string name)
+
+        
+
+        public Pet GetPetByName(string name)
         {
-            List<Pet> list = new List<Pet>();
-
-            string query = string.Format("SELECT * FROM dbo.Pet WHERE NamePet like N'%{0}%'", name) ;
+            string query = string.Format("SELECT * FROM dbo.Pet WHERE NamePet like N'%{0}%'", name);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
-            foreach (DataRow item in data.Rows)
-            {
-                Pet pet = new Pet(item);
-                list.Add(pet);
-            }
-            return list;
-        }
 
+            if (data.Rows.Count > 0)
+            {
+                DataRow item = data.Rows[0]; // Assuming only one matching row is expected
+                return new Pet(item);
+            }
+
+            return null; // Return null if no matching pet is found
+        }
 
         // get pet by idcategory 
 
-        public List<Pet> GetPetByCategoryById(int id)
+        
+
+        public List<Pet> GetPetLoadToBill()
         {
             List<Pet> petlist = new List<Pet>();
-
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT *  FROM dbo.Pet WHERE IdPetCategory = " + id);
+            string query = "SELECT NamePet, Price FROM Pet";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
             foreach (DataRow item in data.Rows)
             {
                 Pet pet = new Pet(item);
                 petlist.Add(pet);
             }
             return petlist;
-        }   
+        }
 
 
-        public bool InsertPet(string namepet,int idpetcategory, int price)
+        public bool InsertPet(int idpet, int idpetcategory,string categorypet, string namepet,int count, int price)
         {
-            string query = string.Format("INSERT INTO Pet (NamePet , IdPetCategory , PRICE)VALUES(N'{0}' , {1} , '{2}')", namepet, idpetcategory, price);
+            string query = string.Format("INSERT INTO Pet (IdPet , IdPetCategory , NamePet, CategoryPet , Price ,Count)VALUES({0} , {1}, N'{2}' , N'{3}' , {4} , {5})", idpet , idpetcategory, namepet, categorypet , price,count);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0; 
         }
 
-        public bool UpdatePet(int idpet,string namepet, int idpetcategory, int price)
+        public bool UpdatePet(int idpet,int idpetcategory, string namepet, string categorypet, int count, int price)
         {
-            string query = string.Format("UPDATE Pet SET NamePet = N'{0}', IdPetCategory = {1} , PRICE '{2}' WHERE IdPet = {3})",namepet, idpetcategory, price,idpet);
+            string query = string.Format("UPDATE Pet SET IdPetCategory = {0}, NamePet = N'{1}' ,CategoryPet = N'{2}', Price = {3}, Count = {4} WHERE IdPet = {5} ", idpetcategory, namepet, categorypet, price, count,idpet );
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }
 
-        public bool DeletePet(int idPet)
+        public bool DeletePet(string namepet)
         {
-            BillInfoDAO.Instance.DeleteBillInfoById(idPet);
-
-            string query = string.Format("DELETE WHERE IdPet = {0})",idPet);
+            string query = string.Format("DELETE Pet WHERE NamePet = N'{0}'",namepet);
             int result = DataProvider.Instance.ExecuteNonQuery(query);
             return result > 0;
         }

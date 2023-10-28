@@ -32,7 +32,7 @@ namespace PetManager
             string passwork = txtPass.Text;
             if(Login(username,passwork)==true )
             {
-               Account loginAccount = AccountDAO.Instance.GetAccountByUserName(username);
+               Staff loginAccount = StaffDAO.Instance.GetAccountByUserName(username);
                fHomePage f = new fHomePage(loginAccount);
                this.Hide();
                f.ShowDialog();
@@ -47,7 +47,7 @@ namespace PetManager
         //check login
         bool Login(string username,string password)
        {
-            return AccountDAO.Instance.Login(username,password);
+            return StaffDAO.Instance.Login(username,password);
        }
         
         //cancel

@@ -50,6 +50,9 @@
             this.panel7 = new System.Windows.Forms.Panel();
             this.btnSaveInfo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.panel11 = new System.Windows.Forms.Panel();
+            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
+            this.label5 = new System.Windows.Forms.Label();
             this.panel8 = new System.Windows.Forms.Panel();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -59,9 +62,6 @@
             this.panel10 = new System.Windows.Forms.Panel();
             this.txtNameStaff = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.dtpBirthday = new System.Windows.Forms.DateTimePicker();
-            this.panel11 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel6.SuspendLayout();
@@ -69,10 +69,10 @@
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel7.SuspendLayout();
+            this.panel11.SuspendLayout();
             this.panel8.SuspendLayout();
             this.panel9.SuspendLayout();
             this.panel10.SuspendLayout();
-            this.panel11.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -283,6 +283,32 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Thông Tin Cá Nhân";
             // 
+            // panel11
+            // 
+            this.panel11.Controls.Add(this.dtpBirthday);
+            this.panel11.Controls.Add(this.label5);
+            this.panel11.Location = new System.Drawing.Point(26, 189);
+            this.panel11.Name = "panel11";
+            this.panel11.Size = new System.Drawing.Size(394, 40);
+            this.panel11.TabIndex = 0;
+            // 
+            // dtpBirthday
+            // 
+            this.dtpBirthday.Location = new System.Drawing.Point(121, 10);
+            this.dtpBirthday.Name = "dtpBirthday";
+            this.dtpBirthday.Size = new System.Drawing.Size(200, 20);
+            this.dtpBirthday.TabIndex = 3;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(46, 13);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(63, 15);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Ngay Sinh";
+            // 
             // panel8
             // 
             this.panel8.Controls.Add(this.txtAddress);
@@ -346,6 +372,7 @@
             // 
             // txtNameStaff
             // 
+            this.txtNameStaff.Enabled = false;
             this.txtNameStaff.Location = new System.Drawing.Point(121, 10);
             this.txtNameStaff.Name = "txtNameStaff";
             this.txtNameStaff.Size = new System.Drawing.Size(208, 20);
@@ -361,37 +388,11 @@
             this.label4.TabIndex = 0;
             this.label4.Text = "Họ Tên";
             // 
-            // dtpBirthday
-            // 
-            this.dtpBirthday.Location = new System.Drawing.Point(121, 10);
-            this.dtpBirthday.Name = "dtpBirthday";
-            this.dtpBirthday.Size = new System.Drawing.Size(200, 20);
-            this.dtpBirthday.TabIndex = 3;
-            // 
-            // panel11
-            // 
-            this.panel11.Controls.Add(this.dtpBirthday);
-            this.panel11.Controls.Add(this.label5);
-            this.panel11.Location = new System.Drawing.Point(26, 189);
-            this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(394, 40);
-            this.panel11.TabIndex = 0;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(46, 13);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(63, 15);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Ngay Sinh";
-            // 
             // fAccountProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(924, 366);
+            this.ClientSize = new System.Drawing.Size(924, 353);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.Name = "fAccountProfile";
@@ -410,14 +411,14 @@
             this.panel2.PerformLayout();
             this.panel7.ResumeLayout(false);
             this.panel7.PerformLayout();
+            this.panel11.ResumeLayout(false);
+            this.panel11.PerformLayout();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
             this.panel10.ResumeLayout(false);
             this.panel10.PerformLayout();
-            this.panel11.ResumeLayout(false);
-            this.panel11.PerformLayout();
             this.ResumeLayout(false);
 
         }

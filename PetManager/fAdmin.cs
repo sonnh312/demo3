@@ -20,178 +20,273 @@ namespace PetManager
 
         BindingSource petlist = new BindingSource();
         BindingSource stafflist = new BindingSource();
+        BindingSource petservice = new BindingSource();
         public fAdmin()
         {
             InitializeComponent();
-            LoadListAccount();
+            LoadListStaff();
             LoadListPet();
-            AddPetBinding();
-            LoadCategoryIntoCb(cbPetCategory);
-            dgvPetList.DataSource = petlist;//data khong bi mat ket noi khi su dung binding
-            dgvPetList.DataSource = stafflist;
+            AddBinding();
+            AddBindingService();
+            LoadPetService();
+            LoadBill();
+            dgvPetList.DataSource = petlist;
+            dgvStaff.DataSource = stafflist;
+            dgvPetService.DataSource = petservice;
+
 
 
         }
         #region Method
+        
 
+
+
+
+        void LoadBill()
+        {
+            
+            dgvRevenue.DataSource = BillDAO.Instance.LoadBill();
+        }
+
+        void AddBindingService()
+        {
+            txtIdPetService.DataBindings.Add(new Binding("Text", petservice, "IdService", true, DataSourceUpdateMode.Never));
+            txtNameService.DataBindings.Add(new Binding("Text", petservice, "NameService", true, DataSourceUpdateMode.Never));
+            nmPriceService.DataBindings.Add(new Binding("Value", petservice , "Price", true, DataSourceUpdateMode.Never));
+
+
+        }
+
+
+        void AddBindingStaff()
+        {
+            txtNameStaff.DataBindings.Add(new Binding("Text", stafflist, "Displayname", true, DataSourceUpdateMode.Never));
+            txtPhone.DataBindings.Add(new Binding("Text", stafflist, "Phone", true, DataSourceUpdateMode.Never));
+            txtAddress.DataBindings.Add(new Binding("Text", stafflist, "Address", true, DataSourceUpdateMode.Never));
+            txtAccStaff.DataBindings.Add(new Binding("Text", stafflist, "Username", true, DataSourceUpdateMode.Never));
+            txtPassStaff.DataBindings.Add(new Binding("Text", stafflist, "Password", true, DataSourceUpdateMode.Never));
+            
+
+        }
+
+        void LoadPetService()
+        {
+            List<PetService> list = new List<PetService>();
+            petservice.DataSource = PetServiceDAO.Instance.LoadPetService();
+
+        }
         // account
-        void LoadListAccount()
+        void SeachStaffByUsername()
         {
             string query = "EXEC USP_GetAccountByUserName @username";
-            dgvLoadAccount.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] {"hs"});
+            stafflist.DataSource = DataProvider.Instance.ExecuteQuery(query,new object[] {"hs"});
         }
-        
-        void LoadQuestionType()
+
+        void LoadListStaff()
         {
-            // tao list do du lieu vao chinh display member and value member
-            //List<QuestionType>
-            //  list = 
-        }
-        voud LoadListStaff()
-        {
-            List<Staff> list = new List<Pet>();
-            petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
+            List<Staff> list = new List<Staff>();
+            stafflist.DataSource = StaffDAO.Instance.LoadStaff();
         }
         // list pet
         void LoadListPet()
         {
-
             List<Pet> list = new List<Pet>();
             petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
         }
 
-        List<Pet> SeachPetByName(string name)
-        {
-            List<Pet> list = PetDAO.Instance.GetPetByPetName(name);
-
-            return list;
-        }
+        
         //binding 
-        void AddPetBinding()
+        void AddBinding()
         {
-            txtId.DataBindings.Add(new Binding("Text", petlist, "IdPetCategory", true, DataSourceUpdateMode.Never));
+            txtIdPet.DataBindings.Add(new Binding("Text", petlist, "IdPet", true, DataSourceUpdateMode.Never));
+            txtIdCategory.DataBindings.Add(new Binding("Text", petlist, "IdPetCategory", true, DataSourceUpdateMode.Never));
             txtNamepet.DataBindings.Add(new Binding("Text", petlist, "NamePet", true, DataSourceUpdateMode.Never));
+            txtCategoryPet.DataBindings.Add(new Binding("Text", petlist, "CategoryPet", true, DataSourceUpdateMode.Never));
+            txtCount.DataBindings.Add(new Binding("Text", petlist, "Count", true, DataSourceUpdateMode.Never));
             nmPrice.DataBindings.Add(new Binding("Value", petlist, "Price", true, DataSourceUpdateMode.Never));
+
         }
-         //load category to cb
-        void LoadCategoryIntoCb(ComboBox cb)
+        
+        /// <summary>
+        /// PetEdit
+        /// </summary>
+        /// <param name="idpet"></param>
+        /// <param name="idpetcategory"></param>
+        /// <param name="namepet"></param>
+        /// <param name="categorypet"></param>
+        /// <param name="count"></param>
+        /// <param name="price"></param>
+        void AddPet(int idpet, int idpetcategory, string namepet,string categorypet, int count, int price)
         {
-            cb.DataSource = PetCategoryDAO.Instance.GetListPetCategory();
-            cb.DisplayMember = "CategoryPet";
+            if(PetDAO.Instance.InsertPet(idpet, idpetcategory, categorypet,  namepet,  count,  price))
+            {
+                MessageBox.Show("Them Thu cung thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("them that bai");
+            }
+            LoadListPet();
         }
+
+        void UpdatePet(int idpet,int idpetcategory, string namepet,string categorypet, int count, int price)
+        {
+            if (PetDAO.Instance.UpdatePet(idpet, idpetcategory,categorypet, namepet, count, price))
+            {
+                MessageBox.Show("Sua thu cung thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("sua that bai");
+            }
+            LoadListPet();
+        }
+
+        void DeletePet( string namepet)
+        {
+            if (PetDAO.Instance.DeletePet(namepet))
+            {
+                MessageBox.Show("Xoa thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("xoa that bai");
+            }
+            LoadListPet();
+        }
+        /// <summary>
+        /// ServiceEdit
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        void AddSer(int idservice, string nameservice, int price)
+        {
+            if (PetServiceDAO.Instance.InsertService( idservice,  nameservice,  price))
+            {
+                MessageBox.Show("Them Thu cung thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("them that bai");
+            }
+            LoadPetService();
+        }
+
+        void UpSer(int idservice, string nameservice, int price)
+        {
+            if (PetServiceDAO.Instance.UpdateService( idservice,  nameservice,  price))
+            {
+                MessageBox.Show("Sua thu cung thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("sua that bai");
+            }
+            LoadPetService();
+        }
+
+        void DelSer(int idservice)
+        {
+            if (PetServiceDAO.Instance.DeleteService(idservice))
+            {
+                MessageBox.Show("Xoa thanh cong");
+            }
+            else
+            {
+                MessageBox.Show("xoa that bai");
+            }
+            LoadPetService();
+        }
+
+
+
 
         #endregion
 
         #region Event
 
-        private event EventHandler insertPet;
-        public event EventHandler InsertPet
+        private void btnSeach_Click_1(object sender, EventArgs e)
         {
-            add { insertPet += value; }
-            remove { insertPet -= value; }
-        }
-        private event EventHandler deletePet;
-        public event EventHandler DeletePet
-        {
-            add { deletePet += value; }
-            remove { DeletePet -= value; }
+            
         }
 
-        private event EventHandler updatePet;
-        public event EventHandler UpdatePet
-        {
-            add { updatePet += value; }
-            remove { UpdatePet -= value; }
-        }
-
-
-        //load pet to add,del..
-        void btnSelect_Click(object sender, EventArgs e)
-        {
-            LoadListPet();
-        }
         private void btnAdd_Click(object sender, EventArgs e)
         {
+            
+            int idpet = Int32.Parse(txtIdPet.Text);
+            int idpetcategory = Int32.Parse(txtIdCategory.Text);
+            string namepet = txtNamepet.Text;
+            string categorypet = txtCategoryPet.Text;
+            int count = Int32.Parse(txtCount.Text);
+            int price = (int) nmPrice.Value;
 
-
-            string name = txtNamepet.Text;
-            int idcategory = (cbPetCategory.SelectedItem as PetCategory).Idpetcategory;
-            int price = (int)nmPrice.Value;
-            if(PetDAO.Instance.InsertPet(name, idcategory, price))
-            {
-                MessageBox.Show("Them thanh cong");
-                LoadListPet();
-                if (insertPet != null)
-                insertPet(this, new EventArgs());
-
-            }
-            else
-            {
-                MessageBox.Show("Loi them lai");
-            }
-
-        }
-
-        private void btnDel_Click(object sender, EventArgs e)
-        {
-            int id = Convert.ToInt32(txtId.Text);
-
-            if (PetDAO.Instance.DeletePet(id))
-            {
-                MessageBox.Show("Xoa thanh cong");
-                LoadListPet();
-                if (deletePet != null)
-                    deletePet(this, new EventArgs());
-            }
-            else
-            {
-                MessageBox.Show("Xoa that bai ");
-            }
-
+            AddPet(idpet, idpetcategory,categorypet, namepet, count, price);
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string name = txtNamepet.Text;
-            int idcategory = (cbPetCategory.SelectedItem as PetCategory).Idpetcategory;
+            int idpet = Int32.Parse(txtIdPet.Text);
+            int idpetcategory = Int32.Parse(txtIdCategory.Text);
+            string namepet = txtNamepet.Text;
+            string categorypet = txtCategoryPet.Text;
+            int count = Int32.Parse(txtCount.Text);
             int price = (int)nmPrice.Value;
-            int idpet = Convert.ToInt32(txtId);
-            
-            if (PetDAO.Instance.UpdatePet(idpet,name, idcategory, price))
-            {
-                MessageBox.Show("Sua thanh cong");
-                LoadListPet();
-                if (updatePet != null)
-                    updatePet(this, new EventArgs());
-            }
-            else
-            {
-                MessageBox.Show("Loi khi sua lai");
-            }
+
+            UpdatePet( idpet,idpetcategory, namepet, categorypet, count, price);
         }
 
-        private void txtNamepet_TextChanged(object sender, EventArgs e)
+        private void btnDel_Click_1(object sender, EventArgs e)
         {
-            int id = (int)dgvPetList.SelectedCells[0].OwningRow.Cells["IdPetCategory"].Value;
-            PetCategory category = PetCategoryDAO.Instance.GetListPetCategoryById(id);
-            cbPetCategory.SelectedItem = category;
-            int index = -1;
-            int i = 0;
-            foreach(PetCategory item in cbPetCategory.Items)
-            {
-                if(item.Idpetcategory==category.Idpetcategory)
-                {
-                    index = i;
-                    break;
-                }
-                i++;
-            }
-            cbPetCategory.SelectedIndex = index;
+            string namepet = txtNamepet.Text;
+            DeletePet(namepet);
         }
+
+        private void btnAddSer_Click(object sender, EventArgs e)
+        {
+            int idser = Int32.Parse(txtIdPetService.Text);
+            
+            string name = txtNameService.Text;
+            
+            int price = (int)nmPriceService.Value;
+            AddSer(idser, name, price);
+        }
+
+        private void btnDelSer_Click(object sender, EventArgs e)
+        {
+            int idser = Int32.Parse(txtIdPetService.Text);
+            DelSer(idser);
+
+        }
+
+        private void btnUpdateSer_Click(object sender, EventArgs e)
+        {
+            int idser = Int32.Parse(txtIdPetService.Text);
+
+            string name = txtNameService.Text;
+
+            int price = (int)nmPriceService.Value;
+            UpSer(idser, name, price);
+        }
+
+
+
+        void btnSelect_Click(object sender, EventArgs e)
+        {
+            LoadListPet();
+        }
+
+        private void btnDel_Click(object sender, EventArgs e)
+        {
+            
+
+        }
+
+        
 
         private void btnSeach_Click(object sender, EventArgs e)
         {
-            petlist.DataSource = SeachPetByName(txtNamepet.Text);
+            
         }
 
 
@@ -203,5 +298,22 @@ namespace PetManager
         {
 
         }
+
+        private void guna2Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtIdPetService_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

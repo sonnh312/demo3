@@ -28,55 +28,70 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpDoanhThu = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvRevenue = new Guna.UI2.WinForms.Guna2DataGridView();
             this.cbCollectionType = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoad = new System.Windows.Forms.Button();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.cbPrice = new System.Windows.Forms.TabPage();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dgvPetList = new System.Windows.Forms.DataGridView();
-            this.txtSeach = new System.Windows.Forms.TextBox();
+            this.dgvPetList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtSeachPet = new System.Windows.Forms.TextBox();
             this.btnSeach = new System.Windows.Forms.Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.txtNamepet = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
-            this.cbPetCategory = new System.Windows.Forms.ComboBox();
             this.btnDel = new System.Windows.Forms.Button();
             this.nmPrice = new System.Windows.Forms.NumericUpDown();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtCategoryPet = new System.Windows.Forms.TextBox();
+            this.txtCount = new System.Windows.Forms.TextBox();
+            this.txtIdPet = new System.Windows.Forms.TextBox();
+            this.So = new System.Windows.Forms.Label();
+            this.txtIdCategory = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvPetService = new Guna.UI2.WinForms.Guna2DataGridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.button5 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.btnAddSer = new System.Windows.Forms.Button();
+            this.btnDelSer = new System.Windows.Forms.Button();
+            this.nmPriceService = new System.Windows.Forms.NumericUpDown();
+            this.btnUpdateSer = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtNameService = new System.Windows.Forms.TextBox();
+            this.txtIdPetService = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dgvStaff = new System.Windows.Forms.DataGridView();
+            this.dgvStaff = new Guna.UI2.WinForms.Guna2DataGridView();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
+            this.btnUpdateStaff = new System.Windows.Forms.Button();
+            this.btnAddStaff = new System.Windows.Forms.Button();
+            this.btnDelStaff = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPhone = new System.Windows.Forms.TextBox();
             this.txtPassStaff = new System.Windows.Forms.TextBox();
@@ -90,7 +105,7 @@
             this.panel1.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.tpDoanhThu.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).BeginInit();
             this.cbPrice.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
@@ -98,9 +113,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nmPrice)).BeginInit();
             this.tabPage4.SuspendLayout();
             this.guna2Panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetService)).BeginInit();
             this.guna2Panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmPriceService)).BeginInit();
             this.tabPage5.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).BeginInit();
@@ -112,7 +127,7 @@
             this.panel1.Controls.Add(this.tabControl1);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 455);
+            this.panel1.Size = new System.Drawing.Size(637, 407);
             this.panel1.TabIndex = 0;
             // 
             // tabControl1
@@ -129,9 +144,9 @@
             // 
             // tpDoanhThu
             // 
-            this.tpDoanhThu.Controls.Add(this.dataGridView1);
+            this.tpDoanhThu.Controls.Add(this.dgvRevenue);
             this.tpDoanhThu.Controls.Add(this.cbCollectionType);
-            this.tpDoanhThu.Controls.Add(this.button1);
+            this.tpDoanhThu.Controls.Add(this.btnLoad);
             this.tpDoanhThu.Controls.Add(this.dateTimePicker2);
             this.tpDoanhThu.Controls.Add(this.dateTimePicker1);
             this.tpDoanhThu.Location = new System.Drawing.Point(4, 22);
@@ -142,13 +157,55 @@
             this.tpDoanhThu.Text = "Doanh Thu";
             this.tpDoanhThu.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvRevenue
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 76);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(561, 274);
-            this.dataGridView1.TabIndex = 3;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvRevenue.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvRevenue.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvRevenue.ColumnHeadersHeight = 4;
+            this.dgvRevenue.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvRevenue.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvRevenue.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRevenue.Location = new System.Drawing.Point(23, 86);
+            this.dgvRevenue.Name = "dgvRevenue";
+            this.dgvRevenue.RowHeadersVisible = false;
+            this.dgvRevenue.Size = new System.Drawing.Size(561, 264);
+            this.dgvRevenue.TabIndex = 3;
+            this.dgvRevenue.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRevenue.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvRevenue.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvRevenue.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvRevenue.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvRevenue.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRevenue.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRevenue.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvRevenue.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvRevenue.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvRevenue.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvRevenue.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvRevenue.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvRevenue.ThemeStyle.ReadOnly = false;
+            this.dgvRevenue.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvRevenue.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvRevenue.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvRevenue.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvRevenue.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvRevenue.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvRevenue.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // cbCollectionType
             // 
@@ -158,15 +215,15 @@
             this.cbCollectionType.Size = new System.Drawing.Size(260, 21);
             this.cbCollectionType.TabIndex = 2;
             // 
-            // button1
+            // btnLoad
             // 
-            this.button1.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(264, 13);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLoad.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoad.Location = new System.Drawing.Point(264, 13);
+            this.btnLoad.Name = "btnLoad";
+            this.btnLoad.Size = new System.Drawing.Size(75, 23);
+            this.btnLoad.TabIndex = 1;
+            this.btnLoad.Text = "Thống kê";
+            this.btnLoad.UseVisualStyleBackColor = true;
             // 
             // dateTimePicker2
             // 
@@ -193,33 +250,74 @@
             this.cbPrice.TabIndex = 1;
             this.cbPrice.Text = "Thú Cưng";
             this.cbPrice.UseVisualStyleBackColor = true;
-            this.cbPrice.Click += new System.EventHandler(this.cbPrice_Click);
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.dgvPetList);
-            this.guna2Panel2.Controls.Add(this.txtSeach);
+            this.guna2Panel2.Controls.Add(this.txtSeachPet);
             this.guna2Panel2.Controls.Add(this.btnSeach);
-            this.guna2Panel2.Location = new System.Drawing.Point(16, 160);
+            this.guna2Panel2.Location = new System.Drawing.Point(16, 144);
             this.guna2Panel2.Name = "guna2Panel2";
-            this.guna2Panel2.Size = new System.Drawing.Size(577, 181);
+            this.guna2Panel2.Size = new System.Drawing.Size(577, 206);
             this.guna2Panel2.TabIndex = 12;
+            this.guna2Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel2_Paint);
             // 
             // dgvPetList
             // 
-            this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPetList.Location = new System.Drawing.Point(15, 64);
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPetList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            this.dgvPetList.ColumnHeadersHeight = 4;
+            this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPetList.DefaultCellStyle = dataGridViewCellStyle6;
+            this.dgvPetList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.Location = new System.Drawing.Point(17, 45);
             this.dgvPetList.Name = "dgvPetList";
-            this.dgvPetList.Size = new System.Drawing.Size(548, 114);
-            this.dgvPetList.TabIndex = 4;
+            this.dgvPetList.RowHeadersVisible = false;
+            this.dgvPetList.Size = new System.Drawing.Size(546, 150);
+            this.dgvPetList.TabIndex = 11;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPetList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPetList.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvPetList.ThemeStyle.ReadOnly = false;
+            this.dgvPetList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPetList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPetList.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvPetList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
-            // txtSeach
+            // txtSeachPet
             // 
-            this.txtSeach.Location = new System.Drawing.Point(15, 19);
-            this.txtSeach.Name = "txtSeach";
-            this.txtSeach.Size = new System.Drawing.Size(243, 20);
-            this.txtSeach.TabIndex = 2;
-            this.txtSeach.TextChanged += new System.EventHandler(this.txtNamepet_TextChanged);
+            this.txtSeachPet.Location = new System.Drawing.Point(15, 19);
+            this.txtSeachPet.Name = "txtSeachPet";
+            this.txtSeachPet.Size = new System.Drawing.Size(243, 20);
+            this.txtSeachPet.TabIndex = 2;
             // 
             // btnSeach
             // 
@@ -230,19 +328,23 @@
             this.btnSeach.TabIndex = 10;
             this.btnSeach.Text = "Tìm";
             this.btnSeach.UseVisualStyleBackColor = true;
-            this.btnSeach.Click += new System.EventHandler(this.btnSeach_Click);
+            this.btnSeach.Click += new System.EventHandler(this.btnSeach_Click_1);
             // 
             // guna2Panel1
             // 
             this.guna2Panel1.Controls.Add(this.txtNamepet);
             this.guna2Panel1.Controls.Add(this.btnAdd);
-            this.guna2Panel1.Controls.Add(this.cbPetCategory);
             this.guna2Panel1.Controls.Add(this.btnDel);
             this.guna2Panel1.Controls.Add(this.nmPrice);
             this.guna2Panel1.Controls.Add(this.btnUpdate);
             this.guna2Panel1.Controls.Add(this.btnSelect);
             this.guna2Panel1.Controls.Add(this.label4);
-            this.guna2Panel1.Controls.Add(this.txtId);
+            this.guna2Panel1.Controls.Add(this.txtCategoryPet);
+            this.guna2Panel1.Controls.Add(this.txtCount);
+            this.guna2Panel1.Controls.Add(this.txtIdPet);
+            this.guna2Panel1.Controls.Add(this.So);
+            this.guna2Panel1.Controls.Add(this.txtIdCategory);
+            this.guna2Panel1.Controls.Add(this.label8);
             this.guna2Panel1.Controls.Add(this.label3);
             this.guna2Panel1.Controls.Add(this.label1);
             this.guna2Panel1.Controls.Add(this.label2);
@@ -250,10 +352,11 @@
             this.guna2Panel1.Name = "guna2Panel1";
             this.guna2Panel1.Size = new System.Drawing.Size(577, 119);
             this.guna2Panel1.TabIndex = 11;
+            this.guna2Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.guna2Panel1_Paint);
             // 
             // txtNamepet
             // 
-            this.txtNamepet.Location = new System.Drawing.Point(130, 28);
+            this.txtNamepet.Location = new System.Drawing.Point(126, 31);
             this.txtNamepet.Name = "txtNamepet";
             this.txtNamepet.Size = new System.Drawing.Size(176, 20);
             this.txtNamepet.TabIndex = 2;
@@ -269,14 +372,6 @@
             this.btnAdd.UseVisualStyleBackColor = true;
             this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
-            // cbPetCategory
-            // 
-            this.cbPetCategory.FormattingEnabled = true;
-            this.cbPetCategory.Location = new System.Drawing.Point(354, 26);
-            this.cbPetCategory.Name = "cbPetCategory";
-            this.cbPetCategory.Size = new System.Drawing.Size(99, 21);
-            this.cbPetCategory.TabIndex = 9;
-            // 
             // btnDel
             // 
             this.btnDel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -286,10 +381,16 @@
             this.btnDel.TabIndex = 0;
             this.btnDel.Text = "Xóa";
             this.btnDel.UseVisualStyleBackColor = true;
+            this.btnDel.Click += new System.EventHandler(this.btnDel_Click_1);
             // 
             // nmPrice
             // 
             this.nmPrice.Location = new System.Drawing.Point(491, 27);
+            this.nmPrice.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
             this.nmPrice.Name = "nmPrice";
             this.nmPrice.Size = new System.Drawing.Size(72, 20);
             this.nmPrice.TabIndex = 8;
@@ -320,19 +421,59 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(317, 34);
+            this.label4.Location = new System.Drawing.Point(317, 38);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(31, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "Loại";
             // 
-            // txtId
+            // txtCategoryPet
             // 
-            this.txtId.Location = new System.Drawing.Point(38, 28);
-            this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(49, 20);
-            this.txtId.TabIndex = 2;
-            this.txtId.TextChanged += new System.EventHandler(this.txtNamepet_TextChanged);
+            this.txtCategoryPet.Location = new System.Drawing.Point(354, 31);
+            this.txtCategoryPet.Name = "txtCategoryPet";
+            this.txtCategoryPet.Size = new System.Drawing.Size(99, 20);
+            this.txtCategoryPet.TabIndex = 2;
+            // 
+            // txtCount
+            // 
+            this.txtCount.Location = new System.Drawing.Point(514, 70);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(49, 20);
+            this.txtCount.TabIndex = 2;
+            // 
+            // txtIdPet
+            // 
+            this.txtIdPet.Location = new System.Drawing.Point(40, 31);
+            this.txtIdPet.Name = "txtIdPet";
+            this.txtIdPet.Size = new System.Drawing.Size(49, 20);
+            this.txtIdPet.TabIndex = 2;
+            // 
+            // So
+            // 
+            this.So.AutoSize = true;
+            this.So.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.So.Location = new System.Drawing.Point(451, 73);
+            this.So.Name = "So";
+            this.So.Size = new System.Drawing.Size(57, 13);
+            this.So.TabIndex = 3;
+            this.So.Text = "So luong";
+            // 
+            // txtIdCategory
+            // 
+            this.txtIdCategory.Location = new System.Drawing.Point(40, 70);
+            this.txtIdCategory.Name = "txtIdCategory";
+            this.txtIdCategory.Size = new System.Drawing.Size(49, 20);
+            this.txtIdCategory.TabIndex = 2;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(14, 38);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 13);
+            this.label8.TabIndex = 3;
+            this.label8.Text = "ID";
             // 
             // label3
             // 
@@ -348,7 +489,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 35);
+            this.label1.Location = new System.Drawing.Point(14, 77);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 3;
@@ -358,7 +499,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(95, 34);
+            this.label2.Location = new System.Drawing.Point(91, 37);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(29, 13);
             this.label2.TabIndex = 3;
@@ -377,7 +518,7 @@
             // 
             // guna2Panel3
             // 
-            this.guna2Panel3.Controls.Add(this.dataGridView2);
+            this.guna2Panel3.Controls.Add(this.dgvPetService);
             this.guna2Panel3.Controls.Add(this.textBox1);
             this.guna2Panel3.Controls.Add(this.button2);
             this.guna2Panel3.Location = new System.Drawing.Point(15, 158);
@@ -385,13 +526,55 @@
             this.guna2Panel3.Size = new System.Drawing.Size(577, 181);
             this.guna2Panel3.TabIndex = 14;
             // 
-            // dataGridView2
+            // dgvPetService
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(15, 64);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(548, 114);
-            this.dataGridView2.TabIndex = 4;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.White;
+            this.dgvPetService.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPetService.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            this.dgvPetService.ColumnHeadersHeight = 4;
+            this.dgvPetService.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPetService.DefaultCellStyle = dataGridViewCellStyle9;
+            this.dgvPetService.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetService.Location = new System.Drawing.Point(15, 52);
+            this.dgvPetService.Name = "dgvPetService";
+            this.dgvPetService.RowHeadersVisible = false;
+            this.dgvPetService.Size = new System.Drawing.Size(549, 126);
+            this.dgvPetService.TabIndex = 11;
+            this.dgvPetService.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetService.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPetService.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPetService.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPetService.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPetService.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetService.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetService.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvPetService.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPetService.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetService.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPetService.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPetService.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvPetService.ThemeStyle.ReadOnly = false;
+            this.dgvPetService.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetService.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPetService.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetService.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPetService.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvPetService.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetService.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // textBox1
             // 
@@ -412,14 +595,13 @@
             // 
             // guna2Panel4
             // 
-            this.guna2Panel4.Controls.Add(this.button4);
-            this.guna2Panel4.Controls.Add(this.comboBox1);
-            this.guna2Panel4.Controls.Add(this.button5);
-            this.guna2Panel4.Controls.Add(this.numericUpDown1);
-            this.guna2Panel4.Controls.Add(this.button6);
-            this.guna2Panel4.Controls.Add(this.button7);
+            this.guna2Panel4.Controls.Add(this.btnAddSer);
+            this.guna2Panel4.Controls.Add(this.btnDelSer);
+            this.guna2Panel4.Controls.Add(this.nmPriceService);
+            this.guna2Panel4.Controls.Add(this.btnUpdateSer);
             this.guna2Panel4.Controls.Add(this.label5);
-            this.guna2Panel4.Controls.Add(this.textBox7);
+            this.guna2Panel4.Controls.Add(this.txtNameService);
+            this.guna2Panel4.Controls.Add(this.txtIdPetService);
             this.guna2Panel4.Controls.Add(this.label6);
             this.guna2Panel4.Controls.Add(this.label7);
             this.guna2Panel4.Location = new System.Drawing.Point(15, 17);
@@ -427,60 +609,50 @@
             this.guna2Panel4.Size = new System.Drawing.Size(577, 119);
             this.guna2Panel4.TabIndex = 13;
             // 
-            // button4
+            // btnAddSer
             // 
-            this.button4.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(197, 70);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 31);
-            this.button4.TabIndex = 0;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddSer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddSer.Location = new System.Drawing.Point(197, 70);
+            this.btnAddSer.Name = "btnAddSer";
+            this.btnAddSer.Size = new System.Drawing.Size(81, 31);
+            this.btnAddSer.TabIndex = 0;
+            this.btnAddSer.Text = "Thêm";
+            this.btnAddSer.UseVisualStyleBackColor = true;
+            this.btnAddSer.Click += new System.EventHandler(this.btnAddSer_Click);
             // 
-            // comboBox1
+            // btnDelSer
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(99, 21);
-            this.comboBox1.TabIndex = 9;
+            this.btnDelSer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelSer.Location = new System.Drawing.Point(284, 70);
+            this.btnDelSer.Name = "btnDelSer";
+            this.btnDelSer.Size = new System.Drawing.Size(81, 31);
+            this.btnDelSer.TabIndex = 0;
+            this.btnDelSer.Text = "Xóa";
+            this.btnDelSer.UseVisualStyleBackColor = true;
+            this.btnDelSer.Click += new System.EventHandler(this.btnDelSer_Click);
             // 
-            // button5
+            // nmPriceService
             // 
-            this.button5.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(284, 70);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(81, 31);
-            this.button5.TabIndex = 0;
-            this.button5.Text = "Xóa";
-            this.button5.UseVisualStyleBackColor = true;
+            this.nmPriceService.Location = new System.Drawing.Point(284, 26);
+            this.nmPriceService.Maximum = new decimal(new int[] {
+            9999,
+            0,
+            0,
+            0});
+            this.nmPriceService.Name = "nmPriceService";
+            this.nmPriceService.Size = new System.Drawing.Size(72, 20);
+            this.nmPriceService.TabIndex = 8;
             // 
-            // numericUpDown1
+            // btnUpdateSer
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(284, 26);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(72, 20);
-            this.numericUpDown1.TabIndex = 8;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(372, 70);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(81, 31);
-            this.button6.TabIndex = 0;
-            this.button6.Text = "Sửa";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(110, 70);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(81, 31);
-            this.button7.TabIndex = 0;
-            this.button7.Text = "Xem";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnUpdateSer.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateSer.Location = new System.Drawing.Point(372, 70);
+            this.btnUpdateSer.Name = "btnUpdateSer";
+            this.btnUpdateSer.Size = new System.Drawing.Size(81, 31);
+            this.btnUpdateSer.TabIndex = 0;
+            this.btnUpdateSer.Text = "Sửa";
+            this.btnUpdateSer.UseVisualStyleBackColor = true;
+            this.btnUpdateSer.Click += new System.EventHandler(this.btnUpdateSer_Click);
             // 
             // label5
             // 
@@ -492,12 +664,21 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Loại";
             // 
-            // textBox7
+            // txtNameService
             // 
-            this.textBox7.Location = new System.Drawing.Point(38, 28);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(49, 20);
-            this.textBox7.TabIndex = 2;
+            this.txtNameService.Location = new System.Drawing.Point(139, 28);
+            this.txtNameService.Name = "txtNameService";
+            this.txtNameService.Size = new System.Drawing.Size(107, 20);
+            this.txtNameService.TabIndex = 2;
+            this.txtNameService.TextChanged += new System.EventHandler(this.txtIdPetService_TextChanged);
+            // 
+            // txtIdPetService
+            // 
+            this.txtIdPetService.Location = new System.Drawing.Point(38, 28);
+            this.txtIdPetService.Name = "txtIdPetService";
+            this.txtIdPetService.Size = new System.Drawing.Size(49, 20);
+            this.txtIdPetService.TabIndex = 2;
+            this.txtIdPetService.TextChanged += new System.EventHandler(this.txtIdPetService_TextChanged);
             // 
             // label6
             // 
@@ -533,24 +714,66 @@
             // panel2
             // 
             this.panel2.Controls.Add(this.dgvStaff);
-            this.panel2.Location = new System.Drawing.Point(45, 168);
+            this.panel2.Location = new System.Drawing.Point(19, 168);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(519, 185);
+            this.panel2.Size = new System.Drawing.Size(570, 185);
             this.panel2.TabIndex = 9;
             // 
             // dgvStaff
             // 
-            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvStaff.Location = new System.Drawing.Point(3, 43);
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dgvStaff.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvStaff.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
+            this.dgvStaff.ColumnHeadersHeight = 4;
+            this.dgvStaff.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvStaff.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dgvStaff.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStaff.Location = new System.Drawing.Point(3, 3);
             this.dgvStaff.Name = "dgvStaff";
-            this.dgvStaff.Size = new System.Drawing.Size(512, 139);
-            this.dgvStaff.TabIndex = 0;
+            this.dgvStaff.RowHeadersVisible = false;
+            this.dgvStaff.Size = new System.Drawing.Size(564, 179);
+            this.dgvStaff.TabIndex = 1;
+            this.dgvStaff.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStaff.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvStaff.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvStaff.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvStaff.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvStaff.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStaff.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStaff.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvStaff.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvStaff.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvStaff.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvStaff.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvStaff.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvStaff.ThemeStyle.ReadOnly = false;
+            this.dgvStaff.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvStaff.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvStaff.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvStaff.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvStaff.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvStaff.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvStaff.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button3);
-            this.panel4.Controls.Add(this.button8);
-            this.panel4.Controls.Add(this.button9);
+            this.panel4.Controls.Add(this.btnUpdateStaff);
+            this.panel4.Controls.Add(this.btnAddStaff);
+            this.panel4.Controls.Add(this.btnDelStaff);
             this.panel4.Controls.Add(this.txtAddress);
             this.panel4.Controls.Add(this.txtPhone);
             this.panel4.Controls.Add(this.txtPassStaff);
@@ -566,35 +789,35 @@
             this.panel4.Size = new System.Drawing.Size(570, 146);
             this.panel4.TabIndex = 8;
             // 
-            // button3
+            // btnUpdateStaff
             // 
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(334, 102);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(89, 31);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Sửa";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnUpdateStaff.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUpdateStaff.Location = new System.Drawing.Point(334, 102);
+            this.btnUpdateStaff.Name = "btnUpdateStaff";
+            this.btnUpdateStaff.Size = new System.Drawing.Size(89, 31);
+            this.btnUpdateStaff.TabIndex = 2;
+            this.btnUpdateStaff.Text = "Sửa";
+            this.btnUpdateStaff.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnAddStaff
             // 
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(89, 102);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(89, 31);
-            this.button8.TabIndex = 2;
-            this.button8.Text = "Thêm ";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnAddStaff.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaff.Location = new System.Drawing.Point(89, 102);
+            this.btnAddStaff.Name = "btnAddStaff";
+            this.btnAddStaff.Size = new System.Drawing.Size(89, 31);
+            this.btnAddStaff.TabIndex = 2;
+            this.btnAddStaff.Text = "Thêm ";
+            this.btnAddStaff.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnDelStaff
             // 
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.Location = new System.Drawing.Point(213, 102);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(89, 31);
-            this.button9.TabIndex = 2;
-            this.button9.Text = "Xóa";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnDelStaff.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelStaff.Location = new System.Drawing.Point(213, 102);
+            this.btnDelStaff.Name = "btnDelStaff";
+            this.btnDelStaff.Size = new System.Drawing.Size(89, 31);
+            this.btnDelStaff.TabIndex = 2;
+            this.btnDelStaff.Text = "Xóa";
+            this.btnDelStaff.UseVisualStyleBackColor = true;
             // 
             // txtAddress
             // 
@@ -680,7 +903,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1386, 658);
+            this.ClientSize = new System.Drawing.Size(659, 427);
             this.Controls.Add(this.panel1);
             this.Name = "fAdmin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -688,7 +911,7 @@
             this.panel1.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.tpDoanhThu.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvRevenue)).EndInit();
             this.cbPrice.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
@@ -699,10 +922,10 @@
             this.tabPage4.ResumeLayout(false);
             this.guna2Panel3.ResumeLayout(false);
             this.guna2Panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetService)).EndInit();
             this.guna2Panel4.ResumeLayout(false);
             this.guna2Panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmPriceService)).EndInit();
             this.tabPage5.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvStaff)).EndInit();
@@ -717,52 +940,45 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpDoanhThu;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ComboBox cbCollectionType;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoad;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TabPage cbPrice;
-        private System.Windows.Forms.ComboBox cbPetCategory;
         private System.Windows.Forms.NumericUpDown nmPrice;
-        private System.Windows.Forms.DataGridView dgvPetList;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtIdCategory;
         private System.Windows.Forms.TextBox txtNamepet;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Button btnSeach;
-        private System.Windows.Forms.TextBox txtSeach;
+        private System.Windows.Forms.TextBox txtSeachPet;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDel;
         private System.Windows.Forms.Button btnAdd;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button2;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button btnAddSer;
+        private System.Windows.Forms.Button btnDelSer;
+        private System.Windows.Forms.NumericUpDown nmPriceService;
+        private System.Windows.Forms.Button btnUpdateSer;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtIdPetService;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DataGridView dgvStaff;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button btnUpdateStaff;
+        private System.Windows.Forms.Button btnAddStaff;
+        private System.Windows.Forms.Button btnDelStaff;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPhone;
         private System.Windows.Forms.TextBox txtPassStaff;
@@ -773,5 +989,15 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox txtIdPet;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtCount;
+        private System.Windows.Forms.Label So;
+        private System.Windows.Forms.TextBox txtCategoryPet;
+        private System.Windows.Forms.TextBox txtNameService;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvStaff;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPetService;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvRevenue;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPetList;
     }
 }

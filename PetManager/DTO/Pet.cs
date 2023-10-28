@@ -11,23 +11,19 @@ namespace PetManager.DTO
     {
         public Pet(DataRow row)
         {
-            if (int.TryParse(row["IdPet"].ToString(), out int idPetValue))
-            {
-                this.Idpet = idPetValue;
-            }
-            
+
+            this.Idpet = (int)row["IdPet"];
             this.Categorypet = row["CategoryPet"].ToString();
             this.Namepet = row["NamePet"].ToString();
             this.Price = (int)row["Price"];
-            
-            if (int.TryParse(row["IdPetCategory"].ToString(), out int IdpetcategoryValue))
-            {
-                this.Idpetcategory = IdpetcategoryValue;
-            }
+            this.Idpetcategory =(int) row["IdPetCategory"];
+            this.Count = (int)row["Count"];
+
+
 
         }
 
-        public Pet(int idpet, int idpetcategory, string categorypet, string namepet, int price)
+        public Pet(int idpet, int idpetcategory, string categorypet, string namepet, int price,int count)
         {
 
             this.Idpet = idpet;
@@ -35,6 +31,7 @@ namespace PetManager.DTO
             this.Namepet = namepet;
             this.Price = price;
             this.Idpetcategory = idpetcategory;
+            this.Count = count;
 
 
         }
@@ -44,6 +41,7 @@ namespace PetManager.DTO
         private int idpetcategory;
         private int price;
         private string namepet;
+        private int count;
 
 
 
@@ -52,5 +50,6 @@ namespace PetManager.DTO
         public string Namepet { get => namepet; set => namepet = value; }
         public int Price { get => price; set => price = value; }
         public int Idpetcategory { get => idpetcategory; set => idpetcategory = value; }
+        public int Count { get => count; set => count = value; }
     }
 }

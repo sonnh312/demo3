@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace PetManager.DTO
 {
-    public class Account
+    public class Staff
     {
         private string username;
         private string password;
@@ -27,7 +27,7 @@ namespace PetManager.DTO
         public string Address { get => address; set => address = value; }
         public DateTime? Birthday { get => birthday; set => birthday = value; }
 
-        public Account(string username,string displayname,string role,string password =null,int phone,string address,DateTime? birthday)
+        public Staff(string username,string displayname,string role,string password,int phone,string address,DateTime? birthday)
         {
             this.Username = username;
             this.Password = password;
@@ -41,15 +41,15 @@ namespace PetManager.DTO
 
         }
 
-        public Account(DataRow row )
+        public Staff(DataRow row )
         {
             this.Username =row["Username"].ToString();
             this.Password = row["Password"].ToString(); 
             this.Displayname = row["Displayname"].ToString();
             this.Role= row["Role"].ToString();
             this.Type = (int)row["Type"];
-            this.Phone = (int)row["PhoneStaff"];
-            this.Address = row["AddressStaff"].ToString();
+            this.Phone = (int)row["Phone"];
+            this.Address = row["Address"].ToString();
             this.Birthday = (DateTime?)row["Birthday"];
 
 

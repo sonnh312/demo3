@@ -11,25 +11,28 @@ namespace PetManager.DTO
     {
         private int idbill;
         private int idpet;
+        private string namepet;
         private DateTime? datecheckin;
-        private DateTime? datecheckout;
+        private int price;
         private string status;
+        private int count;
 
         public int Idbill { get => idbill; set => idbill = value; }
         public DateTime? Datecheckin { get => datecheckin; set => datecheckin = value; }
-        public DateTime? Datecheckout { get => datecheckout; set => datecheckout = value; }
         public string Status { get => status; set => status = value; }
         public int Idpet { get => idpet; set => idpet = value; }
+        public string Namepet { get => namepet; set => namepet = value; }
+        public int Price { get => price; set => price = value; }
+        public int Count { get => count; set => count = value; }
 
-        public Bill(int idBill,int idpet, DateTime? dateCheckIn, DateTime? dateCheckOut, string status)
+        public Bill(int idBill,int idpet, string namepet ,DateTime? datecheckin ,int price,int count  ,string status)
         {
             this.Idbill = idbill;
             this.Idpet = idpet;
             this.Datecheckin = datecheckin;
-            //var datecheckouttemp = row ["DateCheckOut"];
-            //if (datecheckouttemp.ToString != "")
-            //   this.Datecheckout = (DateTime?)datecheckouttemp;
-            this.Datecheckout = datecheckout;
+            this.Namepet = namepet;
+            this.Price = price;
+            this.Count = count;
             this.Status = status;
         }
         public Bill(DataRow row)
@@ -37,7 +40,12 @@ namespace PetManager.DTO
             this.Idbill = (int)row["IdBill"];
             this.Idpet = (int)row["IdPet"];
             this.Datecheckin = (DateTime?)row["DateCheckIn"];
-            this.Datecheckout = (DateTime?)row["DateCheckOut"];
+            var datecheckintemp = (DateTime?)row["DateCheckIn"];
+             if (datecheckintemp.ToString() != "")
+                this.Datecheckin = (DateTime?)datecheckintemp;
+            this.Namepet =row["NamePet"].ToString() ;
+            this.Price = (int) row["Price"];
+             this.Count =(int) row["Count"];
             this.Status = row["Status"].ToString();
         }
     }

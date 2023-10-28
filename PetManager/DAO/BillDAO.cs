@@ -18,10 +18,30 @@ namespace PetManager.DAO
         }
         private BillDAO() { }
 
-        // add pet to bill
-        public void InserBill(int id )
+        public bool AddBill(int idcus ,string namepet,int price, int count)
         {
-            DataProvider.Instance.ExecuteNonQuery("exec USP_InserBill @idPet ", new object[] { id });
+            int result = DataProvider.Instance.ExecuteNonQuery("exec USP_InserNewBill @idcus , @namepet , @price , @count ", new object[] { idcus, namepet, price, count });
+            return result > 0;
+        }
+
+        public List<Bill> LoadBill()
+        {
+            List<Bill> list = new List<Bill>();
+
+            string query = "SELECT * FROM dbo.Bill";
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+            foreach (DataRow item in data.Rows)
+            {
+                Bill bill = new Bill(item);
+                list.Add(bill);
+            }
+            return list;
+        }
+
+        // add pet to bill
+        public void InserBill(int id) 
+        {
+            DataProvider.Instance.ExecuteNonQuery("exec USP_InsertBill @idbill= {}, @idpet = {}, @count={}, @namepet ='{}', @price ={}", new object[] { id });
         }
         // update when u paid
         public void CheckOut(int id)
@@ -48,9 +68,9 @@ namespace PetManager.DAO
         /// that bai -1
         /// </summary>
         /// <returns></returns>
-        public int GetUnCheckGetBillIdByTableId(int id)
+        public int GetUnCheckGetBillIdByIdBill(int id)
         {
-            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE IdPet='" + id + "' AND status = N'Unpaid'");
+            DataTable data = DataProvider.Instance.ExecuteQuery("SELECT * FROM dbo.Bill WHERE IdBill='" + id + "' AND status = N'Unpaid'");
             if (data.Rows.Count > 0)
             {
                 Bill bill = new Bill(data.Rows[0]);
