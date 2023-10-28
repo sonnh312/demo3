@@ -43,6 +43,7 @@
             // 
             // guna2Panel2
             // 
+            this.guna2Panel2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.guna2Panel2.Controls.Add(this.pictureBox1);
             this.guna2Panel2.Controls.Add(this.dgvPetList);
             this.guna2Panel2.Controls.Add(this.txtNamePet);

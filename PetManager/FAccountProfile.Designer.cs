@@ -77,6 +77,7 @@
             // 
             // panel1
             // 
+            this.panel1.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.panel1.Controls.Add(this.btnExit);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.label6);
@@ -92,9 +93,9 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(300, 287);
+            this.btnExit.Location = new System.Drawing.Point(288, 280);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(90, 28);
+            this.btnExit.Size = new System.Drawing.Size(98, 42);
             this.btnExit.TabIndex = 2;
             this.btnExit.Text = "Thoát";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -252,6 +253,7 @@
             // 
             // panel7
             // 
+            this.panel7.BackColor = System.Drawing.Color.LightGreen;
             this.panel7.Controls.Add(this.btnSaveInfo);
             this.panel7.Controls.Add(this.label1);
             this.panel7.Controls.Add(this.panel11);

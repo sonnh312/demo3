@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -21,6 +22,7 @@ namespace PetManager.DAO
 
         public bool Login(string username,string password)
         {
+            
             string query = "exec USP_LoginAccount @username , @password";
             DataTable result = DataProvider.Instance.ExecuteQuery(query,new object[] { username,password});
             return result.Rows.Count > 0; 

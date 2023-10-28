@@ -68,7 +68,7 @@ namespace PetManager
         {
             List<CusPay> listId = CusPayDAO.Instance.GetListId();
             cbIdCus.DataSource = listId;
-            cbIdCus.DisplayMember = "IdCus"; 
+            cbIdCus.DisplayMember = "FullName"; 
 
          
             cbIdCus.SelectedIndexChanged += (sender, e) =>
@@ -76,7 +76,7 @@ namespace PetManager
                 if (cbIdCus.SelectedIndex >= 0)
                 {
                     CusPay selectedCustomer = (CusPay)cbIdCus.SelectedItem;
-                    txtCusName.Text = selectedCustomer.Fullname;
+                    txtCusName.Text = selectedCustomer.Idcus.ToString();
                 }
             };
         }
@@ -210,6 +210,7 @@ namespace PetManager
         private void btnCheckOut_Click(object sender, EventArgs e)
         {
             LoadBill();
+            lvBill.Items.Clear();
         }
 
         private void btnAddToBill_Click(object sender, EventArgs e)
