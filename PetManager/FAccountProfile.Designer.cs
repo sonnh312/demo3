@@ -396,6 +396,7 @@
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel1);
             this.Name = "fAccountProfile";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AccountProfile";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

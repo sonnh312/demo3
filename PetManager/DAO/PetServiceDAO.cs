@@ -20,6 +20,22 @@ namespace PetManager.DAO
         private PetServiceDAO() { }
 
 
+        public List<PetService> GetPetSerByName(string name)
+        {
+            List<PetService> list = new List<PetService>();
+            string query = string.Format("SELECT * FROM dbo.PetService WHERE NameService like N'%{0}%'", name);
+            DataTable data = DataProvider.Instance.ExecuteQuery(query);
+
+            foreach (DataRow item in data.Rows)
+            {
+                PetService ser = new PetService(item);
+                list.Add(ser);
+            }
+            return list;
+
+
+        }
+
 
         public List<PetService> LoadPetService()
         {

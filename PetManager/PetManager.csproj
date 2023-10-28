@@ -116,11 +116,11 @@
     <Compile Include="fPetService.Designer.cs">
       <DependentUpon>fPetService.cs</DependentUpon>
     </Compile>
-    <Compile Include="fProduce.cs">
+    <Compile Include="fCustomer.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="fProduce.Designer.cs">
-      <DependentUpon>fProduce.cs</DependentUpon>
+    <Compile Include="fCustomer.Designer.cs">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -145,8 +145,8 @@
     <EmbeddedResource Include="fPetService.resx">
       <DependentUpon>fPetService.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="fProduce.resx">
-      <DependentUpon>fProduce.cs</DependentUpon>
+    <EmbeddedResource Include="fCustomer.resx">
+      <DependentUpon>fCustomer.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

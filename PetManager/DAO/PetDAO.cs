@@ -52,18 +52,20 @@ namespace PetManager.DAO
 
         
 
-        public Pet GetPetByName(string name)
+        public List<Pet> GetPetByName(string name)
         {
+            List<Pet> list = new List<Pet>();
             string query = string.Format("SELECT * FROM dbo.Pet WHERE NamePet like N'%{0}%'", name);
             DataTable data = DataProvider.Instance.ExecuteQuery(query);
 
-            if (data.Rows.Count > 0)
-            {
-                DataRow item = data.Rows[0]; // Assuming only one matching row is expected
-                return new Pet(item);
+            foreach (DataRow item in data.Rows)
+            {   
+                Pet pet = new Pet(item);
+                list.Add(pet);
             }
+            return list;
 
-            return null; // Return null if no matching pet is found
+            
         }
 
         // get pet by idcategory 

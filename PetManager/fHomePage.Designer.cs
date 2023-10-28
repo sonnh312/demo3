@@ -47,6 +47,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgvDoanhThu = new Guna.UI2.WinForms.Guna2DataGridView();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            this.flpPet = new System.Windows.Forms.FlowLayoutPanel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -54,7 +55,6 @@
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.flpPet = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -157,6 +157,7 @@
             this.kháchHàngToolStripMenuItem.Name = "kháchHàngToolStripMenuItem";
             this.kháchHàngToolStripMenuItem.Size = new System.Drawing.Size(84, 20);
             this.kháchHàngToolStripMenuItem.Text = "Khách Hàng";
+            this.kháchHàngToolStripMenuItem.Click += new System.EventHandler(this.kháchHàngToolStripMenuItem_Click);
             // 
             // panel2
             // 
@@ -249,6 +250,15 @@
             this.guna2Panel1.Size = new System.Drawing.Size(533, 350);
             this.guna2Panel1.TabIndex = 6;
             // 
+            // flpPet
+            // 
+            this.flpPet.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.flpPet.Location = new System.Drawing.Point(293, 22);
+            this.flpPet.Name = "flpPet";
+            this.flpPet.Size = new System.Drawing.Size(237, 162);
+            this.flpPet.TabIndex = 6;
+            this.flpPet.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.pictureBox7);
@@ -324,15 +334,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 7;
             this.pictureBox1.TabStop = false;
-            // 
-            // flpPet
-            // 
-            this.flpPet.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.flpPet.Location = new System.Drawing.Point(293, 22);
-            this.flpPet.Name = "flpPet";
-            this.flpPet.Size = new System.Drawing.Size(237, 162);
-            this.flpPet.TabIndex = 6;
-            this.flpPet.Paint += new System.Windows.Forms.PaintEventHandler(this.flowLayoutPanel1_Paint);
             // 
             // fHomePage
             // 

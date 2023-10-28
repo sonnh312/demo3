@@ -60,34 +60,33 @@ SELECT * FROM Staff
 INSERT INTO Staff (IdUser, Displayname, Username, Password, Type, Role,Address,Birthday,Phone) VALUES (2, N'Hoang Son', N'hs', N'1',1, N'admin',N'HCM',6/9/2000,012345678)
 INSERT INTO Staff (IdUser, Displayname, Username, Password, Type, Role,Address,Birthday,Phone) VALUES (4, N'Gia Han', N'gh', N'1',0, N'staff',N'HN',6/9/2000,012345678)
 INSERT INTO Staff (IdUser, Displayname, Username, Password, Type, Role,Address,Birthday,Phone) VALUES (6, N'Thanh Ngan', N'tn', N'1',0, N'staff',N'DN',6/9/2000,012345678)
-
+UPDATE Staff SET Password='1' WHERE Username='hs'
 CREATE TABLE PetService
 (
-	IdService INT NOT NULL,
+	IdService INT IDENTITY ,
 	NameService NVARCHAR(100) NOT NULL,
 	Price INT,
 	PRIMARY KEY (IdService)
 )
 GO
-
-INSERT dbo.PetService(IdService,NameService,Price) VALUES (1001,N'Shower',50)
-INSERT dbo.PetService(IdService,NameService,Price) VALUES (1002,N'Take Care',150)
-INSERT dbo.PetService(IdService,NameService,Price) VALUES (1003,N'Food',250)
-
+\
+INSERT dbo.PetService(NameService,Price) VALUES (N'Shower',50)
+INSERT dbo.PetService(NameService,Price) VALUES (N'Take Care',150)
+INSERT dbo.PetService(NameService,Price) VALUES (N'Food',250)
+SELECT * FROM dbo.PetService WHERE NameService = N'Shower'
 CREATE TABLE Customer
 (
-	IdCus INT NOT NULL,
+	IdCus INT IDENTITY,
 	FullName NVARCHAR(100) NOT NULL,
 	Address NVARCHAR(100) NOT NULL,
 	Phone INT NOT NULL,
 	PRIMARY KEY (IdCus)
 )
 SELECT * FROM dbo.Customer
-
-INSERT dbo.Customer(IdCus,FullName,Address,Phone) VALUES (1,N'Nguyen Van A',N'141 dbp',09323231)
-INSERT dbo.Customer(IdCus,FullName,Address,Phone) VALUES (3,N'Tran Van B',N'255 dbl',09323231)
-INSERT dbo.Customer(IdCus,FullName,Address,Phone) VALUES (4,N'Dinh Van C',N'410 ahz',09323231)
-
+INSERT dbo.Customer(FullName,Address,Phone) VALUES (N'Nguyen Van A',N'141 dbp',09323231)
+INSERT dbo.Customer(FullName,Address,Phone) VALUES (N'Tran Van B',N'255 dbl',09323231)
+INSERT dbo.Customer(FullName,Address,Phone) VALUES (N'Dinh Van C',N'410 ahz',09323231)
+UPDATE Pet SET Address = N'{0}', Phone = {1} WHERE FullName = N'{2}' 
 CREATE TABLE Bill
 (
 	IdBill INT IDENTITY NOT NULL,
@@ -278,12 +277,13 @@ BEGIN
 	BEGIN
 		IF(@newpassword = null OR @newpassword ='')
 		BEGIN
-			UPDATE Staff SET Displayname= @displayname,Password=@newpassword  WHERE Username=@username
+			UPDATE Staff SET Displayname= @displayname WHERE Username=@username
 		END
-
+		ELSE 
+			UPDATE Staff SET Displayname= @displayname,Password=@newpassword  WHERE Username=@username
 	END
 END
-
+DROP PROC USP_UpdateAccount
 --
 ---- update account staff
 

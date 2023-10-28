@@ -32,92 +32,25 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.txtNamePet = new System.Windows.Forms.TextBox();
-            this.btnSeach = new System.Windows.Forms.Button();
-            this.dgvPet = new Guna.UI2.WinForms.Guna2DataGridView();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.dgvPetList = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.txtNamePet = new System.Windows.Forms.TextBox();
+            this.btnSeachPet = new System.Windows.Forms.Button();
             this.guna2Panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
             this.SuspendLayout();
             // 
             // guna2Panel2
             // 
             this.guna2Panel2.Controls.Add(this.pictureBox1);
-            this.guna2Panel2.Controls.Add(this.dgvPet);
+            this.guna2Panel2.Controls.Add(this.dgvPetList);
             this.guna2Panel2.Controls.Add(this.txtNamePet);
-            this.guna2Panel2.Controls.Add(this.btnSeach);
+            this.guna2Panel2.Controls.Add(this.btnSeachPet);
             this.guna2Panel2.Location = new System.Drawing.Point(22, 12);
             this.guna2Panel2.Name = "guna2Panel2";
             this.guna2Panel2.Size = new System.Drawing.Size(615, 314);
             this.guna2Panel2.TabIndex = 13;
-            // 
-            // txtNamePet
-            // 
-            this.txtNamePet.Location = new System.Drawing.Point(20, 17);
-            this.txtNamePet.Name = "txtNamePet";
-            this.txtNamePet.Size = new System.Drawing.Size(243, 20);
-            this.txtNamePet.TabIndex = 2;
-            // 
-            // btnSeach
-            // 
-            this.btnSeach.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSeach.Location = new System.Drawing.Point(269, 14);
-            this.btnSeach.Name = "btnSeach";
-            this.btnSeach.Size = new System.Drawing.Size(64, 23);
-            this.btnSeach.TabIndex = 10;
-            this.btnSeach.Text = "Tìm";
-            this.btnSeach.UseVisualStyleBackColor = true;
-            this.btnSeach.Click += new System.EventHandler(this.btnSeach_Click);
-            // 
-            // dgvPet
-            // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dgvPet.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPet.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.dgvPet.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPet.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvPet.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPet.Location = new System.Drawing.Point(20, 64);
-            this.dgvPet.Name = "dgvPet";
-            this.dgvPet.RowHeadersVisible = false;
-            this.dgvPet.Size = new System.Drawing.Size(575, 239);
-            this.dgvPet.TabIndex = 11;
-            this.dgvPet.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPet.ThemeStyle.AlternatingRowsStyle.Font = null;
-            this.dgvPet.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
-            this.dgvPet.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
-            this.dgvPet.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
-            this.dgvPet.ThemeStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPet.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPet.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            this.dgvPet.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            this.dgvPet.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPet.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvPet.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvPet.ThemeStyle.HeaderStyle.Height = 4;
-            this.dgvPet.ThemeStyle.ReadOnly = false;
-            this.dgvPet.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
-            this.dgvPet.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
-            this.dgvPet.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvPet.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            this.dgvPet.ThemeStyle.RowsStyle.Height = 22;
-            this.dgvPet.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dgvPet.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
             // pictureBox1
             // 
@@ -129,6 +62,75 @@
             this.pictureBox1.TabIndex = 12;
             this.pictureBox1.TabStop = false;
             // 
+            // dgvPetList
+            // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPetList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvPetList.ColumnHeadersHeight = 4;
+            this.dgvPetList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPetList.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dgvPetList.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.Location = new System.Drawing.Point(20, 64);
+            this.dgvPetList.Name = "dgvPetList";
+            this.dgvPetList.RowHeadersVisible = false;
+            this.dgvPetList.Size = new System.Drawing.Size(575, 239);
+            this.dgvPetList.TabIndex = 11;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.Font = null;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.ForeColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = System.Drawing.Color.Empty;
+            this.dgvPetList.ThemeStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.HeaderStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            this.dgvPetList.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetList.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            this.dgvPetList.ThemeStyle.HeaderStyle.Height = 4;
+            this.dgvPetList.ThemeStyle.ReadOnly = false;
+            this.dgvPetList.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
+            this.dgvPetList.ThemeStyle.RowsStyle.BorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
+            this.dgvPetList.ThemeStyle.RowsStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvPetList.ThemeStyle.RowsStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            this.dgvPetList.ThemeStyle.RowsStyle.Height = 22;
+            this.dgvPetList.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            this.dgvPetList.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            // 
+            // txtNamePet
+            // 
+            this.txtNamePet.Location = new System.Drawing.Point(20, 17);
+            this.txtNamePet.Name = "txtNamePet";
+            this.txtNamePet.Size = new System.Drawing.Size(243, 20);
+            this.txtNamePet.TabIndex = 2;
+            this.txtNamePet.Click += new System.EventHandler(this.btnSeachPet_Click);
+            // 
+            // btnSeachPet
+            // 
+            this.btnSeachPet.Font = new System.Drawing.Font("Arial Narrow", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSeachPet.Location = new System.Drawing.Point(269, 14);
+            this.btnSeachPet.Name = "btnSeachPet";
+            this.btnSeachPet.Size = new System.Drawing.Size(64, 23);
+            this.btnSeachPet.TabIndex = 10;
+            this.btnSeachPet.Text = "Tìm";
+            this.btnSeachPet.UseVisualStyleBackColor = true;
+            this.btnSeachPet.Click += new System.EventHandler(this.btnSeachPet_Click);
+            // 
             // fPet
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -136,11 +138,12 @@
             this.ClientSize = new System.Drawing.Size(661, 346);
             this.Controls.Add(this.guna2Panel2);
             this.Name = "fPet";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fPet";
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvPet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -149,8 +152,8 @@
 
         private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
         private System.Windows.Forms.TextBox txtNamePet;
-        private System.Windows.Forms.Button btnSeach;
+        private System.Windows.Forms.Button btnSeachPet;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private Guna.UI2.WinForms.Guna2DataGridView dgvPet;
+        private Guna.UI2.WinForms.Guna2DataGridView dgvPetList;
     }
 }

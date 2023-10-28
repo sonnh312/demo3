@@ -16,25 +16,34 @@ namespace PetManager
 
     public partial class fPetService : Form
     {
+
+        BindingSource petser = new BindingSource();
         public fPetService()
         {
             InitializeComponent();
             LoadPetService();
+            dgvPetService.DataSource = petser;
         }
 
         void LoadPetService()
         {
-
-            List<PetService> list = new List<PetService>();
-            dgvPetService.DataSource = PetServiceDAO.Instance.LoadPetService();
+            petser.DataSource = PetServiceDAO.Instance.LoadPetService();
         }
 
        
-        private void btnSeach_Click(object sender, EventArgs e)
+        
+        List<PetService> SeachPetSer(string name)
         {
+            List<PetService> list = PetServiceDAO.Instance.GetPetSerByName(name);
 
-            
+            return list;
         }
 
+        
+
+        private void btnSeachSer_Click(object sender, EventArgs e)
+        {
+            petser.DataSource = SeachPetSer(txtPetService.Text);
+        }
     }
 }

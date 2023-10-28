@@ -20,21 +20,25 @@ namespace PetManager
         {
             InitializeComponent();
             LoadListPet();
+            dgvPetList.DataSource = petlist;
         }
 
         void LoadListPet()
         {
-
-            List<Pet> list = new List<Pet>();
-            dgvPet.DataSource = PetDAO.Instance.LoadPetListToDesign();
+            petlist.DataSource = PetDAO.Instance.LoadPetListToDesign();
         }
 
-        
-        private void btnSeach_Click(object sender, EventArgs e)
+        List<Pet> SeachPet(string name)
         {
-           
-            petlist.DataSource = (txtNamePet.Text);
+            List<Pet> list = PetDAO.Instance.GetPetByName(name);
+
+            return list;
         }
 
+        private void btnSeachPet_Click(object sender, EventArgs e)
+        {
+            petlist.DataSource = SeachPet(txtNamePet.Text);
+
+        }
     }
 }

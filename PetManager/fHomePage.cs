@@ -119,8 +119,12 @@ namespace PetManager
             fPay f = new fPay();
             f.ShowDialog();
         }
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            fCustomer f = new fCustomer();
+            f.ShowDialog();
+        }
 
-        
 
         private void takecareToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -145,5 +149,7 @@ namespace PetManager
         {
 
         }
+
+        
     }
 }

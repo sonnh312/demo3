@@ -64,8 +64,8 @@
             this.btnCheckOut = new System.Windows.Forms.Button();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
-            this.label3 = new System.Windows.Forms.Label();
             this.dgvHistoryBill = new Guna.UI2.WinForms.Guna2DataGridView();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.guna2Panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPetList)).BeginInit();
@@ -394,16 +394,6 @@
             this.guna2Panel1.Size = new System.Drawing.Size(384, 201);
             this.guna2Panel1.TabIndex = 7;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(108, 23);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(155, 19);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Lịch Sử Thanh Toán";
-            // 
             // dgvHistoryBill
             // 
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
@@ -416,7 +406,8 @@
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvHistoryBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
-            this.dgvHistoryBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryBill.ColumnHeadersHeight = 4;
+            this.dgvHistoryBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -442,7 +433,7 @@
             this.dgvHistoryBill.ThemeStyle.HeaderStyle.BorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             this.dgvHistoryBill.ThemeStyle.HeaderStyle.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvHistoryBill.ThemeStyle.HeaderStyle.ForeColor = System.Drawing.Color.White;
-            this.dgvHistoryBill.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvHistoryBill.ThemeStyle.HeaderStyle.HeaightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
             this.dgvHistoryBill.ThemeStyle.HeaderStyle.Height = 4;
             this.dgvHistoryBill.ThemeStyle.ReadOnly = false;
             this.dgvHistoryBill.ThemeStyle.RowsStyle.BackColor = System.Drawing.Color.White;
@@ -453,6 +444,16 @@
             this.dgvHistoryBill.ThemeStyle.RowsStyle.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
             this.dgvHistoryBill.ThemeStyle.RowsStyle.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(108, 23);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(155, 19);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Lịch Sử Thanh Toán";
+            // 
             // fPay
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -460,6 +461,7 @@
             this.ClientSize = new System.Drawing.Size(903, 510);
             this.Controls.Add(this.panel1);
             this.Name = "fPay";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "fProduce";
             this.panel1.ResumeLayout(false);
             this.guna2Panel5.ResumeLayout(false);

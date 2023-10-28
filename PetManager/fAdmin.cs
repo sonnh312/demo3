@@ -17,7 +17,7 @@ namespace PetManager
 
     public partial class fAdmin : Form
     {
-
+        BindingSource bill = new BindingSource();
         BindingSource petlist = new BindingSource();
         BindingSource stafflist = new BindingSource();
         BindingSource petservice = new BindingSource();
@@ -28,25 +28,34 @@ namespace PetManager
             LoadListPet();
             AddBinding();
             AddBindingService();
+            AddBindingBill();
             LoadPetService();
             LoadBill();
             dgvPetList.DataSource = petlist;
             dgvStaff.DataSource = stafflist;
             dgvPetService.DataSource = petservice;
+            dgvRevenue.DataSource = bill;
 
 
 
         }
         #region Method
         
+         void AddBindingBill()
+        {
+           
+            dtpBill.DataBindings.Add(new Binding("Value", bill, "DateCheckIn", true, DataSourceUpdateMode.Never));
+            txtCountPet.DataBindings.Add(new Binding("Text", bill, "Price", true, DataSourceUpdateMode.Never));
+            txtTotalPrice.DataBindings.Add(new Binding("Text", bill, "Count", true, DataSourceUpdateMode.Never));
 
+        }
 
 
 
         void LoadBill()
         {
             
-            dgvRevenue.DataSource = BillDAO.Instance.LoadBill();
+            bill.DataSource = BillDAO.Instance.LoadBill();
         }
 
         void AddBindingService()

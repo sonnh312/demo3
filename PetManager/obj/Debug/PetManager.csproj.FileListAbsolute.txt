@@ -93,7 +93,6 @@ D:\Demo\PetManager\obj\Debug\PetManager.fPet.resources
 D:\Demo\PetManager\obj\Debug\PetManager.fHomePage.resources
 D:\Demo\PetManager\obj\Debug\PetManager.fPay.resources
 D:\Demo\PetManager\obj\Debug\PetManager.fPetService.resources
-D:\Demo\PetManager\obj\Debug\PetManager.fProduce.resources
 D:\Demo\PetManager\obj\Debug\PetManager.Properties.Resources.resources
 D:\Demo\PetManager\obj\Debug\PetManager.csproj.GenerateResource.cache
 D:\Demo\PetManager\obj\Debug\PetManager.csproj.CoreCompileInputs.cache
@@ -104,3 +103,4 @@ D:\Demo\PetManager\bin\Debug\PetManager.exe
 D:\Demo\PetManager\bin\Debug\PetManager.pdb
 D:\Demo\PetManager\bin\Debug\Guna.UI2.dll
 D:\Demo\PetManager\obj\Debug\PetManager.csproj.CopyComplete
+D:\Demo\PetManager\obj\Debug\PetManager.fCustomer.resources
